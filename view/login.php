@@ -1,21 +1,7 @@
-<?php
-include('../DB/quicksql.php');
-$queryMessage = "SELECT * FROM webmessage;";
-
-$mysql_result = $db1->query($queryMessage);
-
-if($mysql_result == false)echo "SQL语句错误!";
-
-$arrs = [] ;
-while( $row = $mysql_result->fetch_array( MYSQLI_ASSOC )){
- $arrs [$row['id']] = $row;
-}
 
 
-
-?>
 <!doctype html>
-<html class="no-js" xmlns="http://www.w3.org/1999/html">
+<html class="no-js">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -50,7 +36,7 @@ while( $row = $mysql_result->fetch_array( MYSQLI_ASSOC )){
     <link rel="stylesheet" href="../assets/css/amazeui.min.css">
     <link rel="stylesheet" href="../assets/css/app.css">
 </head>
-<body  style="background-color: #e9e9e9">
+<body style="background-color: #e9e9e9">
 
 <div class="am-g">
     <div class="am-u-sm-1"></div>
@@ -58,9 +44,10 @@ while( $row = $mysql_result->fetch_array( MYSQLI_ASSOC )){
         <a href="https://github.com/rgzhang2018/questionnaire">GitHub</a>
     </div>
 </div>
+
 <div class="am-animation-scale-up am-u-sm-3 am-u-sm-centered" >
     <ol class="am-breadcrumb">
-        <li><a href="../index.php">首页</a></li>
+        <li><a href="admin_index.php">首页</a></li>
         <li><a href="#">分类</a></li>
         <li class="am-active">内容</li>
     </ol>
@@ -68,67 +55,57 @@ while( $row = $mysql_result->fetch_array( MYSQLI_ASSOC )){
 
 
 
-
-<div class="am-u-md-6 am-u-md-centered" style="background-color: #FFFFFF ;box-shadow: 10px 10px 5px"  >
-    <form  action="../control/formsave.php"  method="post" class="am-form am-form-horizontal">
-
-
+<!--  here  -->
+<br>
+<br>
+<div class="am-u-sm-4 am-u-sm-centered"  style="background-color: #FFFFFF ;box-shadow: 10px 10px 5px">
+    <form class="am-form am-form-horizontal"  action="../control/login_control.php"  method="post">
         <div class="am-form-group">
-            <label for="doc-ipt-pwd-2" class="col-sm-2 am-form-label">留言</label>
-            <div class="col-sm-10">
-                <textarea  placeholder="随便说点啥吧" rows="5" name="text1" ></textarea>
-            </div>
+            <br>
         </div>
 
-        <div class="am-form-group">
-            <label for="doc-ipt-3" class="col-sm-2 am-form-label" >昵称</label>
-            <div class="col-sm-10">
-                <input type="text" id="doc-ipt-3" placeholder="输入你的昵称" name="text2" >
-            </div>
-        </div>
-
-        <div class="am-form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="am-btn am-btn-primary" >提交</button>
-            </div>
-        </div>
-        <div class="am-form-group"></div>
-    </form action="../control/formsave.php">
-</div>
-
-
-
-<div class="am-u-sm-12">
-    <br>
-</div>
-<div class="am-u-md-6 am-u-md-centered"  style="background-color: #FFFFFF ;box-shadow: 10px 10px 5px">
-
-    <div class="am-u-sm-12"><h4>历史留言：</h4></div>
-    <?php
-    foreach ($arrs as $value) {
-        ?>
-        <div>
-            <div>
-			 	<span>
-			 		<?php echo "{$value['id']}楼.<br>用户名：{$value['name']}";	?>
-			 	</span>
-            </div>
-            <div>
-			 	<span>
-			 		<?php echo "留言内容：{$value['message']}"; ?>
-			 	</span>
-            </div>
-            <div>
-			 	 <span>
-			 		<?php echo "时间："; echo date("Y-m-d h:m:s",$value['time']); ?>
-			 	</span>
-            </div>
+        <div class="am-form-group" style="text-align:center">
+            <h1>登录</h1>
             <hr>
-            </br>
         </div>
-        <?php
-    }
-    ?>
+
+        <div class="am-form-group">
+            <label for="doc-ipt-pwd-2" class="am-u-sm-2 am-form-label">邮件</label>
+            <div class="am-u-sm-10">
+                <input type="email" name="email" id="doc-ipt-3" placeholder="输入你的电子邮件">
+            </div>
+        </div>
+
+        <div class="am-form-group">
+            <label for="doc-ipt-pwd-2" class="am-u-sm-2 am-form-label">密码</label>
+            <div class="am-u-sm-10">
+                <input type="password" name="password" id="doc-ipt-pwd-2" placeholder="请输入密码">
+            </div>
+        </div>
+
+        <div class="am-form-group">
+            <div class="am-u-sm-offset-2 am-u-sm-10">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name = "remember"  value="yes"> 记住我
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="am-form-group">
+            <div class="am-u-sm-6 ">
+                <button type="submit" name="login"  class="am-btn am-btn-primary am-fr">提交登入</button>
+            </div>
+            <div class="am-u-sm-6 ">
+                <button type="submit" name="register" class="am-btn am-btn-success">点击注册</button>
+            </div>
+        </div>
+        <div class="am-form-group">
+            <hr>
+            <br>
+        </div>
+    </form>
 </div>
 
 

@@ -1,11 +1,11 @@
 <?php 
 //插入的数据库：
-$host = '127.0.0.1';
-$username = 'root';
-$password = 'a530371306';
-$dataBase = 'schema1';
+$host001 = '127.0.0.1';
+$username001 = 'root';
+$password001 = 'a530371306';
+$dataBase001 = 'schema1';
 
-$db1 = new mysqli($host,$username,$password,$dataBase);
+$db1 = new mysqli($host001,$username001,$password001,$dataBase001);
 
 //错误判断
 if($db1->connect_errno <> 0 ){

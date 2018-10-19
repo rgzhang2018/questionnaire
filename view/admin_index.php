@@ -1,21 +1,5 @@
-<?php
-include('../DB/quicksql.php');
-$queryMessage = "SELECT * FROM webmessage;";
-
-$mysql_result = $db1->query($queryMessage);
-
-if($mysql_result == false)echo "SQL语句错误!";
-
-$arrs = [] ;
-while( $row = $mysql_result->fetch_array( MYSQLI_ASSOC )){
- $arrs [$row['id']] = $row;
-}
-
-
-
-?>
 <!doctype html>
-<html class="no-js" xmlns="http://www.w3.org/1999/html">
+<html class="no-js">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -58,9 +42,10 @@ while( $row = $mysql_result->fetch_array( MYSQLI_ASSOC )){
         <a href="https://github.com/rgzhang2018/questionnaire">GitHub</a>
     </div>
 </div>
+
 <div class="am-animation-scale-up am-u-sm-3 am-u-sm-centered" >
     <ol class="am-breadcrumb">
-        <li><a href="../index.php">首页</a></li>
+        <li><a href="admin_index.php">首页</a></li>
         <li><a href="#">分类</a></li>
         <li class="am-active">内容</li>
     </ol>
@@ -68,68 +53,58 @@ while( $row = $mysql_result->fetch_array( MYSQLI_ASSOC )){
 
 
 
+<!--  here  -->
+<div class="am-u-md-4 am-u-md-centered" style="background-color: #ffffff"  >
 
-<div class="am-u-md-6 am-u-md-centered" style="background-color: #FFFFFF ;box-shadow: 10px 10px 5px"  >
-    <form  action="../control/formsave.php"  method="post" class="am-form am-form-horizontal">
+    <form  action="#" method="post" class="am-form am-form-horizontal">
+        <div class="am-form-group" style="text-align:center">
+            <br>
+            <?php
+	header('Content-type:text/html; charset=utf-8');
+	// 开启Session
+	session_start();
 
-
-        <div class="am-form-group">
-            <label for="doc-ipt-pwd-2" class="col-sm-2 am-form-label">留言</label>
-            <div class="col-sm-10">
-                <textarea  placeholder="随便说点啥吧" rows="5" name="text1" ></textarea>
-            </div>
+	// 首先判断Cookie是否有记住了用户信息
+	if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
+		# 若记住了用户信息,则直接传给Session
+        echo "1111";
+		$_SESSION['username'] = $_COOKIE['username'];
+        $_SESSION['email'] = $_COOKIE['email'];
+		$_SESSION['islogin'] = 1;
+	}
+	if (isset($_SESSION['islogin'])) {
+		// 若已经登录
+		echo "你好! ".$_SESSION['username'].' ,欢迎来到个人中心!<br>';
+		echo "<a href='../control/logout.php'>注销</a>";
+	} else {
+		// 若没有登录
+        header("refresh:3;url=./login.php");
+		echo "您还没有登录！三秒后转跳到<a href='./login.php'>登录</a>界面";
+	}
+ ?>
+            <hr>
         </div>
 
         <div class="am-form-group">
-            <label for="doc-ipt-3" class="col-sm-2 am-form-label" >昵称</label>
-            <div class="col-sm-10">
-                <input type="text" id="doc-ipt-3" placeholder="输入你的昵称" name="text2" >
-            </div>
-        </div>
-
-        <div class="am-form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="am-btn am-btn-primary" >提交</button>
-            </div>
+            <button type="button" class="am-u-sm-12 am-btn am-btn-primary  am-round">发布问卷</button>
         </div>
         <div class="am-form-group"></div>
-    </form action="../control/formsave.php">
-</div>
-
-
-
-<div class="am-u-sm-12">
-    <br>
-</div>
-<div class="am-u-md-6 am-u-md-centered"  style="background-color: #FFFFFF ;box-shadow: 10px 10px 5px">
-
-    <div class="am-u-sm-12"><h4>历史留言：</h4></div>
-    <?php
-    foreach ($arrs as $value) {
-        ?>
-        <div>
-            <div>
-			 	<span>
-			 		<?php echo "{$value['id']}楼.<br>用户名：{$value['name']}";	?>
-			 	</span>
-            </div>
-            <div>
-			 	<span>
-			 		<?php echo "留言内容：{$value['message']}"; ?>
-			 	</span>
-            </div>
-            <div>
-			 	 <span>
-			 		<?php echo "时间："; echo date("Y-m-d h:m:s",$value['time']); ?>
-			 	</span>
-            </div>
-            <hr>
-            </br>
+        <div class="am-form-group">
+            <button type="button" class="am-u-sm-12 am-btn am-btn-primary  am-round">我的问卷</button>
         </div>
-        <?php
-    }
-    ?>
+        <div class="am-form-group"></div>
+        <div class="am-form-group">
+                <button type="button" class="am-u-sm-12 am-btn am-btn-primary  am-round">退出登录</button>
+        </div>
+
+        <div class="am-form-group">
+            <hr><br>
+        </div>
+
+
+    </form>
 </div>
+
 
 
 

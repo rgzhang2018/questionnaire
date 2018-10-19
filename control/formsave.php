@@ -62,6 +62,5 @@ else {
 	var_dump($flag);
 }
 
-//header("location: ");
-header("refresh:5;url=../view/form.php");
-print('<br>留言成功！<br>五秒后自动跳转....');
+header("refresh:3;url=../view/form.php");
+print('<br>留言成功！<br>三秒后自动跳转....');

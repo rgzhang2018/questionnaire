@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="assets/css/amazeui.min.css">
     <link rel="stylesheet" href="assets/css/app.css">
 </head>
-<body>
+<body  style="background-color: #e9e9e9">
 
 <div class="am-g">
     <div class="am-u-sm-1"></div>
@@ -50,6 +50,8 @@
     </ol>
 </div>
 
+<br>
+<br>
 <div class="am-animation-scale-up am-u-sm-3 am-u-sm-centered">
     <a class="am-btn am-u-sm-centered am-btn-primary" href="./view/form.php" >
         留言板
@@ -57,8 +59,8 @@
 </div>
 <div class="am-animation-scale-up am-u-sm-3 am-u-sm-centered">-------------------------------------------------------</div>
 <div class="am-animation-scale-up am-u-sm-3 am-u-sm-centered">
-    <a class="am-btn am-u-sm-centered am-btn-primary" href="./view/questionnaire.php">
-        投票问卷
+    <a class="am-btn am-u-sm-centered am-btn-primary" href="./view/login.php">
+        发布问卷
     </a>
 </div>
 <div class="am-animation-scale-up am-u-sm-3 am-u-sm-centered">-------------------------------------------------------</div>
