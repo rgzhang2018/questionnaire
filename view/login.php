@@ -43,15 +43,10 @@
     <div class="am-u-sm-2 am-u-sm-offset-9"><i class="am-icon-github am-icon-fw am-u-sm-left "></i>
         <a href="https://github.com/rgzhang2018/questionnaire">GitHub</a>
     </div>
+    <br>
+    <br>
 </div>
 
-<div class="am-animation-scale-up am-u-sm-3 am-u-sm-centered" >
-    <ol class="am-breadcrumb">
-        <li><a href="admin_index.php">首页</a></li>
-        <li><a href="#">分类</a></li>
-        <li class="am-active">内容</li>
-    </ol>
-</div>
 
 
 
@@ -111,9 +106,12 @@
 
 
 
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<!--<![endif]-->
 <!--[if lte IE 8 ]>
-<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
-<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="../assets/js/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
 <script src="../assets/js/amazeui.min.js"></script>

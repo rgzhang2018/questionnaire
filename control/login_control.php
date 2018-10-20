@@ -2,9 +2,10 @@
 header('Content-type:text/html; charset=utf-8');
 // 开启Session，存储cookie
 session_start();
+
+
+
 //连接数据库
-
-
 // 处理用户登录信息
 if (isset($_POST['login'])) {
     # 接收用户的登录信息
@@ -57,8 +58,8 @@ if (isset($_POST['login'])) {
             setcookie('code', '', time()-999);
         }
         // 处理完附加项后跳转到登录成功的首页
-        header('refresh:3; url=../view/admin_index.php');
-        echo "三秒后转跳个人页面...";
+        header('refresh:2; url=../view/admin_index.php');
+        echo "即将转跳个人页面...";
         exit;
     }
 }elseif (isset($_POST['register']) ){
