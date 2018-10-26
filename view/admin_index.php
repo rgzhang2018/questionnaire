@@ -60,25 +60,23 @@ if (!isset($_SESSION['islogin']))header("refresh:3;url=./login.php");
 <div class="am-g">
     <br>
     <div class="am-u-sm-1"></div>
-    <div class="am-u-sm-3 am-u-sm-offset-8"><i class="am-icon-github am-icon-fw am-u-sm-left "></i>
+    <div class="am-u-sm-4 am-fr"><i class="am-icon-github am-icon-fw am-u-sm-left "></i>
         <a href="https://github.com/rgzhang2018/questionnaire">GitHub</a>
     </div>
     <br>
     <br>
 </div>
 
-<div class="am-animation-scale-up  am-u-sm-4 am-u-sm-centered" >
+<div class="am-animation-scale-up  am-u-sm-5 am-u-sm-centered" >
     <ul class="am-nav am-nav-tabs">
         <li ><a href="../index.php">首页</a></li>
-        <li class="am-active"><a href="./admin_index.php">控制台</a></li>
-        <li><a href="message.php">留言板</a></li>
-        <div class="am-fr">
-            <?php if (isset($_SESSION['islogin'])){
-                echo "欢迎您,{$_SESSION['username']} &nbsp;&nbsp;<a href=\"../control/logout.php\" >|注销|</a>";
+        <li class="am-active" ><a href="./admin_index.php">控制台</a></li>
+        <li ><a href="./message.php">留言板</a></li>
+        <li ><?php if (isset($_SESSION['islogin'])){
+                echo "<a>您好，{$_SESSION['username']}</a>";
             }else {
                 echo "<a href=\"./login.php\" >|点击登录|</a>";
-            } ?>
-        </div>
+            } ?></li>
     </ul>
 </div>
 
@@ -94,7 +92,7 @@ if (!isset($_SESSION['islogin']))header("refresh:3;url=./login.php");
             <?php
             if (isset($_SESSION['islogin'])) {
                 // 若已经登录
-                echo "你好! ".$_SESSION['username'].' ,欢迎来到个人中心!<br>';
+                echo "你好! ".$_SESSION['username'].' ,欢迎来到个人中心! <a href="../control/logout.php" >|点击注销|</a><br>';
             } else {
                 // 若没有登录
                 echo "您还没有登录！三秒后转跳到<a href='./login.php'>登录</a>界面";

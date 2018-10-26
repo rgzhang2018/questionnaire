@@ -70,25 +70,23 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
 <div class="am-g">
     <br>
     <div class="am-u-sm-1"></div>
-    <div class="am-u-sm-3 am-u-sm-offset-8"><i class="am-icon-github am-icon-fw am-u-sm-left "></i>
+    <div class="am-u-sm-4 am-fr"><i class="am-icon-github am-icon-fw am-u-sm-left "></i>
         <a href="https://github.com/rgzhang2018/questionnaire">GitHub</a>
     </div>
     <br>
     <br>
 </div>
 
-<div class="am-animation-scale-up  am-u-sm-5 am-u-sm-centered" >
+<div class="am-animation-scale-up  am-u-sm-4 am-u-sm-centered" >
     <ul class="am-nav am-nav-tabs">
-        <li ><a href="../index.php">首页</a></li>
-        <li ><a href="#">控制台</a></li>
-        <li ><a href="message.php">留言板</a></li>
-        <div class="am-fr">
-            <?php if (isset($_SESSION['islogin'])){
-                echo "欢迎您,{$_SESSION['username']} &nbsp;&nbsp;<a href=\"../control/logout.php\" >|注销|</a>";
+        <li class="am-active"><a href="./index.php">首页</a></li>
+        <li ><a href="./view/admin_index.php">控制台</a></li>
+        <li ><a href="view/message.php">留言板</a></li>
+        <li ><?php if (isset($_SESSION['islogin'])){
+                echo "<a>欢迎您，{$_SESSION['username']}</a>";
             }else {
-                echo "<a href=\"./login.php\" >|点击登录|</a>";
-            } ?>
-        </div>
+                echo "<a href=\"./view/login.php\" >|点击登录|</a>";
+            } ?></li>
     </ul>
 </div>
 

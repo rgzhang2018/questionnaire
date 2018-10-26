@@ -58,7 +58,7 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
 <div class="am-g">
     <br>
     <div class="am-u-sm-1"></div>
-    <div class="am-u-sm-3 am-u-sm-offset-8"><i class="am-icon-github am-icon-fw am-u-sm-left "></i>
+    <div class="am-u-sm-4 am-fr"><i class="am-icon-github am-icon-fw am-u-sm-left "></i>
         <a href="https://github.com/rgzhang2018/questionnaire">GitHub</a>
     </div>
     <br>
@@ -70,13 +70,11 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
         <li class="am-active"><a href="./index.php">首页</a></li>
         <li ><a href="./view/admin_index.php">控制台</a></li>
         <li ><a href="view/message.php">留言板</a></li>
-        <div class="am-fr">
-            <?php if (isset($_SESSION['islogin'])){
-                echo "欢迎您,{$_SESSION['username']} &nbsp;&nbsp;<a href=\"../control/logout.php\" >|注销|</a>";
-            }else {
-                echo "<a href=\"./view/login.php\" >|点击登录|</a>";
-            } ?>
-        </div>
+        <li ><?php if (isset($_SESSION['islogin'])){
+                    echo "<a>欢迎您，{$_SESSION['username']}</a>";
+                }else {
+                    echo "<a href=\"./view/login.php\" >|点击登录|</a>";
+                } ?></li>
     </ul>
 </div>
 
@@ -88,7 +86,7 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
             <?php
             if (isset($_SESSION['islogin'])) {
                 // 若已经登录
-                echo "你好! ".$_SESSION['username'].' ,欢迎您来到主页<br>';
+                echo "你好! ".$_SESSION['username'].' ,欢迎您来到主页 <a href="../control/logout.php" >|点击注销|</a><br>';
             } else {
                 // 若没有登录
                 echo "欢迎您来到主页，<a href='./view/login.php'>点击登录/注册</a>";

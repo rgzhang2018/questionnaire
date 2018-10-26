@@ -40,8 +40,8 @@
 
 <div class="am-g">
     <br>
-    <div class="am-u-sm-1"></div>
-    <div class="am-u-sm-3 am-u-sm-offset-8"><i class="am-icon-github am-icon-fw am-u-sm-left "></i>
+    <div class="am-u-sm-5"><a href="../index.php"><i class="am-icon-home am-icon-fw am-u-sm-left am-fr"></i></a></div>
+    <div class="am-u-sm-5 am-fr"><i class="am-icon-github am-icon-fw am-u-sm-left "></i>
         <a href="https://github.com/rgzhang2018/questionnaire">GitHub</a>
     </div>
     <br>

@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/view/register.php" description="&#10;        &lt;div class=&quot;am-form-group&quot;&gt;&#10;            &lt;..." line="85" />
+    <bookmark url="file://$PROJECT_DIR$/view/register.php" description="&#10;        &lt;div class=&quot;am-form-group&quot;&gt;&#10;            &lt;..." line="87" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1176f9eb-3d77-4113-aa20-948c332d458a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/amaze.html" beforeDir="false" afterPath="$PROJECT_DIR$/amaze.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/questionnaire system.sql" beforeDir="false" afterPath="$PROJECT_DIR$/questionnaire system.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/admin_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin_form.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/admin_index.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin_index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/admin_preview.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin_preview.php" afterDir="false" />
@@ -71,9 +70,9 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="2" />
-          <entry key="html" value="4" />
+          <entry key="html" value="5" />
           <entry key="md" value="1" />
-          <entry key="php" value="84" />
+          <entry key="php" value="86" />
           <entry key="png" value="2" />
           <entry key="sql" value="1" />
         </counts>
@@ -81,24 +80,24 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="2" />
-          <entry key="HTML" value="4" />
+          <entry key="HTML" value="5" />
           <entry key="Image" value="2" />
           <entry key="Markdown" value="1" />
-          <entry key="PHP" value="84" />
+          <entry key="PHP" value="86" />
           <entry key="SQL" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="38" />
-          <entry key="php" value="4435" />
+          <entry key="html" value="40" />
+          <entry key="php" value="4529" />
           <entry key="txt" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="38" />
-          <entry key="PHP" value="4435" />
+          <entry key="HTML" value="40" />
+          <entry key="PHP" value="4529" />
           <entry key="PLAIN_TEXT" value="33" />
         </counts>
       </usages-collector>
@@ -109,12 +108,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/message.php">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="83" column="30" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/view/login.php">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
-              <caret line="77" column="6" selection-start-line="77" selection-start-column="6" selection-end-line="77" selection-end-column="6" />
-              <folding>
-                <element signature="e#31#37#0" expanded="true" />
-                <element signature="e#37#43#0" expanded="true" />
-              </folding>
+              <caret line="47" column="8" lean-forward="true" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -122,12 +126,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="65" column="6" selection-start-line="65" selection-start-column="6" selection-end-line="65" selection-end-column="6" />
-              <folding>
-                <element signature="e#31#37#0" expanded="true" />
-                <element signature="e#37#43#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-14">
+              <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
             </state>
           </provider>
         </entry>
@@ -135,34 +135,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/admin_index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="67" column="6" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
-              <folding>
-                <element signature="e#31#37#0" expanded="true" />
-                <element signature="e#37#43#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="195">
+              <caret line="70" column="35" lean-forward="true" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/admin_form.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="64" column="6" selection-start-line="64" selection-start-column="6" selection-end-line="64" selection-end-column="6" />
-              <folding>
-                <element signature="e#31#37#0" expanded="true" />
-                <element signature="e#37#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/amaze.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="44" column="8" lean-forward="true" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
+            <state relative-caret-position="157">
+              <caret line="59" column="6" selection-start-line="59" selection-start-column="6" selection-end-line="59" selection-end-column="6" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -173,12 +156,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/admin_preview.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="64" column="6" selection-start-line="64" selection-start-column="6" selection-end-line="64" selection-end-column="6" />
-              <folding>
-                <element signature="e#31#37#0" expanded="true" />
-                <element signature="e#37#43#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-14">
+              <caret line="71" column="52" lean-forward="true" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -186,8 +165,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/register.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="61" column="6" selection-start-line="61" selection-start-column="6" selection-end-line="61" selection-end-column="6" />
+            <state relative-caret-position="214">
+              <caret line="53" selection-start-line="53" selection-end-line="61" selection-end-column="6" />
               <folding>
                 <element signature="e#7#39#0#PHP" expanded="true" />
               </folding>
@@ -196,14 +175,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/admin_form.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="309">
+              <caret line="77" column="6" lean-forward="true" selection-start-line="77" selection-start-column="6" selection-end-line="77" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/vote.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="77" column="6" selection-start-line="77" selection-start-column="6" selection-end-line="77" selection-end-column="6" />
-              <folding>
-                <element signature="e#31#37#0" expanded="true" />
-                <element signature="e#37#43#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="651">
+              <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
             </state>
           </provider>
         </entry>
@@ -211,19 +195,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/admin_questionnaire.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="64" column="6" selection-start-line="64" selection-start-column="6" selection-end-line="64" selection-end-column="6" />
+            <state relative-caret-position="917">
+              <caret line="152" column="31" lean-forward="true" selection-start-line="152" selection-start-column="31" selection-end-line="152" selection-end-column="31" />
               <folding>
-                <element signature="e#31#37#0" expanded="true" />
-                <element signature="e#37#43#0" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/questionnaire system.sql">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -264,16 +242,16 @@
         <option value="$PROJECT_DIR$/DB/quicksql.php" />
         <option value="$PROJECT_DIR$/control/login_control.php" />
         <option value="$PROJECT_DIR$/control/formsave.php" />
-        <option value="$PROJECT_DIR$/view/login.php" />
-        <option value="$PROJECT_DIR$/view/message.php" />
-        <option value="$PROJECT_DIR$/view/register.php" />
-        <option value="$PROJECT_DIR$/view/vote.php" />
-        <option value="$PROJECT_DIR$/view/admin_form.php" />
-        <option value="$PROJECT_DIR$/view/admin_index.php" />
-        <option value="$PROJECT_DIR$/view/admin_preview.php" />
-        <option value="$PROJECT_DIR$/view/admin_questionnaire.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/amaze.html" />
+        <option value="$PROJECT_DIR$/view/vote.php" />
+        <option value="$PROJECT_DIR$/view/admin_form.php" />
+        <option value="$PROJECT_DIR$/view/message.php" />
+        <option value="$PROJECT_DIR$/view/admin_preview.php" />
+        <option value="$PROJECT_DIR$/view/admin_questionnaire.php" />
+        <option value="$PROJECT_DIR$/view/admin_index.php" />
+        <option value="$PROJECT_DIR$/view/register.php" />
+        <option value="$PROJECT_DIR$/view/login.php" />
       </list>
     </option>
   </component>
@@ -288,7 +266,7 @@
       <path value="$PROJECT_DIR$/../php" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="30" />
     <option name="y" value="30" />
     <option name="width" value="1600" />
@@ -374,12 +352,12 @@
       <workItem from="1539964351193" duration="621000" />
       <workItem from="1540021162784" duration="11521000" />
       <workItem from="1540218121419" duration="22000" />
-      <workItem from="1540535489692" duration="10255000" />
+      <workItem from="1540535489692" duration="12003000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64575000" />
+    <option name="totallyTimeSpent" value="66323000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -508,110 +486,85 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="40" selection-start-line="40" selection-end-line="48" selection-end-column="6" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/questionnaire system.sql">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/message.php">
+    <entry file="file://$PROJECT_DIR$/amaze.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="77" column="6" selection-start-line="77" selection-start-column="6" selection-end-line="77" selection-end-column="6" />
+        <state relative-caret-position="157">
+          <caret line="59" column="6" selection-start-line="59" selection-start-column="6" selection-end-line="59" selection-end-column="6" />
           <folding>
-            <element signature="e#31#37#0" expanded="true" />
-            <element signature="e#37#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="61" column="6" selection-start-line="61" selection-start-column="6" selection-end-line="61" selection-end-column="6" />
-          <folding>
-            <element signature="e#7#39#0#PHP" expanded="true" />
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/vote.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="77" column="6" selection-start-line="77" selection-start-column="6" selection-end-line="77" selection-end-column="6" />
-          <folding>
-            <element signature="e#31#37#0" expanded="true" />
-            <element signature="e#37#43#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="651">
+          <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/admin_form.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="64" column="6" selection-start-line="64" selection-start-column="6" selection-end-line="64" selection-end-column="6" />
+        <state relative-caret-position="309">
+          <caret line="77" column="6" lean-forward="true" selection-start-line="77" selection-start-column="6" selection-end-line="77" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-14">
+          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/message.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="83" column="30" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/admin_preview.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-14">
+          <caret line="71" column="52" lean-forward="true" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/admin_questionnaire.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="917">
+          <caret line="152" column="31" lean-forward="true" selection-start-line="152" selection-start-column="31" selection-end-line="152" selection-end-column="31" />
           <folding>
-            <element signature="e#31#37#0" expanded="true" />
-            <element signature="e#37#43#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/admin_index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="67" column="6" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
+        <state relative-caret-position="195">
+          <caret line="70" column="35" lean-forward="true" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="53" selection-start-line="53" selection-end-line="61" selection-end-column="6" />
           <folding>
-            <element signature="e#31#37#0" expanded="true" />
-            <element signature="e#37#43#0" expanded="true" />
+            <element signature="e#7#39#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin_preview.php">
+    <entry file="file://$PROJECT_DIR$/view/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="64" column="6" selection-start-line="64" selection-start-column="6" selection-end-line="64" selection-end-column="6" />
-          <folding>
-            <element signature="e#31#37#0" expanded="true" />
-            <element signature="e#37#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin_questionnaire.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="64" column="6" selection-start-line="64" selection-start-column="6" selection-end-line="64" selection-end-column="6" />
-          <folding>
-            <element signature="e#31#37#0" expanded="true" />
-            <element signature="e#37#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/questionnaire system.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="65" column="6" selection-start-line="65" selection-start-column="6" selection-end-line="65" selection-end-column="6" />
-          <folding>
-            <element signature="e#31#37#0" expanded="true" />
-            <element signature="e#37#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/amaze.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="44" column="8" lean-forward="true" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="323">
+          <caret line="47" column="8" lean-forward="true" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
         </state>
       </provider>
     </entry>
