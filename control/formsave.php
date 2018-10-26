@@ -1,5 +1,5 @@
-<?php 
-
+<?php
+header('Content-type:text/html; charset=utf-8');
 $text = $_POST['text1'];
 $name = $_POST['text2'];
 $time = time();

@@ -1,5 +1,5 @@
 <?php
-
+header('Content-type:text/html; charset=utf-8');
 if (isset($_POST['register'])) {
     # 接收用户的登录信息
 

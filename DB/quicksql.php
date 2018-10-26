@@ -1,4 +1,5 @@
-<?php 
+<?php
+header('Content-type:text/html; charset=utf-8');
 //插入的数据库：
 $host001 = '127.0.0.1';
 $username001 = 'admin001';

@@ -1,4 +1,6 @@
-<?php 
+<?php
+
+header('Content-type:text/html; charset=utf-8');
 include("../DB/quicksql.php");
 
 $queryMessage = "SELECT * FROM webmessage;";

@@ -1,4 +1,5 @@
-<?php header('Content-type:text/html; charset=utf-8');
+<?php
+header('Content-type:text/html; charset=utf-8');
 // 开启Session，存储cookie
 session_start();
 
