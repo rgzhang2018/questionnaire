@@ -75,7 +75,7 @@ if (!isset($_SESSION['islogin']))header("refresh:3;url=./login.php");
         <li ><?php if (isset($_SESSION['islogin'])){
                 echo "<a>您好，{$_SESSION['username']}</a>";
             }else {
-                echo "<a href=\"./login.php\" >|点击登录|</a>";
+                echo "<a href=\"./login.php\" >|登录|</a>";
             } ?></li>
     </ul>
 </div>

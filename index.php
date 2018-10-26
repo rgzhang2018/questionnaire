@@ -73,7 +73,7 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
         <li ><?php if (isset($_SESSION['islogin'])){
                     echo "<a>欢迎您，{$_SESSION['username']}</a>";
                 }else {
-                    echo "<a href=\"./view/login.php\" >|点击登录|</a>";
+                    echo "<a href=\"./view/login.php\" >|登录|</a>";
                 } ?></li>
     </ul>
 </div>
