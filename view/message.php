@@ -69,8 +69,8 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
 
 <div class="am-g">
     <br>
-    <div class="am-u-sm-2"></div>
-    <div class="am-u-sm-2 am-u-sm-offset-8"><i class="am-icon-github am-icon-fw am-u-sm-left "></i>
+    <div class="am-u-sm-1"></div>
+    <div class="am-u-sm-3 am-u-sm-offset-8"><i class="am-icon-github am-icon-fw am-u-sm-left "></i>
         <a href="https://github.com/rgzhang2018/questionnaire">GitHub</a>
     </div>
     <br>
@@ -139,7 +139,7 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
         <div>
             <section class="am-panel am-panel-default">
                 <header class="am-panel-hd">
-                    <span class="am-fr"><?php echo date("Y-m-d h:m:s",$value['m_time']); ?> </span>
+                    <span class="am-fr"><?php echo date("Y-m-d H:m:s",$value['m_time']); ?> </span>
                     <h3 class="am-panel-title"><?php echo "{$value['m_id']}楼.  {$value['m_name']}:"; ?></h3>
 
                 </header>

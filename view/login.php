@@ -40,8 +40,8 @@
 
 <div class="am-g">
     <br>
-    <div class="am-u-sm-2"></div>
-    <div class="am-u-sm-2 am-u-sm-offset-8"><i class="am-icon-github am-icon-fw am-u-sm-left "></i>
+    <div class="am-u-sm-1"></div>
+    <div class="am-u-sm-3 am-u-sm-offset-8"><i class="am-icon-github am-icon-fw am-u-sm-left "></i>
         <a href="https://github.com/rgzhang2018/questionnaire">GitHub</a>
     </div>
     <br>
@@ -52,7 +52,7 @@
 
 <!--  here  -->
 
-<div class="am-u-sm-4 am-u-sm-centered"  style="background-color: #FFFFFF ;box-shadow: 10px 10px 5px">
+<div class="am-u-md-5 am-u-sm-centered"  style="background-color: #FFFFFF ;box-shadow: 10px 10px 5px">
     <form class="am-form am-form-horizontal"  action="../control/login_control.php"  method="post">
         <div class="am-form-group">
             <br>

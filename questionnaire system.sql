@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2018/10/26 18:22:53                          */
+/* Created on:     2018/10/26 19:36:36                          */
 /*==============================================================*/
 
 
@@ -21,7 +21,7 @@ create table messageboard
 (
    m_id                 int not null auto_increment,
    u_id                 int not null,
-   m_messnage           varchar(300),
+   m_message            varchar(300),
    m_name               varchar(45),
    m_time               int,
    primary key (m_id)

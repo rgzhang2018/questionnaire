@@ -55,8 +55,9 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
 <body  style="background-color: #e9e9e9">
 
 <div class="am-g">
+    <br>
     <div class="am-u-sm-1"></div>
-    <div class="am-u-sm-2 am-u-sm-offset-9"><i class="am-icon-github am-icon-fw am-u-sm-left "></i>
+    <div class="am-u-sm-3 am-u-sm-offset-8"><i class="am-icon-github am-icon-fw am-u-sm-left "></i>
         <a href="https://github.com/rgzhang2018/questionnaire">GitHub</a>
     </div>
     <br>
