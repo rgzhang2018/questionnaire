@@ -18,7 +18,7 @@ $db1->query("SET NAMES UTF8");
 if(isset($_GET['email'])){
     sleep(1);
     $email = $_GET['email'];
-    $sql="SELECT * FROM q_user WHERE q_email LIKE '{$email}';";
+    $sql="SELECT * FROM user WHERE u_email LIKE '{$email}';";
     $mysql_result = $db1->query($sql);
     $row = $mysql_result->fetch_array( MYSQLI_ASSOC );
 

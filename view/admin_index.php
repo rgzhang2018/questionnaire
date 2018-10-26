@@ -23,7 +23,7 @@ if (!isset($_SESSION['islogin']))header("refresh:3;url=./login.php");
     <meta name="keywords" content="">
     <meta name="viewport"
           content="width=device-width, initial-scale=1">
-    <title>Hello Amaze UI</title>
+    <title>问卷管理</title>
 
     <!-- Set render engine for 360 browser -->
     <meta name="renderer" content="webkit">

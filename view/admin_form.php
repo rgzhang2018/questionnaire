@@ -25,7 +25,7 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
     <meta name="keywords" content="">
     <meta name="viewport"
           content="width=device-width, initial-scale=1">
-    <title>Hello Amaze UI</title>
+    <title>我的问卷</title>
 
     <!-- Set render engine for 360 browser -->
     <meta name="renderer" content="webkit">

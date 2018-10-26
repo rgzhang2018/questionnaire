@@ -9,7 +9,7 @@ if (isset($_POST['register'])) {
 
     include '../DB/quicksql.php';
 
-    $sql = "INSERT INTO q_user (q_email,q_password,q_name) VALUES ('{$email}','{$password}','{$name}');";
+    $sql = "INSERT INTO user (u_email,u_password,u_name) VALUES ('{$email}','{$password}','{$name}');";
     $mysql_result = $db1->query($sql);
     if(!$mysql_result){
         header('refresh:3; url=../view/register.php');

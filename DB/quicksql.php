@@ -1,7 +1,7 @@
 <?php 
 //插入的数据库：
 $host001 = '127.0.0.1';
-$username001 = 'root';
+$username001 = 'admin001';
 $password001 = 'a530371306';
 $dataBase001 = 'schema1';
 

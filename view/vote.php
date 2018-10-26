@@ -1,6 +1,6 @@
 <?php
 include('../DB/quicksql.php');
-$queryMessage = "SELECT * FROM messageboard;";
+$queryMessage = "SELECT * FROM webmessage;";
 
 $mysql_result = $db1->query($queryMessage);
 
@@ -8,7 +8,7 @@ if($mysql_result == false)echo "SQL语句错误!";
 
 $arrs = [] ;
 while( $row = $mysql_result->fetch_array( MYSQLI_ASSOC )){
- $arrs [$row['m_id']] = $row;
+    $arrs [$row['id']] = $row;
 }
 
 //判断是否登录部分：
@@ -36,7 +36,7 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
     <meta name="keywords" content="">
     <meta name="viewport"
           content="width=device-width, initial-scale=1">
-    <title>留言板</title>
+    <title>填写问卷</title>
 
     <!-- Set render engine for 360 browser -->
     <meta name="renderer" content="webkit">
@@ -79,7 +79,7 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
     <ul class="am-nav am-nav-tabs">
         <li ><a href="../index.php">首页</a></li>
         <li ><a href="#">控制台</a></li>
-        <li class="am-active"><a href="message.php">留言板</a></li>
+        <li ><a href="message.php">留言板</a></li>
         <div class="am-fr">
             <?php if (isset($_SESSION['islogin'])){
                 echo "欢迎您,{$_SESSION['username']} &nbsp;&nbsp;<a href=\"../control/logout.php\" >|注销|</a>";
@@ -98,18 +98,66 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
 
 
         <div class="am-form-group">
-            <label for="doc-ipt-pwd-2" class="col-sm-2 am-form-label">留言</label>
-            <div class="col-sm-10">
-                <textarea  placeholder="随便说点啥吧" rows="5" name="text1" ></textarea>
-            </div>
+            <h1>这里是问卷标题</h1>
         </div>
 
         <div class="am-form-group">
-            <label for="doc-ipt-3" class="col-sm-2 am-form-label" >昵称</label>
+            <h4>问卷描述</h4>
+        </div>
+
+        <br>
+        <hr>
+
+        <div class="am-form-group">
+            <h3>这里是单选的问题 <sup class="am-text-danger">*</sup></h3>
+            <label class="am-radio">
+                <input type="radio" name="radio10" value="male" data-am-ucheck required> 选项一
+            </label>
+            <label class="am-radio">
+                <input type="radio" name="radio10" value="female" data-am-ucheck> 选项二
+            </label>
+            <label class="am-radio">
+                <input type="radio" name="radio10" value="pig" data-am-ucheck> 选项三
+            </label>
+            </div>
+
+
+        <br>
+        <hr>
+
+        <div class="am-form-group">
+            <h3>多选题</h3>
+            <label class="am-checkbox">
+                <input type="checkbox" value="" data-am-ucheck> 没有选中
+            </label>
+            <label class="am-checkbox">
+                <input type="checkbox" checked="checked" value="" data-am-ucheck checked>
+                已选中
+            </label>
+            <label class="am-checkbox">
+                <input type="checkbox" value="" data-am-ucheck disabled>
+                禁用/未选中
+            </label>
+            <label class="am-checkbox">
+                <input type="checkbox" checked="checked" value="" data-am-ucheck disabled
+                       checked>
+                禁用/已选中
+            </label>
+        </div>
+
+        <br>
+        <hr>
+
+        <div class="am-form-group">
+            <label for="doc-ipt-pwd-2" class="col-sm-2 am-form-label">这里是问答题题目</label>
             <div class="col-sm-10">
-                <input type="text" id="doc-ipt-3" placeholder="输入你的昵称" name="text2" >
+                <textarea id="doc-ta-1" placeholder="80字以内" rows="4"></textarea>
             </div>
         </div>
+
+        <br>
+        <hr>
+
 
         <div class="am-form-group">
             <div class="col-sm-offset-2 col-sm-10">
@@ -117,43 +165,8 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
             </div>
         </div>
         <div class="am-form-group"></div>
-    </form action="../control/formsave.php">
+    </form action="../control/votesave.php">
 </div>
-
-
-
-<div class="am-u-sm-12">
-    <br>
-</div>
-<div class="am-u-md-6 am-u-md-centered"  style="background-color: #FFFFFF ;box-shadow: 10px 10px 5px">
-
-    <div class="am-u-sm-12"><h4>历史留言：</h4></div>
-    <br>
-    <br>
-    <br>
-    <?php
-    foreach ($arrs as $value) {
-        ?>
-        <div>
-            <section class="am-panel am-panel-default">
-                <header class="am-panel-hd">
-                    <span class="am-fr"><?php echo date("Y-m-d h:m:s",$value['m_time']); ?> </span>
-                    <h3 class="am-panel-title"><?php echo "{$value['m_id']}楼.  {$value['m_name']}:"; ?></h3>
-
-                </header>
-                <div class="am-panel-bd">
-                    <?php echo "{$value['m_message']}"; ?>
-                </div>
-            </section>
-            <br>
-        <?php
-    }
-    ?>
-</div>
-
-
-
-
 
 
 

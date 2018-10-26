@@ -11,6 +11,6 @@ $arrs = [] ;
 while( $row = $mysql_result->fetch_array( MYSQLI_ASSOC )){
  $arrs [$row['id']] = $row;
 }
-var_dump($arrs);
+
 
  ?>
