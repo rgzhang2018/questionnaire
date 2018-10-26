@@ -34,33 +34,21 @@ if(isOk($name) ){
 
 
 //插入数据库中：
-$host = '127.0.0.1';
-$username = 'root';
-$password = 'a530371306';
-$dataBase = 'schema1';
+include '../DB/quicksql.php';
 
-$db1 = new mysqli($host,$username,$password,$dataBase);
-
-//错误判断
-if($db1->connect_errno <> 0 ){
-	echo "connect fail!</br>";
-	echo $db1->connect_error;
-}
-
-//设置传输过去的编码格式为utf-8（注意，没有'-'）
-$db1->query("SET NAMES UTF8");
-
-$insertMessage = "INSERT INTO webmessage (message,name,time) VALUES ('{$text}','{$name}','{$time}');";
+$insertMessage = "INSERT INTO messageboard (m_message,m_name,m_time) VALUES ('{$text}','{$name}','{$time}');";
 
 
 $flag = $db1->query($insertMessage);
 
 //错误判断
-if($flag)echo "insert OK!";
+if($flag){
+    echo "insert OK!";
+    print('<br>留言成功！<br>三秒后自动跳转....');
+}
 else {
 	echo "insert Error :</br>";
 	var_dump($flag);
 }
-
 header("refresh:3;url=../view/message.php");
-print('<br>留言成功！<br>三秒后自动跳转....');
+

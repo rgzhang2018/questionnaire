@@ -22,7 +22,6 @@ session_start();
 // 首先判断Cookie是否有记住了用户信息
 if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
     # 若记住了用户信息,则直接传给Session
-    echo "1111";
     $_SESSION['username'] = $_COOKIE['username'];
     $_SESSION['email'] = $_COOKIE['email'];
     $_SESSION['islogin'] = 1;

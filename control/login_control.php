@@ -4,8 +4,6 @@ header('Content-type:text/html; charset=utf-8');
 session_start();
 
 
-
-//连接数据库
 // 处理用户登录信息
 if (isset($_POST['login'])) {
     # 接收用户的登录信息
