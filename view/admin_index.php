@@ -67,7 +67,7 @@ if (!isset($_SESSION['islogin']))header("refresh:3;url=./login.php");
     <br>
 </div>
 
-<div class="am-animation-scale-up  am-u-sm-5 am-u-sm-centered" >
+<div class="am-animation-scale-up  am-u-sm-4 am-u-sm-centered" >
     <ul class="am-nav am-nav-tabs">
         <li ><a href="../index.php">首页</a></li>
         <li class="am-active" ><a href="./admin_index.php">控制台</a></li>
