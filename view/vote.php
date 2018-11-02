@@ -94,7 +94,7 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
 
 
 <div class="am-u-md-6 am-u-md-centered" style="background-color: #FFFFFF ;box-shadow: 10px 10px 5px"  >
-    <form  action="../control/formsave.php"  method="post" class="am-form am-form-horizontal">
+    <form action="../control/messagesave.php" method="post" class="am-form am-form-horizontal">
 
 
         <div class="am-form-group">

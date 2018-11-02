@@ -2,17 +2,7 @@
 
 header('Content-type:text/html; charset=utf-8');
 
-include('../DB/quicksql.php');
-$queryMessage = "SELECT * FROM messageboard;";
-
-$mysql_result = $db1->query($queryMessage);
-
-if($mysql_result == false)echo "SQL语句错误!";
-
-$arrs = [] ;
-while( $row = $mysql_result->fetch_array( MYSQLI_ASSOC )){
- $arrs [$row['m_id']] = $row;
-}
+include('../control/querymessage.php');
 
 //判断是否登录部分：
 header('Content-type:text/html; charset=utf-8');
@@ -94,7 +84,7 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
 
 
 <div class="am-u-md-6 am-u-md-centered" style="background-color: #FFFFFF ;box-shadow: 10px 10px 5px"  >
-    <form  action="../control/formsave.php"  method="post" class="am-form am-form-horizontal">
+    <form action="../control/messagesave.php" method="post" class="am-form am-form-horizontal">
 
 
         <div class="am-form-group">
