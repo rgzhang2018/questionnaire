@@ -90,3 +90,21 @@ alter table questionnaire add constraint FK_user_q foreign key (u_id)
 alter table selection add constraint FK_question_selection foreign key (qq_id)
       references question (qq_id) on delete restrict on update restrict;
 
+
+
+
+
+#2018.11.3 补充：修复bug:无法插入中文
+
+ALTER TABLE `schema1`.`question` 
+CHANGE COLUMN `qq_name` `qq_name` VARCHAR(100) CHARACTER SET 'utf8' NULL DEFAULT NULL ;
+
+ALTER TABLE `schema1`.`questionnaire` 
+CHANGE COLUMN `q_name` `q_name` VARCHAR(45) CHARACTER SET 'utf8' NULL DEFAULT NULL ,
+CHANGE COLUMN `q_describe` `q_describe` VARCHAR(200) CHARACTER SET 'utf8' NULL DEFAULT NULL ;
+
+ALTER TABLE `schema1`.`selection` 
+CHANGE COLUMN `qs_name` `qs_name` VARCHAR(180) CHARACTER SET 'utf8' NULL DEFAULT NULL ;
+
+ALTER TABLE `schema1`.`user` 
+CHANGE COLUMN `u_name` `u_name` VARCHAR(45) CHARACTER SET 'utf8' NULL DEFAULT NULL ;
