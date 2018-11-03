@@ -9,6 +9,7 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
     echo "1111";
     $_SESSION['username'] = $_COOKIE['username'];
     $_SESSION['email'] = $_COOKIE['email'];
+    $_SESSION['u_id'] = $_COOKIE['u_id'];
     $_SESSION['islogin'] = 1;
 }
 if (!isset($_SESSION['islogin']))header("refresh:3;url=./login.php");

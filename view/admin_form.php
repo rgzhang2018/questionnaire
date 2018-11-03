@@ -4,6 +4,7 @@
 header('Content-type:text/html; charset=utf-8');
 // 开启Session，存储cookie
 session_start();
+include_once "../class/questionnaire.php";
 
 // 首先判断Cookie是否有记住了用户信息
 if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
@@ -11,8 +12,13 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
     echo "1111";
     $_SESSION['username'] = $_COOKIE['username'];
     $_SESSION['email'] = $_COOKIE['email'];
+    $_SESSION['u_id'] = $_COOKIE['u_id'];
     $_SESSION['islogin'] = 1;
 }
+
+$questionnaire = new questionnaire($_SESSION['u_id'],null,null);
+$questions = $questionnaire->queryQuestions();
+
 ?>
 
 
@@ -82,9 +88,9 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
 
 
 <!--  here  -->
-<div class="am-u-md-5 am-u-md-centered" style="background-color: #ffffff ;box-shadow: 5px 5px 3px"   >
+<div class="am-u-md-6 am-u-md-centered" style="background-color: #ffffff ;box-shadow: 5px 5px 3px"   >
 
-    <form  action="#" method="post" class="am-form am-form-horizontal">
+    <form  action="./admin_preview.php" method="post" class="am-form am-form-horizontal">
         <div class="am-form-group" style="text-align:center">
             <br>
             <?php
@@ -109,31 +115,25 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
                 <thead>
                 <tr>
                     <th>问卷名</th>
+                    <th>描述</th>
                     <th>发布时间</th>
-                    <th>点击查看</th>
+                    <th>问卷状态</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>Amaze UI</td>
-                    <td>http://amazeui.org</td>
-                    <td><a href="./admin_preview.php">点击查看详情</a></td>
-                </tr>
-                <tr>
-                    <td>Amaze UI</td>
-                    <td>http://amazeui.org</td>
-                    <td><a href="#">点击查看详情</a></td>
-                </tr>
-                <tr class="am-active">
-                    <td>Amaze UI(Active)</td>
-                    <td>http://amazeui.org</td>
-                    <td><button type="submit">点击查看详情</button></td>
-                </tr>
-                <tr>
-                    <td>Amaze UI</td>
-                    <td>http://amazeui.org</td>
-                    <td><a href="#">点击查看详情</a></td>
-                </tr>
+
+                <?php
+                    foreach ($questions as $question){
+                        echo "<tr>";
+                        echo "<td>{$question['q_name']}</td>";
+                        echo "<td>{$question['q_describe']}</td>";
+                        $time = date("Y-m-d H:m:s",$question['q_starttime']);
+                        echo "<td>{$time}</td>";
+                        echo "<td><button type=\"submit\" name=\"chick\" class=\"am-btn am-btn-default am-btn-block\">点击查看</button></td>";
+                        echo "</tr>";
+                        echo "<input type=\"hidden\" name=\"q_id\" value={$question['q_id']}>"; //设置隐藏提交的q_id
+                    }
+                ?>
                 </tbody>
             </table>
         </div>

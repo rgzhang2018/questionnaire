@@ -1,18 +1,33 @@
 <?php
 
-//判断是否登录部分：
 header('Content-type:text/html; charset=utf-8');
+$q_id = 0;
+if (isset($_POST['chick'])){
+//    var_dump($_POST);
+    $q_id = $_POST['q_id'];
+}else {
+    echo "错误：未指明问卷，三秒后返回";
+    header('refresh:3; url=./admin_form.php');
+}
+
+
+//判断是否登录部分：
 // 开启Session，存储cookie
 session_start();
-
 // 首先判断Cookie是否有记住了用户信息
 if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
     # 若记住了用户信息,则直接传给Session
     echo "1111";
     $_SESSION['username'] = $_COOKIE['username'];
     $_SESSION['email'] = $_COOKIE['email'];
+    $_SESSION['u_id'] = $_COOKIE['u_id'];
     $_SESSION['islogin'] = 1;
 }
+
+
+include "../class/questionnaire.php";
+$thisq = new questionnaire(1,"没啥用","我是来取出问题的，这个没啥用");
+$questions = $thisq->getQuestionnaireByID($q_id);
 ?>
 
 
@@ -67,7 +82,7 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
 <div class="am-animation-scale-up  am-u-sm-5 am-u-sm-centered" >
     <ul class="am-nav am-nav-tabs">
         <li ><a href="../index.php">首页</a></li>
-        <li class="am-active" ><a href="./admin_index.php">控制台</a></li>
+        <li ><a href="./admin_index.php">控制台</a></li>
         <li ><a href="./message.php">留言板</a></li>
         <li ><?php if (isset($_SESSION['islogin'])){
                 echo "<a>您好，{$_SESSION['username']}</a>";
@@ -81,7 +96,7 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
 
 
 <!--  here  -->
-<div class="am-u-md-5 am-u-md-centered" style="background-color: #ffffff ;box-shadow: 5px 5px 3px"   >
+<div class="am-u-md-7 am-u-md-centered" style="background-color: #ffffff ;box-shadow: 5px 5px 3px"   >
 
     <form  action="#" method="post" class="am-form am-form-horizontal">
         <div class="am-form-group" style="text-align:center">
@@ -97,15 +112,44 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
                 echo "您还没有登录！三秒后转跳到<a href='./login.php'>登录</a>界面";
             }
             ?>
-            <hr>
-        </div>
 
+        </div>
+        <div>问卷预览:</div>
         <div class="am-form-group" style="text-align:center">
-            <h2>问卷预览</h2>
-        </div>
+            <hr>
+            <h2><?php  echo "{$questions["questionnaire"]["q_name"]}"  ?></h2>
+            <?php  echo "{$questions["questionnaire"]["q_describe"]}"  ?>
 
+        </div>
+        <hr>
         <div class="am-form-group">
-            这里是问卷内容，待补充
+<!--            这里是问卷内容-->
+            <?php
+            $count = 1;
+            foreach ($questions as $question) {
+                if(isset($question["q_id"]))continue;
+            ?>
+            <section class="am-panel am-panel-default">
+                <header class="am-panel-hd">
+                    <h3 class="am-panel-title"><?php echo "第{$count}题. {$question["question"]["qq_name"]}:"; $count++; ?></h3>
+
+                </header>
+                <div class="am-panel-bd">
+                    <?php
+                    if(isset($question[0])){
+                        foreach ($question as $item){
+                            if(isset($item["q_id"]))continue;
+                            $item["qs_order"]++;
+                            echo "{$item["qs_order"]}.{$item["qs_name"]}<br>";
+                        }
+                    }else{
+                        echo " <textarea  placeholder=\"随便说点啥吧\" rows=\"5\" name=\"text1\" ></textarea>";
+                    }
+                     ?>
+                </div>
+            </section>
+            <br>
+            <?php } ?>
         </div>
     </form>
 </div>

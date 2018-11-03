@@ -124,22 +124,22 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
     <?php
     foreach ($arrs as $value) {
         ?>
-        <div>
-            <section class="am-panel am-panel-default">
-                <header class="am-panel-hd">
-                    <span class="am-fr"><?php echo date("Y-m-d H:m:s",$value['m_time']); ?> </span>
-                    <h3 class="am-panel-title"><?php echo "{$value['m_id']}楼.  {$value['m_name']}:"; ?></h3>
+    <div>
+        <section class="am-panel am-panel-default">
+            <header class="am-panel-hd">
+                <span class="am-fr"><?php echo date("Y-m-d H:m:s",$value['m_time']); ?> </span>
+                <h3 class="am-panel-title"><?php echo "{$value['m_id']}楼.  {$value['m_name']}:"; ?></h3>
 
-                </header>
-                <div class="am-panel-bd">
-                    <?php echo "{$value['m_message']}"; ?>
-                </div>
-            </section>
-            <br>
-        <?php
+            </header>
+            <div class="am-panel-bd">
+                <?php echo "{$value['m_message']}"; ?>
+            </div>
+        </section>
+        <br>
+    <?php
     }
     ?>
-</div>
+    </div>
 
 
 

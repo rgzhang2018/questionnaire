@@ -42,18 +42,21 @@ if (isset($_POST['login'])) {
         # 用户名和密码都正确,将用户信息存到Session中
         $_SESSION['email'] = $email;
         $_SESSION['username'] = $message['u_name'];
+        $_SESSION['u_id'] = $message['u_id'];
         $_SESSION['islogin'] = 1;
         echo "您好！{$message['u_name']}，登陆成功！";
         // 若勾选7天内自动登录,则将其保存到Cookie并设置保留7天
         if ($_POST['remember'] == "yes"){
             setcookie('email', $email, time()+7*24*60*60);
             setcookie('username', $message['u_name'], time()+7*24*60*60);
+            setcookie('u_id', $message['u_id'], time()+7*24*60*60);
             setcookie('code', md5($email.md5($password)), time()+7*24*60*60);
         } else {
             // 没有勾选则删除Cookie
             setcookie('email', '', time()-999);
             setcookie('username', '', time()-999);
             setcookie('code', '', time()-999);
+            setcookie('u_id', '', time()-999);
         }
         // 处理完附加项后跳转到登录成功的首页
         header('refresh:2; url=../view/admin_index.php');
