@@ -4,20 +4,25 @@
 header('Content-type:text/html; charset=utf-8');
 // 开启Session，存储cookie
 session_start();
-include_once "../class/questionnaire.php";
+include_once "../class/reader.php";
 
 // 首先判断Cookie是否有记住了用户信息
 if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
     # 若记住了用户信息,则直接传给Session
-    echo "1111";
     $_SESSION['username'] = $_COOKIE['username'];
     $_SESSION['email'] = $_COOKIE['email'];
     $_SESSION['u_id'] = $_COOKIE['u_id'];
     $_SESSION['islogin'] = 1;
 }
+if(isset($_SESSION['u_id'])){
+    $reader = new reader($_SESSION['u_id']);
+    $questions = $reader->queryQuestions();
 
-$questionnaire = new questionnaire($_SESSION['u_id'],null,null);
-$questions = $questionnaire->queryQuestions();
+}
+else{
+    header("refresh:3;url=./login.php");
+    echo "您还没有登录！三秒后转跳到<a href='./login.php'>登录</a>界面";
+}
 
 ?>
 

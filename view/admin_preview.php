@@ -3,7 +3,6 @@
 header('Content-type:text/html; charset=utf-8');
 $q_id = 0;
 if (isset($_POST['chick'])){
-//    var_dump($_POST);
     $q_id = $_POST['q_id'];
 }else {
     echo "错误：未指明问卷，三秒后返回";
@@ -24,9 +23,8 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
     $_SESSION['islogin'] = 1;
 }
 
-
-include "../class/questionnaire.php";
-$thisq = new questionnaire(1,"没啥用","我是来取出问题的，这个没啥用");
+include "../class/reader.php";
+$thisq = new reader($_SESSION['u_id']);
 $questions = $thisq->getQuestionnaireByID($q_id);
 ?>
 
@@ -126,23 +124,42 @@ $questions = $thisq->getQuestionnaireByID($q_id);
 <!--            这里是问卷内容-->
             <?php
             $count = 1;
+            $type=0;      //表示单选、多选、问答,分别是0,1,2
             foreach ($questions as $question) {
-                if(isset($question["q_id"]))continue;
+                if(isset($question["q_id"])){
+                    continue;
+                }
             ?>
             <section class="am-panel am-panel-default">
                 <header class="am-panel-hd">
-                    <h3 class="am-panel-title"><?php echo "第{$count}题. {$question["question"]["qq_name"]}:"; $count++; ?></h3>
+                    <h3 class="am-panel-title">
+                        <?php
+                        echo "第{$count}题. {$question["question"]["qq_name"]}:";
+                        $type = $question["question"]["qq_type"];
+                        $count++;
+                        ?>
+                    </h3>
 
                 </header>
                 <div class="am-panel-bd">
                     <?php
-                    if(isset($question[0])){
+                    if($type == 0){
+                        echo "<div class=\"am-radio\">";
                         foreach ($question as $item){
                             if(isset($item["q_id"]))continue;
                             $item["qs_order"]++;
-                            echo "{$item["qs_order"]}.{$item["qs_name"]}<br>";
+                            echo "<label><input type=\"radio\" name=\"{$item["qq_id"]}\" value=\"{$item["qs_order"]}\">{$item["qs_order"]}.{$item["qs_name"]}</label><br>";
                         }
-                    }else{
+                        echo "</div>";
+                    }elseif($type==1){
+                        echo "<div class=\"am-checkbox\">";
+                        foreach ($question as $item){
+                            if(isset($item["q_id"]))continue;
+                            $item["qs_order"]++;
+                            echo "<label><input type=\"checkbox\">{$item["qs_order"]}.{$item["qs_name"]}</label><br>";
+                        }
+                        echo "</div>";
+                    } else{
                         echo " <textarea  placeholder=\"随便说点啥吧\" rows=\"5\" name=\"text1\" ></textarea>";
                     }
                      ?>

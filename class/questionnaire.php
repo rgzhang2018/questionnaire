@@ -80,7 +80,6 @@ class questionnaire
         }
         //设置传输过去的编码格式为utf-8（注意，没有'-'）
         $flag = $this->mysqli->query("SET NAMES UTF8");
-//        echo "<br>在构造问卷类里，这里的sql连接建立  flag = {$flag}<br>";
     }
 
     public function setQName($name, $describe){
@@ -93,25 +92,6 @@ class questionnaire
         $this->questions[$this->count] = $obj;
         $this->count++;
     }
-
-//    用上方统一的插入题目方法代替
-//    public function addSingle($name, $choice){   //name是选择题名，choice是选项数组
-//        $obj = new qQuestion($name,$choice,$this->mysqli,0);
-//        $this->questions[$this->count] = $obj;
-//        $this->count++;
-//    }
-//
-//    public function addMultiple($name,$choice){
-//        $obj = new qQuestion($name,$choice,$this->mysqli,1);
-//        $this->questions[$this->count] = $obj;
-//        $this->count++;
-//    }
-//
-//    public function addEssay($name){
-//        $obj = new qQuestion($name,null,$this->mysqli,2);
-//        $this->questions[$this->count] = $obj;
-//        $this->count++;
-//    }
 
     public function setTime($startTime = null, $endTime = null){
         if($startTime!=null){
@@ -160,7 +140,6 @@ class questionnaire
 
     //下面是对单选、多选、问答题的插入,用关键词insert
     private function insertQuestion(){
-
         for($i=0;$i<$this->count;$i++){
             $flag1 = $this->questions[$i]->insertQuestion($this->q_id);
             $flag2 = $this->questions[$i]->insertOptions();
@@ -169,66 +148,7 @@ class questionnaire
         }
     }
 
-    //返回该用户的某个q_id的问卷的所有信息
-    public function getQuestionnaireByID($q_id){
-        //查询问卷信息，返回只有一项
-        $queryMessage = "SELECT * FROM questionnaire where q_id = {$q_id};";
-        $mysql_result = $this->mysqli->query($queryMessage);
-        $row = $mysql_result->fetch_array( MYSQLI_ASSOC );
-        $questionnaire = $row;
 
-        //查询选项信息，返回多个选项
-        $queryMessage = "SELECT * FROM question where q_id = {$q_id};;";
-        $mysql_result = $this->mysqli->query($queryMessage);
-        $questions = [] ;
-        $count = 0;
-        while( $temp1 = $mysql_result->fetch_array( MYSQLI_ASSOC )){
-            $questions [$count++] = $temp1;
-        }
-
-        $all_selections = [];         //这个q_selections是存放的所有的选项，每个选项以题目为下标区分开
-        $countQuestions = 0;
-        //查询得到选项信息
-        foreach ($questions as $question){
-            $qq_id = $question['qq_id'];
-            $queryMessage = "SELECT * FROM selection where qq_id = {$qq_id};";
-            $mysql_result = $this->mysqli->query($queryMessage);
-
-            $selections = [] ;                         //存放当前的qq_id对应的题目的所有选项
-            $countSelection = 0;                     //用于记录当前问题有多少个选项，选项作为下标
-            while( $temp2 = $mysql_result->fetch_array( MYSQLI_ASSOC )){
-                $selections [$countSelection++] = $temp2;
-            }
-
-            $all_selections[$countQuestions++] = $selections;   //把当前题目的选项按类分开放到所有的选项里面
-        }
-
-
-        //整合所有信息，方便返回
-        $all_questions = [];
-        $all_questions['questionnaire'] =  $questionnaire;
-        $i=0;
-        foreach ($questions as $question){
-            $temp = $all_selections[$i];
-            $temp['question'] = $question;
-            $all_questions[$i] = $temp;
-            $i++;
-        }
-
-        return $all_questions;
-    }
-
-    //返回该用户的所有问卷（只返回问卷题目和id等信息）
-    public function queryQuestions(){
-        $queryMessage = "SELECT * FROM questionnaire;";
-        $mysql_result = $this->mysqli->query($queryMessage);
-        $arrs = [] ;
-        $count = 0;
-        while( $row = $mysql_result->fetch_array( MYSQLI_ASSOC )){
-            $arrs [$count++] = $row;
-        }
-        return $arrs;
-    }
 
 
 }
