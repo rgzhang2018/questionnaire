@@ -2,11 +2,11 @@
 
 header('Content-type:text/html; charset=utf-8');
 $q_id = 0;
-if (isset($_POST['check'])){
-    $q_id = $_POST['q_id'];
+if (isset($_GET['check'])){
+    $q_id = $_GET['q_id'];
 }else {
-    header('refresh:3; url=./admin_form.php');
-    die ("错误：未指明问卷，三秒后返回");
+    echo "错误：未指明问卷，三秒后返回首页";
+    header('refresh:3; url=../index.php');
 }
 
 
@@ -25,7 +25,14 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
 
 include "../class/reader.php";
 $thisq = new reader($_SESSION['u_id']);
-$questions = $thisq->getQuestionnaireByID($q_id);
+$flag = $thisq->checkQ_id($q_id);
+if(!$flag){
+    header('refresh:3; url=../index.php');
+    die("错误：未指明问卷或者问卷标识号错误，三秒后返回");
+}else{
+    $questions = $thisq->getQuestionnaireByID($q_id);
+}
+
 ?>
 
 
@@ -106,13 +113,12 @@ $questions = $thisq->getQuestionnaireByID($q_id);
 //                echo "<a href='../control/logout.php'>注销</a>";
             } else {
                 // 若没有登录
-                header("refresh:3;url=./login.php");
-                echo "您还没有登录！三秒后转跳到<a href='./login.php'>登录</a>界面";
+                echo "<a href='./login.php'>点击登录</a>";
             }
             ?>
 
         </div>
-        <div>问卷预览:</div>
+
         <div class="am-form-group" style="text-align:center">
             <hr>
             <h2><?php  echo "{$questions["questionnaire"]["q_name"]}"  ?></h2>
@@ -121,7 +127,7 @@ $questions = $thisq->getQuestionnaireByID($q_id);
         </div>
         <hr>
         <div class="am-form-group">
-<!--            这里是问卷内容-->
+            <!--            这里是问卷内容-->
             <?php
             $count = 1;
             $type=0;      //表示单选、多选、问答,分别是0,1,2
@@ -129,45 +135,52 @@ $questions = $thisq->getQuestionnaireByID($q_id);
                 if(isset($question["q_id"])){
                     continue;
                 }
-            ?>
-            <section class="am-panel am-panel-default">
-                <header class="am-panel-hd">
-                    <h3 class="am-panel-title">
-                        <?php
-                        echo "第{$count}题. {$question["question"]["qq_name"]}:";
-                        $type = $question["question"]["qq_type"];
-                        $count++;
-                        ?>
-                    </h3>
+                ?>
+                <section class="am-panel am-panel-default">
+                    <header class="am-panel-hd">
+                        <h3 class="am-panel-title">
+                            <?php
+                            echo "第{$count}题. {$question["question"]["qq_name"]}:";
+                            $type = $question["question"]["qq_type"];
+                            $count++;
+                            ?>
+                        </h3>
 
-                </header>
-                <div class="am-panel-bd">
-                    <?php
-                    if($type == 0){
-                        echo "<div class=\"am-radio\">";
-                        foreach ($question as $item){
-                            if(isset($item["q_id"]))continue;
-                            $item["qs_order"]++;
-                            echo "<label><input type=\"radio\" name=\"{$item["qq_id"]}\" value=\"{$item["qs_order"]}\">{$item["qs_order"]}.{$item["qs_name"]}</label><br>";
+                    </header>
+                    <div class="am-panel-bd">
+                        <?php
+                        if($type == 0){
+                            echo "<div class=\"am-radio\">";
+                            foreach ($question as $item){
+                                if(isset($item["q_id"]))continue;
+                                $item["qs_order"]++;
+                                echo "<label><input type=\"radio\" name=\"{$item["qq_id"]}\" value=\"{$item["qs_order"]}\">{$item["qs_order"]}.{$item["qs_name"]}</label><br>";
+                            }
+                            echo "</div>";
+                        }elseif($type==1){
+                            echo "<div class=\"am-checkbox\">";
+                            foreach ($question as $item){
+                                if(isset($item["q_id"]))continue;
+                                $item["qs_order"]++;
+                                echo "<label><input type=\"checkbox\">{$item["qs_order"]}.{$item["qs_name"]}</label><br>";
+                            }
+                            echo "</div>";
+                        } else{
+                            echo " <textarea  placeholder=\"随便说点啥吧\" rows=\"5\" name=\"text1\" ></textarea>";
                         }
-                        echo "</div>";
-                    }elseif($type==1){
-                        echo "<div class=\"am-checkbox\">";
-                        foreach ($question as $item){
-                            if(isset($item["q_id"]))continue;
-                            $item["qs_order"]++;
-                            echo "<label><input type=\"checkbox\">{$item["qs_order"]}.{$item["qs_name"]}</label><br>";
-                        }
-                        echo "</div>";
-                    } else{
-                        echo " <textarea  placeholder=\"随便说点啥吧\" rows=\"5\" name=\"text1\" ></textarea>";
-                    }
-                     ?>
-                </div>
-            </section>
-            <br>
+                        ?>
+                    </div>
+                </section>
+                <br>
             <?php } ?>
         </div>
+        <div class="am-form-group"><hr></div>
+        <div class="am-form-group">
+            <div class="am-u-sm-8 am-u-sm-centered">
+                <button type="submit" name="commit"  class="am-btn am-btn-primary am-btn-block">确认提交</button>
+            </div>
+        </div>
+        <div class="am-form-group"><hr></div>
     </form>
 </div>
 

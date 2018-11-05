@@ -59,7 +59,7 @@ if (isset($_POST['login'])) {
             setcookie('u_id', '', time()-999);
         }
         // 处理完附加项后跳转到登录成功的首页
-        header('refresh:2; url=../view/admin_index.php');
+        header('refresh:1; url=../view/admin_index.php');
         echo "即将转跳个人页面...";
         exit;
     }

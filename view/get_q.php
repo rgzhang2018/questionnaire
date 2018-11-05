@@ -1,32 +1,18 @@
 <?php
-
 //判断是否登录部分：
-header('Content-type:text/html; charset=utf-8');
 // 开启Session，存储cookie
 session_start();
-include_once "../class/reader.php";
-
 // 首先判断Cookie是否有记住了用户信息
 if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
-    # 若记住了用户信息,则直接传给Session
-    $_SESSION['username'] = $_COOKIE['username'];
-    $_SESSION['email'] = $_COOKIE['email'];
-    $_SESSION['u_id'] = $_COOKIE['u_id'];
-    $_SESSION['islogin'] = 1;
-}
-if(isset($_SESSION['u_id'])){
-    $reader = new reader($_SESSION['u_id']);
-    $questions = $reader->queryQuestions();
-
-}
-else{
-    header("refresh:3;url=./login.php");
-    echo "您还没有登录！三秒后转跳到<a href='./login.php'>登录</a>界面";
+# 若记住了用户信息,则直接传给Session
+echo "1111";
+$_SESSION['username'] = $_COOKIE['username'];
+$_SESSION['email'] = $_COOKIE['email'];
+$_SESSION['u_id'] = $_COOKIE['u_id'];
+$_SESSION['islogin'] = 1;
 }
 
 ?>
-
-
 <!doctype html>
 <html class="no-js">
 <head>
@@ -36,7 +22,7 @@ else{
     <meta name="keywords" content="">
     <meta name="viewport"
           content="width=device-width, initial-scale=1">
-    <title>我的问卷</title>
+    <title>登录页面</title>
 
     <!-- Set render engine for 360 browser -->
     <meta name="renderer" content="webkit">
@@ -63,7 +49,7 @@ else{
     <link rel="stylesheet" href="../assets/css/amazeui.min.css">
     <link rel="stylesheet" href="../assets/css/app.css">
 </head>
-<body  style="background-color: #e9e9e9">
+<body style="background-color: #e9e9e9">
 
 <div class="am-g">
     <br>
@@ -88,68 +74,38 @@ else{
     </ul>
 </div>
 
-
-
-
-
 <!--  here  -->
-<div class="am-u-md-6 am-u-md-centered" style="background-color: #ffffff ;box-shadow: 5px 5px 3px"   >
 
-    <form  action="./admin_preview.php" method="post" class="am-form am-form-horizontal">
-        <div class="am-form-group" style="text-align:center">
+<div class="am-u-md-5 am-u-sm-centered"  style="background-color: #FFFFFF ;box-shadow: 10px 10px 5px">
+    <form class="am-form am-form-horizontal"  action="../view/questionnaire.php"  method="get">
+        <div class="am-form-group">
             <br>
-            <?php
-            if (isset($_SESSION['islogin'])) {
-//                // 若已经登录
-//                echo "你好! ".$_SESSION['username'].'!，';
-//                echo "<a href='../control/logout.php'>注销</a>";
-            } else {
-                // 若没有登录
-                header("refresh:3;url=./login.php");
-                echo "您还没有登录！三秒后转跳到<a href='./login.php'>登录</a>界面";
-            }
-            ?>
+        </div>
+
+        <div class="am-form-group" style="text-align:center">
+            <h1>问卷选择</h1>
             <hr>
         </div>
 
-        <div class="am-form-group" style="text-align:center">
-            <h2>我的问卷</h2>
-        </div>
-        <div class="am-form-group">
-            <table class="am-table am-table-bordered am-table-radius am-table-striped">
-                <thead>
-                <tr>
-                    <th>问卷名</th>
-                    <th>描述</th>
-                    <th>发布时间</th>
-                    <th>问卷状态</th>
-                </tr>
-                </thead>
-                <tbody>
-
-                <?php
-                    foreach ($questions as $question){
-                        echo "<tr>";
-                        echo "<td>{$question['q_name']}</td>";
-                        echo "<td>{$question['q_describe']}</td>";
-                        $time = date("Y-m-d H:m:s",$question['q_starttime']);
-                        echo "<td>{$time}</td>";
-                        echo "<td><button type=\"submit\" name=\"check\" class=\"am-btn am-btn-default am-btn-block\">点击查看</button></td>";
-                        echo "</tr>";
-                        echo "<input type=\"hidden\" name=\"q_id\" value={$question['q_id']}>"; //设置隐藏提交的q_id
-                    }
-                ?>
-                </tbody>
-            </table>
-        </div>
-
 
         <div class="am-form-group">
+            <label for="doc-ipt-pwd-2" class="am-u-sm-2 am-form-label">识别码</label>
+            <div class="am-u-sm-10">
+                <input type="text" name="q_id"  placeholder="请输入识别码">
+            </div>
+        </div>
 
+        <div class="am-form-group">
+            <div class="am-u-sm-6 ">
+                <button type="submit" name="check"  class="am-btn am-btn-primary am-fr">提交检查</button>
+            </div>
+        </div>
+        <div class="am-form-group">
+            <hr>
+            <br>
         </div>
     </form>
 </div>
-
 
 
 
@@ -165,4 +121,3 @@ else{
 <script src="../assets/js/amazeui.min.js"></script>
 </body>
 </html>
-

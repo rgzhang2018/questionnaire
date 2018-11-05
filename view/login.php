@@ -66,14 +66,14 @@
         <div class="am-form-group">
             <label for="doc-ipt-pwd-2" class="am-u-sm-2 am-form-label">邮件</label>
             <div class="am-u-sm-10">
-                <input type="email" name="email" id="doc-ipt-3" placeholder="输入你的电子邮件">
+                <input type="email" name="email" placeholder="输入你的电子邮件">
             </div>
         </div>
 
         <div class="am-form-group">
             <label for="doc-ipt-pwd-2" class="am-u-sm-2 am-form-label">密码</label>
             <div class="am-u-sm-10">
-                <input type="password" name="password" id="doc-ipt-pwd-2" placeholder="请输入密码">
+                <input type="password" name="password"  placeholder="请输入密码">
             </div>
         </div>
 

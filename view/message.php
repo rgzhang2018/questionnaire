@@ -100,14 +100,22 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
                 <input type="text" id="doc-ipt-3" placeholder="输入你的昵称" name="text2" >
             </div>
         </div>
-
         <div class="am-form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="am-btn am-btn-primary" >提交</button>
+
+        </div>
+        <div class="am-form-group">
+            <div class="am-u-md-3">
+                <img src="../control/image_captcha.php"  onclick="this.src='../control/image_captcha.php?'+new Date().getTime();" width="100" height="30">
+            </div>
+            <div class="am-u-md-3">
+                <input type="text" name="captcha" placeholder="请输入验证码"><br/>
+            </div>
+            <div class="am-u-md-6">
+                <button type="submit" name="commit" class="am-btn am-btn-primary" >提交</button>
             </div>
         </div>
         <div class="am-form-group"></div>
-    </form action="../control/formsave.php">
+    </form action="../control/messagesave.php">
 </div>
 
 

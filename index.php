@@ -26,7 +26,7 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
     <meta name="keywords" content="">
     <meta name="viewport"
           content="width=device-width, initial-scale=1">
-    <title>Hello Amaze UI</title>
+    <title>我的问卷系统V1.0</title>
 
     <!-- Set render engine for 360 browser -->
     <meta name="renderer" content="webkit">
@@ -108,10 +108,17 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
         </div>
         <div class="am-form-group"></div>
         <div class="am-form-group">
+            <a class="am-btn am-u-sm-centered am-btn-primary" href="./view/get_q.php">
+                填写问卷
+            </a>
+        </div>
+        <div class="am-form-group"></div>
+        <div class="am-form-group">
             <a class="am-btn am-u-sm-centered am-btn-primary" href="http://www.rgzhang.top">
                 个人主页
             </a>
         </div>
+
         <div class="am-form-group">
             <hr><br>
         </div>

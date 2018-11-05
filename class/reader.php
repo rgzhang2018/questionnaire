@@ -87,4 +87,11 @@ class reader
         }
         return $arrs;
     }
+
+    public function checkQ_id($q_id){
+        $queryMessage = "SELECT * FROM questionnaire where q_id = {$q_id};";
+        $mysql_result = $this->mysqli->query($queryMessage);
+        $row = $mysql_result->fetch_array( MYSQLI_ASSOC );
+        return isset($row["q_name"]);
+    }
 }
