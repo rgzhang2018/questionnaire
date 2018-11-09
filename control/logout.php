@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * 登出模块。
+ * 各个页面的导航条均有转跳链接
+ */
+
 header('Content-type:text/html; charset=utf-8');
 // 注销后的操作
 session_start();

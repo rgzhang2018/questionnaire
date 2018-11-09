@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * 问卷预览界面，需要指明问卷ID
+ */
+
 header('Content-type:text/html; charset=utf-8');
 $q_id = 0;
 if (isset($_POST['check'])){

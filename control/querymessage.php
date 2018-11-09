@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * 留言板信息的显示
+ */
+
 header('Content-type:text/html; charset=utf-8');
 include("../DB/quicksql.php");
 

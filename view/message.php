@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * 留言板
+ */
+
 header('Content-type:text/html; charset=utf-8');
 
 include('../control/querymessage.php');

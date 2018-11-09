@@ -1,5 +1,10 @@
 <?php
 
+
+/**
+ * 该页面当前尚未使用，用的是get_q和questionnaire作为获取问卷的页面
+ */
+
 header('Content-type:text/html; charset=utf-8');
 include('../DB/quicksql.php');
 $queryMessage = "SELECT * FROM messageboard;";
@@ -79,13 +84,13 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
 
 <div class="am-animation-scale-up  am-u-sm-4 am-u-sm-centered" >
     <ul class="am-nav am-nav-tabs">
-        <li class="am-active"><a href="./index.php">首页</a></li>
-        <li ><a href="./view/admin_index.php">控制台</a></li>
-        <li ><a href="view/message.php">留言板</a></li>
+        <li class="am-active"><a href="../index.php">首页</a></li>
+        <li ><a href="../view/admin_index.php">控制台</a></li>
+        <li ><a href="../view/message.php">留言板</a></li>
         <li ><?php if (isset($_SESSION['islogin'])){
                 echo "<a>欢迎您，{$_SESSION['username']}</a>";
             }else {
-                echo "<a href=\"./view/login.php\" >|登录|</a>";
+                echo "<a href=\"../view/login.php\" >|登录|</a>";
             } ?></li>
     </ul>
 </div>

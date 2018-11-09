@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * 注册控制页面
+ * 接受从../view/register传来的注册信息
+ */
+
 header('Content-type:text/html; charset=utf-8');
 if (isset($_POST['register'])) {
     # 接收用户的登录信息

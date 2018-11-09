@@ -1,8 +1,10 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
 /* Created on:     2018/10/26 19:36:36                          */
+/* by rgzhang2018                                               */
 /*==============================================================*/
 
+SET FOREIGN_KEY_CHECKS=0;
 
 drop table if exists messageboard;
 
@@ -13,6 +15,8 @@ drop table if exists questionnaire;
 drop table if exists selection;
 
 drop table if exists user;
+
+SET FOREIGN_KEY_CHECKS=1;
 
 /*==============================================================*/
 /* Table: messageboard                                          */
@@ -78,6 +82,25 @@ create table user
    primary key (u_id)
 );
 
+
+
+
+/*==============================================================*/
+/*  修复:使用户名唯一                                            */
+/*==============================================================*/
+
+ALTER TABLE `schema1`.`user`
+CHANGE COLUMN `u_email` `u_email` VARCHAR(45) NOT NULL ,
+ADD UNIQUE INDEX `u_email_UNIQUE` (`u_email` ASC);
+CHANGE COLUMN `u_password` `u_password` VARCHAR(45) NOT NULL ,
+CHANGE COLUMN `u_name` `u_name` VARCHAR(45) CHARACTER SET 'utf8' NOT NULL ;
+
+
+/*==============================================================*/
+/*  加入外键关联                                                */
+/*==============================================================*/
+
+
 alter table messageboard add constraint FK_user_messagebord foreign key (u_id)
       references user (u_id) on delete restrict on update restrict;
 
@@ -92,9 +115,10 @@ alter table selection add constraint FK_question_selection foreign key (qq_id)
 
 
 
+/*==============================================================*/
+/* #2018.11.3 补充：修复bug:无法插入中文                         */
+/*==============================================================*/
 
-
-#2018.11.3 补充：修复bug:无法插入中文
 
 ALTER TABLE `schema1`.`question` 
 CHANGE COLUMN `qq_name` `qq_name` VARCHAR(100) CHARACTER SET 'utf8' NULL DEFAULT NULL ;
@@ -112,3 +136,7 @@ CHANGE COLUMN `u_name` `u_name` VARCHAR(45) CHARACTER SET 'utf8' NULL DEFAULT NU
 ALTER TABLE `schema1`.`messageboard` 
 CHANGE COLUMN `m_message` `m_message` VARCHAR(300) CHARACTER SET 'utf8' NULL DEFAULT NULL ,
 CHANGE COLUMN `m_name` `m_name` VARCHAR(45) CHARACTER SET 'utf8' NULL DEFAULT NULL ;
+
+
+
+;

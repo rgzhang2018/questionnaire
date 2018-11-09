@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * 问卷查看页面。这里显示全部的问卷
+ */
+
 //判断是否登录部分：
 header('Content-type:text/html; charset=utf-8');
 // 开启Session，存储cookie
@@ -14,14 +18,13 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
     $_SESSION['u_id'] = $_COOKIE['u_id'];
     $_SESSION['islogin'] = 1;
 }
+
+$questions = [];
 if(isset($_SESSION['u_id'])){
     $reader = new reader($_SESSION['u_id']);
     $questions = $reader->queryQuestions();
-
-}
-else{
+}else{
     header("refresh:3;url=./login.php");
-    echo "您还没有登录！三秒后转跳到<a href='./login.php'>登录</a>界面";
 }
 
 ?>

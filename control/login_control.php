@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * 登录信息验证模块。
+ * 发过来两种请求：login和register
+ * 对应php页面在../view/login下
+ */
+
 header('Content-type:text/html; charset=utf-8');
 // 开启Session，存储cookie
 session_start();

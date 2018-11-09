@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * 注册控制：检测用户名是否存在
+ */
+
+
 header('Content-type:text/html; charset=utf-8');
 //插入的数据库：
 $host001 = '127.0.0.1';
@@ -16,7 +22,7 @@ $db1 = new mysqli($host001,$username001,$password001,$dataBase001);
 //设置传输过去的编码格式为utf-8（注意，没有'-'）
 $db1->query("SET NAMES UTF8");
 
-if(isset($_GET['email'])){
+if(isset($_GET['email']) && $_GET['email']!=""){
     sleep(1);
     $email = $_GET['email'];
     $sql="SELECT * FROM user WHERE u_email LIKE '{$email}';";
@@ -24,10 +30,12 @@ if(isset($_GET['email'])){
     $row = $mysql_result->fetch_array( MYSQLI_ASSOC );
 
     if(isset($row)){
-        echo "<font color='red'>用户名已存在</font>";
+        echo "0";
     }else{
-        echo "用户名可以使用";
+        echo "1";
     }
+}else{
+    echo "0";
 }
 
 

@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * 问卷填写的页面
+ * 这里调用了reader类取读取指定页面的问卷信息
+ * 填写方式：待定
+ * 这里才用的get请求，便于发布人将页面链接贴出去
+ * get请求由get_q页面发布到本页，包括：
+ *      check:按钮点击
+ *      q_id：问卷id
+ */
+
 header('Content-type:text/html; charset=utf-8');
 $q_id = 0;
 if (isset($_GET['check'])){
@@ -32,6 +42,7 @@ if(!$flag){
 }else{
     $questions = $thisq->getQuestionnaireByID($q_id);
 }
+
 
 ?>
 

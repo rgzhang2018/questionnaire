@@ -1,7 +1,14 @@
 <?php
+
+
+/**
+ * 留言判断与插入模块。
+ * 对应验证码模块在./image_captcha下
+ * 对应请求php页面在../view/message下
+ */
+
+
 header('Content-type:text/html; charset=utf-8');
-
-
 if(!isset($_POST['commit'])){
     header("refresh:3;url=../view/message.php");
     die("错误提交！三秒后返回</br> ");
@@ -14,7 +21,6 @@ $name = $_POST['text2'];
 $captcha = $_POST["captcha"];
 //2. 将session中的验证码和用户提交的验证码进行核对,当成功时提示验证码正确，并销毁之前的session值,不成功则重新提交
 if(strtolower($_SESSION["captcha"]) == strtolower($captcha)){
-    echo "验证码正确!";
     $_SESSION["captcha"] = "";
 }else{
     header("refresh:3;url=../view/message.php");
@@ -24,21 +30,16 @@ if(strtolower($_SESSION["captcha"]) == strtolower($captcha)){
 
 function isOk( $tempText ){
 	if($tempText == '')return false;
-	$s = ['av','AV','gcd'];
+	$s = ['WHERE','ALTER','LIKE'];  //简单过滤
 	foreach ($s as $key => $value){
-		if($value === $tempText)return false;
-
+		if(stristr($tempText,$value))return false;
 	}
 	return true;
 }
 
-if(isOk($text) ){
-	echo "留言内容：";
-	echo $text;
-	echo "</br>";
-}else {
+if(!isOk($text) ){
     header("refresh:3;url=../view/message.php");
-	die("内容不能为空！</br> 请重新输入");
+	die("内容不能为空！或者出现了敏感词汇</br> 请重新输入");
 }
 
 if(isOk($name) ){

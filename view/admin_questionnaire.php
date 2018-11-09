@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * 问卷发布页面。
+ * 这里的post请求内容：...
+ */
+
 //判断是否登录部分：
 header('Content-type:text/html; charset=utf-8');
 // 开启Session，存储cookie

@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * 用户个人首页，如果没有登录则会自动跳转到登录页面
+ */
+
+
+
 header('Content-type:text/html; charset=utf-8');
 // 开启Session，存储cookie
 session_start();

@@ -1,6 +1,8 @@
 <?php
 /**
  * 字母+数字的验证码生成
+ * 判断验证码是否正确，需要拿$_SESSION["captcha"]和$POST/$GET对比
+ * 目前仅用于留言板界面
  */
 // 开启session
 session_start();

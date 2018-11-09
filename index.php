@@ -1,4 +1,8 @@
 <?php
+/**
+ * 首页
+ */
+
 
 //判断是否登录部分：
 header('Content-type:text/html; charset=utf-8');

@@ -1,11 +1,11 @@
 <?php
 ///**
 // * Created by PhpStorm.
-// * User: HiJack
+// * User: rgzhang2018
 // * Date: 2018/11/3
 // * Time: 9:39
+// * 注：此部分目前被搬运到了questionnaire.php中
 // */
-//注释：目前全部搬到questionnaire里了
 
 //class qQuestion
 //{

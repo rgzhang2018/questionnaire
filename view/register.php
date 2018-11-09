@@ -1,16 +1,9 @@
 
 <?php
-//include('../DB/quicksql.php');
-//$queryMessage = "SELECT * FROM user ;";
-//
-//$mysql_result = $db1->query($queryMessage);
-//
-//if($mysql_result == false)echo "SQL语句错误!";
-//
-//$arrs = [] ;
-//while( $row = $mysql_result->fetch_array( MYSQLI_ASSOC )){
-//    $arrs [$row['u_id']] = $row;
-//}
+/**
+ * 注册页
+ * 通过XMLHTTP检测用户名情况
+ */
 
 ?>
 <!doctype html>
@@ -82,7 +75,7 @@
         <div class="am-form-group">
             <label for="reg-email" class="am-u-sm-2 am-form-label">邮件</label>
             <div class="am-u-sm-10">
-                <input type="email" name="email" id="reg-email" placeholder="输入你的电子邮件" onblur="nameChick()">
+                <input type="email" name="email" id="reg-email" placeholder="输入你的电子邮件" onblur="emailChick()">
             </div>
         </div>
 
@@ -104,7 +97,7 @@
         <div class="am-form-group">
             <label for="reg-name" class="am-u-sm-2 am-form-label">昵称</label>
             <div class="am-u-sm-10">
-                <input type="text" name="name" id="reg-name" placeholder="起个昵称吧">
+                <input type="text" name="name" id="reg-name" placeholder="起个昵称吧" onblur="nameChick()">
             </div>
         </div>
 
@@ -114,7 +107,7 @@
 
         <div class="am-form-group">
             <div class="am-u-sm-8 am-u-sm-centered">
-                <button type="submit" name="register" id="reg-submit" class="am-btn am-btn-success am-btn-block">点击注册</button>
+                <button type="submit" name="register" id="reg-submit" class="am-btn am-btn-success am-btn-block" onclick="checkAll()">点击注册</button>
             </div>
         </div>
         <div class="am-form-group">
@@ -125,20 +118,67 @@
 </div>
 
   <script>
+    var flag_emali = 0;
+    var flag_password = 0;
+    var flag_name = 0;
     function validate() {
         var pwd1 = document.getElementById("reg-pwd1").value;
         var pwd2 = document.getElementById("reg-pwd2").value;
         <!-- 对比两次输入的密码 -->
-        if(pwd1 === pwd2 ) {
+        if(pwd1 === pwd2 && pwd1.length>=6 ) {
             document.getElementById("reg-msg").innerHTML="<font color='green'>两次密码相同，OK!</font>";
-            document.getElementById("reg-submit").disabled = false;
+            flag_password = 1;
         }
-        else {
+        else if(pwd1.length<=6)
+        {
+            document.getElementById("reg-msg").innerHTML="<font color='red'>密码长度不能小于6</font>";
+            flag_password = 0;
+        }else {
             document.getElementById("reg-msg").innerHTML="<font color='red'>两次密码不相同</font>";
-            document.getElementById("reg-submit").disabled = true;
+            flag_password = 0;
         }
     }
 
+    function nameChick(){
+        var name = document.getElementById("reg-name").value;
+        if(name ==="" || name ==="null"){
+            document.getElementById("reg-msg").innerHTML="<font color='red'>昵称不能为空</font>";
+            flag_name = 0;
+        }else {
+            document.getElementById("reg-msg").innerHTML="<font color='green'>昵称格式正确</font>";
+            flag_name = 1;
+        }
+    }
+
+    //检测所有信息，符合条件后可以注册
+    var submitBtn = document.getElementById("reg-submit");
+    submitBtn.onclick = function checkAll( e ){
+        if(flag_password===1 && flag_emali === 1 &&flag_name===1){
+            alert("格式正确，转跳注册");
+        }else if(flag_emali === 0){
+            alert("用户名已存在！请重新输入");
+            if(e&&e.preventDefault){
+                e.preventDefault();
+            }else{                                      //IE标签
+                window.event.returnValue = false;
+            }
+        }else if(flag_password === 0){
+            alert("两次密码不一致/密码格式错误：密码长度必须大于等于6");
+            if(e&&e.preventDefault){
+                e.preventDefault();
+            }else{
+                window.event.returnValue = false;
+            }
+        }else if(flag_name === 0){
+            alert("昵称不能为空");
+            if(e&&e.preventDefault){
+                e.preventDefault();
+            }else{
+                window.event.returnValue = false;
+            }
+        }
+
+    }
 
     var xmlHttp;
     function S_xmlhttprequest(){
@@ -148,24 +188,27 @@
             xmlHttp = new XMLHttpRequest();
         }
     }
-    function nameChick(){
+    function emailChick(){
         var f = document.getElementById("reg-email").value;//获取文本框内容
         S_xmlhttprequest();
-        xmlHttp.open("GET","../DB/email_chick.php?email="+f,true);//找开请求
+        xmlHttp.open("GET","../control/email_chick.php?email="+f,true);//找开请求
         xmlHttp.onreadystatechange = byphp;//准备就绪执行
         xmlHttp.send(null);//发送
 
     }
     function byphp(){
         //判断状态
-
-        if(xmlHttp.readyState==1){//Ajax状态
-
-            document.getElementById('reg-msg').innerHTML = "<font color='red'>正在加载</font>";
+        if(xmlHttp.readyState===1){//Ajax状态
+            document.getElementById('reg-msg').innerHTML = "正在加载";
         }
-        if(xmlHttp.readyState==4){//Ajax状态
-            if(xmlHttp.status==200){//服务器端状态
-                document.getElementById('reg-msg').innerHTML = xmlHttp.responseText;  //把内容传回
+        if(xmlHttp.readyState===4){//Ajax状态
+            if(xmlHttp.status===200){//服务器端状态
+                flag_emali = xmlHttp.responseText;
+                if(flag_emali  === 0) {
+                    document.getElementById('reg-msg').innerHTML = "用户名已存在"
+                }else {
+                    document.getElementById('reg-msg').innerHTML = "用户名可以使用"
+                }
             }
         }
     }
