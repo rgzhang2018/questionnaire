@@ -1,0 +1,68 @@
+<!--用于展示模版的位置-->
+<div id="area"></div>
+​
+<script src="./lib/template-web.js"></script>
+<!--用于存放模版-->
+<script id="template" type="text/html">
+    <div>
+        <% for(i=0;i<content.length;++i) {%>
+        <h1><%=content[i].province%></h1>
+        <% for(j=0 ; j<content[i].city.length ; ++j){%>
+        <p><%=content[i].city[j]%></p>
+        <%}%>
+        <%}%>
+    </div>
+</script>
+<!--用于渲染模版-->
+<script>
+    var data={
+        content:[
+            {province:'四川',city:['成都','绵阳','自贡']},
+            {province:'广东',city:['广州','东莞','佛山']},
+            {province:'海南',city:['海口','三亚']}
+        ]
+    };
+    var html=template('template',data);
+    document.getElementById('area').innerHTML=html
+</script>
+
+<!--下面-->
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+</head>
+<body>
+<script id="test" type="text/html">
+    <h1><%=title%></h1>
+    <ul>
+        <%
+        if(typeof list!='undefined'){
+        for(var i=0;i<list.length;i++){
+        %>
+        <li>索引 <%=i + 1%> ：<%=list[i]%></li>
+        <%    }
+        }
+        %>
+    </ul>
+</script>
+
+<div id="content"></div>
+
+<script type="text/javascript" src="./lib/template-web.js"></script>
+
+<script type="text/javascript">
+    var data = {
+        title: '标签',
+        list: ['a','b','c']
+    };
+    //根据id编译模板在进行渲染
+    var html = template('test',data);
+    //打印渲染结果
+    console.log(html);
+    //填充渲染结果到content
+    document.getElementById('content').innerHTML = html;
+</script>
+</body>
+</html>

@@ -5,30 +5,57 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1176f9eb-3d77-4113-aa20-948c332d458a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/test2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/email_chick.php" beforeDir="false" afterPath="$PROJECT_DIR$/control/email_chick.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/quicksql.php" beforeDir="false" afterPath="$PROJECT_DIR$/DB/quicksql.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/qQuestion.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/qQuestion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amaze.html" beforeDir="false" afterPath="$PROJECT_DIR$/amaze.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/css/admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/amazeui.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/css/amazeui.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/amazeui.flat.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/css/amazeui.flat.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/amazeui.flat.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/css/amazeui.flat.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/amazeui.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/css/amazeui.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/FontAwesome.otf" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/fonts/FontAwesome.otf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fontawesome-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fontawesome-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fontawesome-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fontawesome-webfont.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/i/app-icon72x72@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/i/app-icon72x72@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/i/examples/admin-chrome.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/i/examples/admin-chrome.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/i/examples/admin-firefox.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/i/examples/admin-firefox.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/i/examples/admin-ie.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/i/examples/admin-ie.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/i/examples/admin-opera.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/i/examples/admin-opera.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/i/examples/admin-safari.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/i/examples/admin-safari.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/i/examples/adminPage.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/i/examples/adminPage.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/i/examples/blogPage.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/i/examples/blogPage.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/i/examples/landing.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/i/examples/landing.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/i/examples/landingPage.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/i/examples/landingPage.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/i/examples/loginPage.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/i/examples/loginPage.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/i/examples/sidebarPage.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/i/examples/sidebarPage.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/i/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/i/favicon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/i/startup-640x1096.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/i/startup-640x1096.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/amazeui.ie8polyfill.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/js/amazeui.ie8polyfill.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/amazeui.ie8polyfill.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/js/amazeui.ie8polyfill.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/amazeui.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/js/amazeui.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/amazeui.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/js/amazeui.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/amazeui.widgets.helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/js/amazeui.widgets.helper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/amazeui.widgets.helper.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/js/amazeui.widgets.helper.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/handlebars.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/assets/js/handlebars.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/class/questionnaire.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/questionnaire.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/class/reader.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/reader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/check.php" beforeDir="false" afterPath="$PROJECT_DIR$/control/check.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/image_captcha.php" beforeDir="false" afterPath="$PROJECT_DIR$/control/image_captcha.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/login_control.php" beforeDir="false" afterPath="$PROJECT_DIR$/control/login_control.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/control/logout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/messagesave.php" beforeDir="false" afterPath="$PROJECT_DIR$/control/messagesave.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/querymessage.php" beforeDir="false" afterPath="$PROJECT_DIR$/control/querymessage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/register_control.php" beforeDir="false" afterPath="$PROJECT_DIR$/control/register_control.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/questionnaire system.sql" beforeDir="false" afterPath="$PROJECT_DIR$/questionnaire system.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test2.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/view/admin_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin_form.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/admin_index.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin_index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/admin_preview.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin_preview.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/admin_questionnaire.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin_questionnaire.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/get_q.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/get_q.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/message.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/message.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/questionnaire.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/questionnaire.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/vote.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/vote.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/vote.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,26 +104,27 @@
     <session id="1687533486">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="17" />
+          <entry key="project.closed" value="20" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="2" />
           <entry key="project.open.time.13" value="4" />
           <entry key="project.open.time.14" value="2" />
           <entry key="project.open.time.15" value="3" />
-          <entry key="project.open.time.16" value="2" />
-          <entry key="project.open.time.18" value="2" />
+          <entry key="project.open.time.16" value="3" />
+          <entry key="project.open.time.18" value="3" />
+          <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="18" />
+          <entry key="project.opened" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="2" />
-          <entry key="html" value="9" />
-          <entry key="js" value="1" />
-          <entry key="md" value="4" />
-          <entry key="php" value="187" />
+          <entry key="html" value="10" />
+          <entry key="js" value="4" />
+          <entry key="md" value="6" />
+          <entry key="php" value="203" />
           <entry key="png" value="2" />
           <entry key="sql" value="6" />
         </counts>
@@ -104,29 +132,31 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="2" />
-          <entry key="HTML" value="9" />
+          <entry key="HTML" value="10" />
           <entry key="Image" value="2" />
-          <entry key="JavaScript" value="1" />
-          <entry key="Markdown" value="4" />
-          <entry key="PHP" value="187" />
+          <entry key="JavaScript" value="4" />
+          <entry key="Markdown" value="6" />
+          <entry key="PHP" value="203" />
           <entry key="SQL" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="32" />
-          <entry key="html" value="40" />
-          <entry key="md" value="60" />
-          <entry key="php" value="14797" />
+          <entry key="html" value="91" />
+          <entry key="js" value="1" />
+          <entry key="md" value="86" />
+          <entry key="php" value="15780" />
           <entry key="sql" value="141" />
           <entry key="txt" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="40" />
-          <entry key="Markdown" value="60" />
-          <entry key="PHP" value="14786" />
+          <entry key="HTML" value="91" />
+          <entry key="JavaScript" value="1" />
+          <entry key="Markdown" value="86" />
+          <entry key="PHP" value="15769" />
           <entry key="PLAIN_TEXT" value="65" />
           <entry key="SQL" value="152" />
         </counts>
@@ -143,18 +173,18 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/questionnaire.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="44" selection-start-line="44" selection-end-line="44" />
+            <state relative-caret-position="3629">
+              <caret line="199" selection-start-line="199" selection-end-line="199" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="380">
-                <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+              <first_editor relative-caret-position="513">
+                <caret line="27" selection-start-line="27" selection-end-line="27" />
               </first_editor>
               <second_editor />
             </state>
@@ -164,8 +194,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/register.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="491">
-              <caret line="178" column="9" lean-forward="true" selection-start-line="178" selection-start-column="9" selection-end-line="178" selection-end-column="9" />
+            <state relative-caret-position="358">
+              <caret line="172" column="28" lean-forward="true" selection-start-line="172" selection-start-column="28" selection-end-line="172" selection-end-column="28" />
               <folding>
                 <element signature="e#7#41#0#PHP" expanded="true" />
               </folding>
@@ -174,49 +204,79 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/control/register_control.php">
+        <entry file="file://$PROJECT_DIR$/test2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+            <state relative-caret-position="111">
+              <caret line="52" selection-start-line="52" selection-end-line="53" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/control/check.php">
+        <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/control/messagesave.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-551">
-              <caret line="22" column="47" lean-forward="true" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/control/email_chick.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+            <state relative-caret-position="358">
+              <caret line="143" column="54" selection-start-line="143" selection-start-column="54" selection-end-line="143" selection-end-column="54" />
               <folding>
-                <element signature="e#7#32#0#PHP" expanded="true" />
+                <element signature="e#6#19#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DB/quicksql.php">
+        <entry file="file://$PROJECT_DIR$/view/admin_index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="95">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+              <folding>
+                <element signature="e#7#42#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/view/admin_questionnaire.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="241" lean-forward="true" selection-start-line="241" selection-end-line="241" />
+              <folding>
+                <element signature="e#7#44#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="68" column="71" selection-start-line="68" selection-start-column="49" selection-end-line="68" selection-end-column="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/admin_preview.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="136" selection-start-line="136" selection-end-line="170" selection-end-column="22" />
+              <folding>
+                <element signature="e#7#33#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/message.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="e#7#21#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -243,10 +303,14 @@
       <find>2222</find>
       <find>wrong in insertQuestion</find>
       <find>captchaimg</find>
+      <find>template</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/lib/template-web.js" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -256,7 +320,6 @@
         <option value="$PROJECT_DIR$/view/form.php" />
         <option value="$PROJECT_DIR$/control/votesave.php" />
         <option value="$PROJECT_DIR$/control/formsave.php" />
-        <option value="$PROJECT_DIR$/amaze.html" />
         <option value="$PROJECT_DIR$/class/form.php" />
         <option value="$PROJECT_DIR$/class/q_essay.php" />
         <option value="$PROJECT_DIR$/assets/js/amazeui.js" />
@@ -267,21 +330,17 @@
         <option value="$PROJECT_DIR$/class/qEssay.php" />
         <option value="$PROJECT_DIR$/class/qSingle.php" />
         <option value="$PROJECT_DIR$/test1.php" />
-        <option value="$PROJECT_DIR$/test2.php" />
         <option value="$PROJECT_DIR$/view/login.php" />
         <option value="$PROJECT_DIR$/view/get_q.php" />
-        <option value="$PROJECT_DIR$/class/questionnaire.php" />
         <option value="$PROJECT_DIR$/class/qQuestion.php" />
         <option value="$PROJECT_DIR$/control/login_control.php" />
         <option value="$PROJECT_DIR$/control/logout.php" />
         <option value="$PROJECT_DIR$/control/messagesave.php" />
         <option value="$PROJECT_DIR$/control/image_captcha.php" />
         <option value="$PROJECT_DIR$/control/check.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/view/admin_index.php" />
         <option value="$PROJECT_DIR$/view/admin_preview.php" />
         <option value="$PROJECT_DIR$/view/admin_form.php" />
-        <option value="$PROJECT_DIR$/view/admin_questionnaire.php" />
         <option value="$PROJECT_DIR$/view/vote.php" />
         <option value="$PROJECT_DIR$/view/message.php" />
         <option value="$PROJECT_DIR$/control/register_control.php" />
@@ -291,9 +350,17 @@
         <option value="$PROJECT_DIR$/control/email_chick.php" />
         <option value="$PROJECT_DIR$/view/register.php" />
         <option value="$PROJECT_DIR$/questionnaire system.sql" />
-        <option value="$PROJECT_DIR$/class/reader.php" />
         <option value="$PROJECT_DIR$/view/questionnaire.php" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/class/reader.php" />
+        <option value="$PROJECT_DIR$/class/questionnaire.php" />
+        <option value="$PROJECT_DIR$/template.js/template.js" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/amaze.html" />
+        <option value="$PROJECT_DIR$/test2.php" />
+        <option value="$PROJECT_DIR$/lib/template-web.js" />
+        <option value="$PROJECT_DIR$/test2.html" />
+        <option value="$PROJECT_DIR$/view/admin_questionnaire.php" />
       </list>
     </option>
   </component>
@@ -308,7 +375,7 @@
       <path value="$PROJECT_DIR$/../php" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="30" />
     <option name="y" value="30" />
     <option name="width" value="1600" />
@@ -353,21 +420,6 @@
             <path>
               <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
               <item name="htdocs" type="462c0819:PsiDirectoryNode" />
-              <item name="class" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="htdocs" type="462c0819:PsiDirectoryNode" />
-              <item name="control" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="htdocs" type="462c0819:PsiDirectoryNode" />
-              <item name="DB" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="htdocs" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -381,11 +433,12 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SearchEverywhereHistoryKey" value="..&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../php" />
+    <property name="last_opened_file_path" value="C:/MY/projects/my_website/_example/e1/votesystem" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\lib" />
       <recent name="D:\xampp\htdocs\control" />
       <recent name="D:\xampp\htdocs\view" />
       <recent name="D:\xampp\htdocs\DB" />
@@ -431,16 +484,19 @@
       <workItem from="1541509782995" duration="1458000" />
       <workItem from="1541603978144" duration="386000" />
       <workItem from="1541744402988" duration="7392000" />
+      <workItem from="1541751952583" duration="400000" />
+      <workItem from="1541848297624" duration="9194000" />
+      <workItem from="1541862608129" duration="4809000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120690000" />
+    <option name="totallyTimeSpent" value="135093000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28150135" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2935657" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -470,7 +526,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/模板/example/admin.php" />
     <entry file="file://$PROJECT_DIR$/模板/example/index.php" />
-    <entry file="file://$PROJECT_DIR$/assets/css/amazeui.min.css">
+    <entry file="file://$PROJECT_DIR$/lib/assets/css/amazeui.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="149">
           <caret column="17521" selection-start-column="17521" selection-end-column="17521" />
@@ -486,18 +542,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/amazeui.flat.min.css">
+    <entry file="file://$PROJECT_DIR$/lib/assets/css/amazeui.flat.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="700">
           <caret column="215724" selection-start-column="215724" selection-end-column="215724" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/i/favicon.png">
+    <entry file="file://$PROJECT_DIR$/lib/assets/i/favicon.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$USER_HOME$/Desktop/index.php" />
-    <entry file="file://$PROJECT_DIR$/assets/js/amazeui.js">
+    <entry file="file://$PROJECT_DIR$/lib/assets/js/amazeui.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
           <caret line="15024" column="54" selection-start-line="15024" selection-start-column="54" selection-end-line="15024" selection-end-column="54" />
@@ -507,31 +563,10 @@
     <entry file="file://$PROJECT_DIR$/class/qMultiple.php" />
     <entry file="file://$PROJECT_DIR$/class/qEssay.php" />
     <entry file="file://$PROJECT_DIR$/class/qSingle.php" />
-    <entry file="file://$PROJECT_DIR$/test1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="17" column="11" lean-forward="true" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" selection-start-line="3" selection-end-line="9" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_1.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
           <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/amaze.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="41" column="88" selection-start-line="41" selection-start-column="88" selection-end-line="41" selection-end-column="88" />
         </state>
       </provider>
     </entry>
@@ -546,9 +581,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#7#75#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -563,19 +595,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="2" selection-start-line="2" selection-end-line="6" selection-end-column="3" />
-          <folding>
-            <element signature="e#7#27#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin_preview.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#7#33#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -583,33 +602,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="2" selection-start-line="2" selection-end-line="4" selection-end-column="3" />
-          <folding>
-            <element signature="e#7#34#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/vote.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="35" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin_questionnaire.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin_index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" selection-start-line="2" selection-end-line="5" />
-          <folding>
-            <element signature="e#7#42#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -617,33 +609,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1026">
           <caret line="54" column="8" lean-forward="true" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/message.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#7#21#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" selection-start-line="1" selection-end-line="4" />
-          <folding>
-            <element signature="e#6#19#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-877">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
         </state>
       </provider>
     </entry>
@@ -661,64 +626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DB/quicksql.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control/check.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control/messagesave.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-551">
-          <caret line="22" column="47" lean-forward="true" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control/email_chick.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-          <folding>
-            <element signature="e#7#32#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="178" column="9" lean-forward="true" selection-start-line="178" selection-start-column="9" selection-end-line="178" selection-end-column="9" />
-          <folding>
-            <element signature="e#7#41#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/class/reader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="29" column="35" lean-forward="true" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/class/questionnaire.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" selection-start-line="2" selection-end-line="13" selection-end-column="4" />
-          <folding>
-            <element signature="e#7#674#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/questionnaire system.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -733,20 +640,163 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/control/check.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/messagesave.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/email_chick.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DB/quicksql.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/class/reader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/class/questionnaire.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="124" column="2" selection-start-line="124" selection-start-column="2" selection-end-line="124" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template.js/TODO.md" />
+    <entry file="file://$PROJECT_DIR$/template.js/template.js" />
+    <entry file="file://$PROJECT_DIR$/view/vote.php" />
+    <entry file="file://$PROJECT_DIR$/amaze.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/view/questionnaire.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
+        <state relative-caret-position="3629">
+          <caret line="199" selection-start-line="199" selection-end-line="199" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="380">
-            <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+          <first_editor relative-caret-position="513">
+            <caret line="27" selection-start-line="27" selection-end-line="27" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/template-web.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/message.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#7#21#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="172" column="28" lean-forward="true" selection-start-line="172" selection-start-column="28" selection-end-line="172" selection-end-column="28" />
+          <folding>
+            <element signature="e#7#41#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/admin_preview.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="136" selection-start-line="136" selection-end-line="170" selection-end-column="22" />
+          <folding>
+            <element signature="e#7#33#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="143" column="54" selection-start-line="143" selection-start-column="54" selection-end-line="143" selection-end-column="54" />
+          <folding>
+            <element signature="e#6#19#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/admin_index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#7#42#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="52" selection-start-line="52" selection-end-line="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="68" column="71" selection-start-line="68" selection-start-column="49" selection-end-line="68" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/admin_questionnaire.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="241" lean-forward="true" selection-start-line="241" selection-end-line="241" />
+          <folding>
+            <element signature="e#7#44#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

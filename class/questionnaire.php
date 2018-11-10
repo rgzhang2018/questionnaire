@@ -116,8 +116,16 @@ class questionnaire
             $this->endTime = time()+2592000;    //默认一个月
         }
     }
-    public function submit(){
 
+//    public function getQuestion(){
+//        $message = [];
+//        $questionnaire = [];
+//        $questionnaire["q_id"]
+//        $message['quesetionnaire'] = $questionnaire;
+//
+//    }
+
+    public function submit(){
         $message = "begin;";
         $flag = $this->mysqli->query("$message");
         if(!$flag){

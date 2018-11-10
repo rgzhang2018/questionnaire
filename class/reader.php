@@ -84,7 +84,7 @@ class reader
         $questionnaire = $row;
 
         //查询选项信息，返回多个选项
-        $queryMessage = "SELECT * FROM question where q_id = {$q_id};;";
+        $queryMessage = "SELECT * FROM question where q_id = {$q_id};";
         $mysql_result = $this->mysqli->query($queryMessage);
         $questions = [] ;
         $count = 0;

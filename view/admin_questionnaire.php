@@ -39,24 +39,24 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
     <!-- No Baidu Siteapp-->
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
 
-    <link rel="icon" type="image/png" href="../assets/i/favicon.png">
+    <link rel="icon" type="image/png" href="../lib/assets/i/favicon.png">
 
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" sizes="32x32" href="../assets/i/app-icon72x72@2x.png">
+    <link rel="icon" sizes="32x32" href="../lib/assets/i/app-icon72x72@2x.png">
 
     <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
-    <link rel="apple-touch-icon-precomposed" href="../assets/i/app-icon72x72@2x.png">
+    <link rel="apple-touch-icon-precomposed" href="../lib/assets/i/app-icon72x72@2x.png">
 
     <!-- Tile icon for Win8 (144x144 + tile color) -->
     <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
     <meta name="msapplication-TileColor" content="#0e90d2">
 
-    <link rel="stylesheet" href="../assets/css/amazeui.min.css">
-    <link rel="stylesheet" href="../assets/css/app.css">
+    <link rel="stylesheet" href="../lib/assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="../lib/assets/css/app.css">
 </head>
 <body  style="background-color: #e9e9e9">
 
@@ -126,64 +126,122 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
 
         <div class="am-form-group">
             <div class="am-u-sm-4">
-                <button type="button" class="am-u-sm-9 am-btn am-btn-primary  am-round">添加选择</button>
+                <button type="button" class="am-u-sm-9 am-btn am-btn-primary  am-round" onclick="addSingle()">添加单选</button>
             </div>
+            <div class="am-u-sm-4">
+                <button type="button" class="am-u-sm-9 am-u-sm-centered am-btn am-btn-secondary  am-round">添加多选</button>
+            </div>
+
             <div class="am-u-sm-4">
                 <button type="button" class="am-u-sm-9 am-u-sm-centered am-btn am-btn-secondary  am-round">添加问答</button>
             </div>
-            <div class="am-u-sm-4">
-                <a href="#doc-oc-demo1" data-am-offcanvas>
-                <button type="button" class="am-u-sm-9 am-btn am-btn-success  am-round">预览题目</button>
-                </a>
-            </div>
-
-
-
         </div>
 
         <div class="am-form-group"><br></div>
 
         <div class="am-form-group">
             <div class="am-u-sm-6">
-                <button type="submit" class="am-btn am-btn-default am-btn-block" >完成提交</button>
+                <button type="submit" name="commit" class="am-btn am-btn-default am-btn-block" >完成提交</button>
             </div>
             <div class="am-u-sm-6">
                 <button class="am-btn am-btn-default am-btn-block" >重置问卷</button>
             </div>
         </div>
-        <div class="am-form-group">
-            <br>
+        <div class="am-form-group" >
+            <hr>
+            <h3>下面是题目预览</h3>
+        </div>
+        <div class="am-form-group" id="addItemSingle">
         </div>
     </form>
 </div>
 <!-- 链接触发器， href 属性为目标元素 ID -->
 
-<!-- 侧边栏内容 -->
-<div id="doc-oc-demo1" class="am-offcanvas">
-    <div class="am-offcanvas-bar">
-        <div class="am-offcanvas-content">
-            <p>
-                <h2>题目一 （单选）</h2>
-                A.这是第一个选项 <br/>
-                B.这是第二个选项 <br/>
 
-            <br/>
 
-            <h2>题目二 （多选）</h2>
-            A.这是第一个选项 <br/>
-            B.这是第二个选项 <br/>
-            <br/>
+<!--用于存放模版-->
+<script type="text/javascript" src="../lib/template-web.js"></script>
 
-            <h2>题目三 （问答）</h2>
-            ________________________ <br/>
 
-            </p>
+<!--下面是单选题目的添加-->
+<script id="Question" type="text/html">
+    <section class="am-panel am-panel-default">
+        <header class="am-panel-hd">
+            <h3 class="am-panel-title">
+                <label><input type="text" placeholder="输入单选题题目"></label>
+                <button type="button" class = "am-fr" id=<%=id%> onclick="addSingleChoice(this)">添加选项</button>
+            </h3>
+
+        </header>
+        <div class="am-panel-bd" id=<%=selection%> >
+            <label><input type="text" placeholder="输入选项内容"></label><br>
+            <label><input type="text" placeholder="输入选项内容"></label><br>
         </div>
-    </div>
-</div>
+    </section>
+</script>
+
+<!--下面是单选题选项的添加-->
+<script id="Choice" type="text/html">
+    <label><input type="text" name="" placeholder="输入选项内容"></label><br>
+</script>
 
 
 
+
+
+
+
+
+
+
+
+
+<!--用于渲染模版-->
+<script>
+    var signleID = 0;
+
+    function addSingle() {
+        signleID++;
+        var Selection = signleID+"-singleChoice";
+        var data = {
+            id:signleID,
+            selection:Selection
+        };
+        var html=template('Question',data);
+        console.log(html);
+        $("#addItemSingle").append(html);
+    }
+
+    function addSingleChoice(e){
+        var selectionID = e.id +"-singleChoice";
+        var data = {
+        };
+        var html=template('Choice',data);
+        $("#"+selectionID).append(html);
+    }
+
+    function addMultiple() {
+        signleID++;
+        var Selection = signleID+"-multipleChoice";
+        var data = {
+            id:signleID,
+            selection:Selection
+        };
+        var html=template('Question',data);
+        console.log(html);
+        $("#addItemMultiple").append(html);
+    }
+    function addMultipleChoice(e){
+        var selectionID = e.id +"-multipleChoice";
+        var data = {
+        };
+        var html=template('Choice',data);
+        $("#"+selectionID).append(html);
+        alert(selectionID);
+    }
+
+
+</script>
 
 <!--[if (gte IE 9)|!(IE)]><!-->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -191,9 +249,9 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
 <!--[if lte IE 8 ]>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="../assets/js/amazeui.ie8polyfill.min.js"></script>
+<script src="../lib/assets/js/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
-<script src="../assets/js/amazeui.min.js"></script>
+<script src="../lib/assets/js/amazeui.min.js"></script>
 </body>
 </html>
 
