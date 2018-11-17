@@ -169,7 +169,7 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
         <header class="am-panel-hd">
             <h3 class="am-panel-title">
                 <label><input type="text" placeholder="输入单选题题目"></label>
-                <button type="button" class = "am-fr" id=<%=id%> onclick="addSingleChoice(this)">添加选项</button>
+                <button type="button" class = "am-fr am-btn am-btn-default am-round" id=<%=id%> onclick="addSingleChoice(this)">添加选项</button>
             </h3>
 
         </header>
@@ -192,13 +192,9 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
 
 
 
-
-
-
-
 <!--用于渲染模版-->
 <script>
-    var signleID = 0;
+    var signleID = 0;   //动态添加单选信息
 
     function addSingle() {
         signleID++;
