@@ -4,76 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/home/view/register.html" description="&#10;        &lt;div class=&quot;am-form-group&quot;&gt;&#10;            &lt;..." line="73" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1176f9eb-3d77-4113-aa20-948c332d458a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amaze.html" beforeDir="false" afterPath="$PROJECT_DIR$/amaze.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/css/admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/css/amazeui.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/css/amazeui.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/css/amazeui.flat.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/css/amazeui.flat.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/css/amazeui.flat.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/css/amazeui.flat.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/css/amazeui.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/css/amazeui.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/fonts/FontAwesome.otf" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/fonts/FontAwesome.otf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/fonts/fontawesome-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/fonts/fontawesome-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/fonts/fontawesome-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/fonts/fontawesome-webfont.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/i/app-icon72x72@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/i/app-icon72x72@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/i/examples/admin-chrome.png" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/i/examples/admin-chrome.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/i/examples/admin-firefox.png" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/i/examples/admin-firefox.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/i/examples/admin-ie.png" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/i/examples/admin-ie.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/i/examples/admin-opera.png" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/i/examples/admin-opera.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/i/examples/admin-safari.png" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/i/examples/admin-safari.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/i/examples/adminPage.png" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/i/examples/adminPage.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/i/examples/blogPage.png" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/i/examples/blogPage.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/i/examples/landing.png" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/i/examples/landing.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/i/examples/landingPage.png" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/i/examples/landingPage.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/i/examples/loginPage.png" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/i/examples/loginPage.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/i/examples/sidebarPage.png" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/i/examples/sidebarPage.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/i/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/i/favicon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/i/startup-640x1096.png" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/i/startup-640x1096.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/js/amazeui.ie8polyfill.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/js/amazeui.ie8polyfill.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/js/amazeui.ie8polyfill.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/js/amazeui.ie8polyfill.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/js/amazeui.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/js/amazeui.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/js/amazeui.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/js/amazeui.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/js/amazeui.widgets.helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/js/amazeui.widgets.helper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/js/amazeui.widgets.helper.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/js/amazeui.widgets.helper.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/assets/js/handlebars.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/assets/js/handlebars.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/lib/lib/template-web.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/res/home/default/template-web.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/check.php" beforeDir="false" afterPath="$PROJECT_DIR$/home/controller/check.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/email_check.php" beforeDir="false" afterPath="$PROJECT_DIR$/home/controller/email_check.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/getImage.php" beforeDir="false" afterPath="$PROJECT_DIR$/home/controller/getImage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/login_control.php" beforeDir="false" afterPath="$PROJECT_DIR$/home/controller/login_control.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/home/controller/logout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/messagesave.php" beforeDir="false" afterPath="$PROJECT_DIR$/home/controller/messagesave.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/querymessage.php" beforeDir="false" afterPath="$PROJECT_DIR$/home/controller/querymessage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/register_control.php" beforeDir="false" afterPath="$PROJECT_DIR$/home/controller/register_control.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/userHeader.php" beforeDir="false" afterPath="$PROJECT_DIR$/home/controller/userHeader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/votesave.php" beforeDir="false" afterPath="$PROJECT_DIR$/home/controller/votesave.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/lib/z/view.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/lib/z/view.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/lib/z/z.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/lib/z/z.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/controller/index.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/home/controller/index.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myModel/image_captcha.php" beforeDir="false" afterPath="$PROJECT_DIR$/home/model/image_captcha.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myModel/qQuestion.php" beforeDir="false" afterPath="$PROJECT_DIR$/home/model/qQuestion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myModel/questionnaire.php" beforeDir="false" afterPath="$PROJECT_DIR$/home/model/questionnaire.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myModel/quicksql.php" beforeDir="false" afterPath="$PROJECT_DIR$/home/model/quicksql.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myModel/reader.php" beforeDir="false" afterPath="$PROJECT_DIR$/home/model/reader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myModel/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/home/model/user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test2.html" beforeDir="false" afterPath="$PROJECT_DIR$/test2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/home/view/admin_form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin_index.php" beforeDir="false" afterPath="$PROJECT_DIR$/home/view/admin_index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin_preview.php" beforeDir="false" afterPath="$PROJECT_DIR$/home/view/admin_preview.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin_questionnaire.php" beforeDir="false" afterPath="$PROJECT_DIR$/home/view/admin_questionnaire.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/get_q.php" beforeDir="false" afterPath="$PROJECT_DIR$/home/view/get_q.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/view/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/message.php" beforeDir="false" afterPath="$PROJECT_DIR$/home/view/message.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/questionnaire.php" beforeDir="false" afterPath="$PROJECT_DIR$/home/view/questionnaire.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/view/register.html" afterDir="false" />
-    </list>
+    <list default="true" id="1176f9eb-3d77-4113-aa20-948c332d458a" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,8 +200,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public_html/register.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="56" lean-forward="true" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
+            <state relative-caret-position="323">
+              <caret line="80" column="14" lean-forward="true" selection-start-line="80" selection-start-column="14" selection-end-line="80" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -459,24 +390,6 @@
             <path>
               <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
               <item name="htdocs" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="htdocs" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="htdocs" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="htdocs" type="462c0819:PsiDirectoryNode" />
               <item name="public_html" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -556,12 +469,12 @@
       <workItem from="1542356216439" duration="1344000" />
       <workItem from="1542435975854" duration="637000" />
       <workItem from="1542515328028" duration="4500000" />
-      <workItem from="1542882785242" duration="11473000" />
+      <workItem from="1542882785242" duration="12674000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="153646000" />
+    <option name="totallyTimeSpent" value="154847000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -964,8 +877,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public_html/register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="56" lean-forward="true" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
+        <state relative-caret-position="323">
+          <caret line="80" column="14" lean-forward="true" selection-start-line="80" selection-start-column="14" selection-end-line="80" selection-end-column="14" />
         </state>
       </provider>
     </entry>
