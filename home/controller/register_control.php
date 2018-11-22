@@ -13,7 +13,7 @@ if (isset($_POST['register'])) {
     $password = $_POST['password1'];
     $name = $_POST['name'];
 
-    include '../myModel/quicksql.php';
+    include '../model/quicksql.php';
 
     $sql = "INSERT INTO user (u_email,u_password,u_name) VALUES ('{$email}','{$password}','{$name}');";
     $mysql_result = $db1->query($sql);

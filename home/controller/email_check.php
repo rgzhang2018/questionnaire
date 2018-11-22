@@ -6,7 +6,7 @@
 
 
 header('Content-type:text/html; charset=utf-8');
-include '../myModel/quicksql.php';
+include '../model/quicksql.php';
 
 if(isset($_GET['email']) && $_GET['email']!=""){
     $email = $_GET['email'];

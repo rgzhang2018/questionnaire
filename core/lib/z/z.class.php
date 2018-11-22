@@ -30,7 +30,7 @@
 			define('ISROUTE',self::$ZPHP_CONFIG['ROUTE_ON'] ?? false);
 			route::route();
 			define('MODEL',APP . 'model/');
-			define('VIEW',APP . 'view/');
+			define('VIEW',APP . 'public_html/');
 			define('THEME',VIEW . self::$ZPHP_CONFIG['THEME'] . '/');
 			define('RUN_APP',RUN_DIR . APP_PATH . '/');
 			define('CACHE_DIR',RUN_DIR . 'cache/');

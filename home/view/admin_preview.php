@@ -15,10 +15,10 @@ if (isset($_POST['check'])){
 
 
 //判断是否登录部分：
-include_once "../control/userHeader.php";
+include_once "../controller/userHeader.php";
 
 //问卷信息部分
-include "../myModel/reader.php";
+include "../model/reader.php";
 $thisq = new reader($_SESSION['u_id']);
 $questions = $thisq->getQuestionnaireByID($q_id);
 ?>
@@ -41,24 +41,24 @@ $questions = $thisq->getQuestionnaireByID($q_id);
     <!-- No Baidu Siteapp-->
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
 
-    <link rel="icon" type="image/png" href="../common/lib/lib/assets/i/favicon.png">
+    <link rel="icon" type="image/png" href="../../public_html/res/home/default/assets/i/favicon.png">
 
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" sizes="32x32" href="../common/lib/lib/assets/i/app-icon72x72@2x.png">
+    <link rel="icon" sizes="32x32" href="../../public_html/res/home/default/assets/i/app-icon72x72@2x.png">
 
     <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
-    <link rel="apple-touch-icon-precomposed" href="../common/lib/lib/assets/i/app-icon72x72@2x.png">
+    <link rel="apple-touch-icon-precomposed" href="../../public_html/res/home/default/assets/i/app-icon72x72@2x.png">
 
     <!-- Tile icon for Win8 (144x144 + tile color) -->
     <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
     <meta name="msapplication-TileColor" content="#0e90d2">
 
-    <link rel="stylesheet" href="../common/lib/lib/assets/css/amazeui.min.css">
-    <link rel="stylesheet" href="../common/lib/lib/assets/css/app.css">
+    <link rel="stylesheet" href="../../public_html/res/home/default/assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="../../public_html/res/home/default/assets/css/app.css">
 </head>
 <body  style="background-color: #e9e9e9">
 
@@ -74,9 +74,9 @@ $questions = $thisq->getQuestionnaireByID($q_id);
 
 <div class="am-animation-scale-up  am-u-sm-5 am-u-sm-centered" >
     <ul class="am-nav am-nav-tabs">
-        <li ><a href="../index.php">首页</a></li>
+        <li ><a href="../../index.php">首页</a></li>
         <li ><a href="./admin_index.php">控制台</a></li>
-        <li ><a href="./message.php">留言板</a></li>
+        <li ><a href="message.php">留言板</a></li>
         <li ><?php if (isset($_SESSION['islogin'])){
                 echo "<a>您好，{$_SESSION['username']}</a>";
             }else {
@@ -176,9 +176,9 @@ $questions = $thisq->getQuestionnaireByID($q_id);
 <!--[if lte IE 8 ]>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="../common/lib/lib/assets/js/amazeui.ie8polyfill.min.js"></script>
+<script src="../../public_html/res/home/default/assets/js/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
-<script src="../common/lib/lib/assets/js/amazeui.min.js"></script>
+<script src="../../public_html/res/home/default/assets/js/amazeui.min.js"></script>
 </body>
 </html>
 

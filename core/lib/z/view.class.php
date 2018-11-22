@@ -32,7 +32,7 @@
 				}elseif(strstr($r,'/')){
 					$filename_arr = explode('/',$r);
 					switch(count($filename_arr)){
-						case 4 : $file = ROOT . "{$filename_arr[0]}/view/{$filename_arr[1]}/{$filename_arr[2]}/{$filename_arr[3]}";
+						case 4 : $file = ROOT . "{$filename_arr[0]}/public_html/{$filename_arr[1]}/{$filename_arr[2]}/{$filename_arr[3]}";
 						break;
 						case 3 : $file = VIEW . $file;
 						break;

@@ -25,7 +25,7 @@ if (isset($_POST['login'])) {
     }
 
     //连接sql数据库，然后查询对应的信息
-    include '../myModel/quicksql.php';
+    include '../model/quicksql.php';
     $sql = "SELECT * FROM user WHERE u_email LIKE '{$email}';";
     $mysql_result = $db1->query($sql);
 

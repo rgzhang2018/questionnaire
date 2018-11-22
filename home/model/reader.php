@@ -1,5 +1,9 @@
 <?php
 
+
+namespace reader;
+
+
 /**
  * Class reader
  * 用于读取某问卷的ID或者某用户的ID
