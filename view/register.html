@@ -1,11 +1,4 @@
 
-<?php
-/**
- * 注册页
- * 通过XMLHTTP检测用户名情况
- */
-
-?>
 <!doctype html>
 <html class="no-js">
 <head>
@@ -23,24 +16,24 @@
     <!-- No Baidu Siteapp-->
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
 
-    <link rel="icon" type="image/png" href="../lib/assets/i/favicon.png">
+    <link rel="icon" type="image/png" href="../common/lib/lib/assets/i/favicon.png">
 
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" sizes="32x32" href="../lib/assets/i/app-icon72x72@2x.png">
+    <link rel="icon" sizes="32x32" href="../common/lib/lib/assets/i/app-icon72x72@2x.png">
 
     <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
-    <link rel="apple-touch-icon-precomposed" href="../lib/assets/i/app-icon72x72@2x.png">
+    <link rel="apple-touch-icon-precomposed" href="../common/lib/lib/assets/i/app-icon72x72@2x.png">
 
     <!-- Tile icon for Win8 (144x144 + tile color) -->
     <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
     <meta name="msapplication-TileColor" content="#0e90d2">
 
-    <link rel="stylesheet" href="../lib/assets/css/amazeui.min.css">
-    <link rel="stylesheet" href="../lib/assets/css/app.css">
+    <link rel="stylesheet" href="../common/lib/lib/assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="../common/lib/lib/assets/css/app.css">
 </head>
 <body style="background-color: #e9e9e9">
 
@@ -118,7 +111,7 @@
 </div>
 
   <script>
-    var flag_emali = 0;
+    var flag_email = 0;
     var flag_password = 0;
     var flag_name = 0;
     function validate() {
@@ -153,9 +146,9 @@
     //检测所有信息，符合条件后可以注册
     var submitBtn = document.getElementById("reg-submit");
     submitBtn.onclick = function checkAll( e ){
-        if(flag_password===1 && flag_emali === 1 &&flag_name===1){
+        if(flag_password===1 && flag_email === 1 &&flag_name===1){
             alert("格式正确，转跳注册");
-        }else if(flag_emali === 0){
+        }else if(flag_email === 0){
             alert("用户名已存在！请重新输入");
             if(e&&e.preventDefault){
                 e.preventDefault();
@@ -191,7 +184,7 @@
     function emailChick(){
         var f = document.getElementById("reg-email").value;//获取文本框内容
         S_xmlhttprequest();
-        xmlHttp.open("GET","../control/email_chick.php?email="+f,true);//找开请求
+        xmlHttp.open("GET","../control/email_check.php?email="+f,true);//找开请求
         xmlHttp.onreadystatechange = byphp;//准备就绪执行
         xmlHttp.send(null);//发送
 
@@ -199,12 +192,12 @@
     function byphp(){
         //判断状态
         if(xmlHttp.readyState===1){//Ajax状态
-            document.getElementById('reg-msg').innerHTML = "正在加载";
+            document.getElementById('reg-msg').innerHTML = "正在检测";
         }
         if(xmlHttp.readyState===4){//Ajax状态
             if(xmlHttp.status===200){//服务器端状态
-                flag_emali = xmlHttp.responseText;
-                if(flag_emali  === 0) {
+                flag_email = xmlHttp.responseText;
+                if(flag_email  === '0') {
                     document.getElementById('reg-msg').innerHTML = "用户名已存在"
                 }else {
                     document.getElementById('reg-msg').innerHTML = "用户名可以使用"
@@ -223,8 +216,8 @@
 <!--[if lte IE 8 ]>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="../lib/assets/js/amazeui.ie8polyfill.min.js"></script>
+<script src="../common/lib/lib/assets/js/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
-<script src="../lib/assets/js/amazeui.min.js"></script>
+<script src="../common/lib/lib/assets/js/amazeui.min.js"></script>
 </body>
 </html>

@@ -4,27 +4,16 @@
  * 问卷查看页面。这里显示全部的问卷
  */
 
-//判断是否登录部分：
-header('Content-type:text/html; charset=utf-8');
-// 开启Session，存储cookie
-session_start();
-include_once "../class/reader.php";
+include_once "../control/userHeader.php";
+include_once "../myModel/reader.php";
 
-// 首先判断Cookie是否有记住了用户信息
-if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
-    # 若记住了用户信息,则直接传给Session
-    $_SESSION['username'] = $_COOKIE['username'];
-    $_SESSION['email'] = $_COOKIE['email'];
-    $_SESSION['u_id'] = $_COOKIE['u_id'];
-    $_SESSION['islogin'] = 1;
-}
 
 $questions = [];
 if(isset($_SESSION['u_id'])){
     $reader = new reader($_SESSION['u_id']);
     $questions = $reader->queryQuestions();
 }else{
-    header("refresh:3;url=./login.php");
+    header("refresh:3;url=./login.html");
 }
 
 ?>
@@ -47,24 +36,24 @@ if(isset($_SESSION['u_id'])){
     <!-- No Baidu Siteapp-->
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
 
-    <link rel="icon" type="image/png" href="../lib/assets/i/favicon.png">
+    <link rel="icon" type="image/png" href="../common/lib/lib/assets/i/favicon.png">
 
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" sizes="32x32" href="../lib/assets/i/app-icon72x72@2x.png">
+    <link rel="icon" sizes="32x32" href="../common/lib/lib/assets/i/app-icon72x72@2x.png">
 
     <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
-    <link rel="apple-touch-icon-precomposed" href="../lib/assets/i/app-icon72x72@2x.png">
+    <link rel="apple-touch-icon-precomposed" href="../common/lib/lib/assets/i/app-icon72x72@2x.png">
 
     <!-- Tile icon for Win8 (144x144 + tile color) -->
-    <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileImage" content="../lib/assets/i/app-icon72x72@2x.png">
     <meta name="msapplication-TileColor" content="#0e90d2">
 
-    <link rel="stylesheet" href="../lib/assets/css/amazeui.min.css">
-    <link rel="stylesheet" href="../lib/assets/css/app.css">
+    <link rel="stylesheet" href="../common/lib/lib/assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="../common/lib/lib/assets/css/app.css">
 </head>
 <body  style="background-color: #e9e9e9">
 
@@ -86,7 +75,7 @@ if(isset($_SESSION['u_id'])){
         <li ><?php if (isset($_SESSION['islogin'])){
                 echo "<a>您好，{$_SESSION['username']}</a>";
             }else {
-                echo "<a href=\"./login.php\" >|登录|</a>";
+                echo " >|登录|</a>";
             } ?></li>
     </ul>
 </div>
@@ -108,8 +97,8 @@ if(isset($_SESSION['u_id'])){
 //                echo "<a href='../control/logout.php'>注销</a>";
             } else {
                 // 若没有登录
-                header("refresh:3;url=./login.php");
-                echo "您还没有登录！三秒后转跳到<a href='./login.php'>登录</a>界面";
+                header("refresh:3;url=./login.html");
+                echo "您还没有登录！三秒后转跳到<a href='login.html'>登录</a>界面";
             }
             ?>
             <hr>
@@ -163,9 +152,9 @@ if(isset($_SESSION['u_id'])){
 <!--[if lte IE 8 ]>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="../lib/assets/js/amazeui.ie8polyfill.min.js"></script>
+<script src="../common/lib/lib/assets/js/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
-<script src="../lib/assets/js/amazeui.min.js"></script>
+<script src="../common/lib/lib/assets/js/amazeui.min.js"></script>
 </body>
 </html>
 

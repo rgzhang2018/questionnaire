@@ -4,22 +4,8 @@
  * 用户个人首页，如果没有登录则会自动跳转到登录页面
  */
 
+include_once "../control/userHeader.php";
 
-
-header('Content-type:text/html; charset=utf-8');
-// 开启Session，存储cookie
-session_start();
-
-// 首先判断Cookie是否有记住了用户信息
-if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
-    # 若记住了用户信息,则直接传给Session
-    echo "1111";
-    $_SESSION['username'] = $_COOKIE['username'];
-    $_SESSION['email'] = $_COOKIE['email'];
-    $_SESSION['u_id'] = $_COOKIE['u_id'];
-    $_SESSION['islogin'] = 1;
-}
-if (!isset($_SESSION['islogin']))header("refresh:3;url=./login.php");
 ?>
 
 
@@ -40,24 +26,24 @@ if (!isset($_SESSION['islogin']))header("refresh:3;url=./login.php");
     <!-- No Baidu Siteapp-->
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
 
-    <link rel="icon" type="image/png" href="../lib/assets/i/favicon.png">
+    <link rel="icon" type="image/png" href="../common/lib/lib/assets/i/favicon.png">
 
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" sizes="32x32" href="../lib/assets/i/app-icon72x72@2x.png">
+    <link rel="icon" sizes="32x32" href="../common/lib/lib/assets/i/app-icon72x72@2x.png">
 
     <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
-    <link rel="apple-touch-icon-precomposed" href="../lib/assets/i/app-icon72x72@2x.png">
+    <link rel="apple-touch-icon-precomposed" href="../common/lib/lib/assets/i/app-icon72x72@2x.png">
 
     <!-- Tile icon for Win8 (144x144 + tile color) -->
     <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
     <meta name="msapplication-TileColor" content="#0e90d2">
 
-    <link rel="stylesheet" href="../lib/assets/css/amazeui.min.css">
-    <link rel="stylesheet" href="../lib/assets/css/app.css">
+    <link rel="stylesheet" href="../common/lib/lib/assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="../common/lib/lib/assets/css/app.css">
 
 </head>
 
@@ -81,9 +67,9 @@ if (!isset($_SESSION['islogin']))header("refresh:3;url=./login.php");
         <li class="am-active" ><a href="./admin_index.php">控制台</a></li>
         <li ><a href="./message.php">留言板</a></li>
         <li ><?php if (isset($_SESSION['islogin'])){
-                echo "<a>您好，{$_SESSION['username']}</a>";
+                echo "您好，{$_SESSION['username']}";
             }else {
-                echo "<a href=\"./login.php\" >|登录|</a>";
+                echo "|游客|";
             } ?></li>
     </ul>
 </div>
@@ -103,7 +89,8 @@ if (!isset($_SESSION['islogin']))header("refresh:3;url=./login.php");
                 echo "你好! ".$_SESSION['username'].' ,欢迎来到个人中心! <a href="../control/logout.php" >|点击注销|</a><br>';
             } else {
                 // 若没有登录
-                echo "您还没有登录！三秒后转跳到<a href='./login.php'>登录</a>界面";
+                echo "您还没有登录！三秒后转跳到<a href='login.html'>登录</a>界面";
+                header("refresh:3;url=./login.html");
             }
             ?>
             <hr>
@@ -140,8 +127,8 @@ if (!isset($_SESSION['islogin']))header("refresh:3;url=./login.php");
 <!--[if lte IE 8 ]>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="../lib/assets/js/amazeui.ie8polyfill.min.js"></script>
+<script src="../common/lib/lib/assets/js/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
-<script src="../lib/assets/js/amazeui.min.js"></script>
+<script src="../common/lib/lib/assets/js/amazeui.min.js"></script>
 </body>
 </html>

@@ -13,16 +13,16 @@ if (isset($_POST['register'])) {
     $password = $_POST['password1'];
     $name = $_POST['name'];
 
-    include '../DB/quicksql.php';
+    include '../myModel/quicksql.php';
 
     $sql = "INSERT INTO user (u_email,u_password,u_name) VALUES ('{$email}','{$password}','{$name}');";
     $mysql_result = $db1->query($sql);
     if(!$mysql_result){
-        header('refresh:3; url=../view/register.php');
+        header('refresh:3; url=../view/register.html');
         echo "注册错误！三秒后返回注册页面";
         exit;
     }else{
-        header('refresh:3; url=../view/login.php');
+        header('refresh:3; url=../view/login.html');
         echo "注册成功！三秒后跳转到登录页面";
         exit;
     }

@@ -7,7 +7,7 @@
 // * 注：此部分目前被搬运到了questionnaire.php中
 // */
 
-//class qQuestion
+//myModel qQuestion
 //{
 //    protected $q_mysqli;
 //    protected $q_id;         //问卷的编号，用于插入题目

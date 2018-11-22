@@ -2,7 +2,7 @@
 
 header('Content-type:text/html; charset=utf-8');
 
-include "./class/questionnaire.php";
+include "./myModel/questionnaire.php";
 
 
 $name="测试问卷1";

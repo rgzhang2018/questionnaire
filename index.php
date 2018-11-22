@@ -38,24 +38,24 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
     <!-- No Baidu Siteapp-->
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
 
-    <link rel="icon" type="image/png" href="lib/assets/i/favicon.png">
+    <link rel="icon" type="image/png" href="common/lib/lib/assets/i/favicon.png">
 
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" sizes="32x32" href="lib/assets/i/app-icon72x72@2x.png">
+    <link rel="icon" sizes="32x32" href="common/lib/lib/assets/i/app-icon72x72@2x.png">
 
     <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
-    <link rel="apple-touch-icon-precomposed" href="lib/assets/i/app-icon72x72@2x.png">
+    <link rel="apple-touch-icon-precomposed" href="common/lib/lib/assets/i/app-icon72x72@2x.png">
 
     <!-- Tile icon for Win8 (144x144 + tile color) -->
     <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
     <meta name="msapplication-TileColor" content="#0e90d2">
 
-    <link rel="stylesheet" href="lib/assets/css/amazeui.min.css">
-    <link rel="stylesheet" href="lib/assets/css/app.css">
+    <link rel="stylesheet" href="common/lib/lib/assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="common/lib/lib/assets/css/app.css">
 </head>
 <body  style="background-color: #e9e9e9">
 
@@ -73,11 +73,11 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
     <ul class="am-nav am-nav-tabs">
         <li class="am-active"><a href="./index.php">首页</a></li>
         <li ><a href="./view/admin_index.php">控制台</a></li>
-        <li ><a href="view/message.php">留言板</a></li>
+        <li ><a href="./view/message.php">留言板</a></li>
         <li ><?php if (isset($_SESSION['islogin'])){
                     echo "<a>欢迎您，{$_SESSION['username']}</a>";
                 }else {
-                    echo "<a href=\"./view/login.php\" >|登录|</a>";
+                    echo " >|登录|</a>";
                 } ?></li>
     </ul>
 </div>
@@ -93,7 +93,7 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
                 echo "你好! ".$_SESSION['username'].' ,欢迎您来到主页 <a href="../control/logout.php" >|点击注销|</a><br>';
             } else {
                 // 若没有登录
-                echo "欢迎您来到主页，<a href='./view/login.php'>点击登录/注册</a>";
+                echo "欢迎您来到主页，<a href='view/login.html'>点击登录/注册</a>";
             }
             ?>
             <hr>
@@ -139,8 +139,8 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
 <!--[if lte IE 8 ]>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="../assets/js/amazeui.ie8polyfill.min.js"></script>
+<script src="common/lib/lib/assets/js/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
-<script src="./lib/assets/js/amazeui.min.js"></script>
+<script src="common/lib/lib/assets/js/amazeui.min.js"></script>
 </body>
 </html>
