@@ -18,11 +18,11 @@ if (isset($_POST['register'])) {
     $sql = "INSERT INTO user (u_email,u_password,u_name) VALUES ('{$email}','{$password}','{$name}');";
     $mysql_result = $db1->query($sql);
     if(!$mysql_result){
-        header('refresh:3; url=../view/register.html');
+        header('refresh:3; url=../view/visitor_register.html');
         echo "注册错误！三秒后返回注册页面";
         exit;
     }else{
-        header('refresh:3; url=../view/login.html');
+        header('refresh:3; url=../view/visitor_login.html');
         echo "注册成功！三秒后跳转到登录页面";
         exit;
     }

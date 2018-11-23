@@ -19,6 +19,6 @@ setcookie('code', '', time()-99);
 
 // 提示信息
 echo "欢迎下次光临, ".$username.'<br>';
-echo "<a href='../view/login.html'>重新登录</a>";
+echo "<a href='../view/visitor_login.html'>重新登录</a>";
 
 ?>

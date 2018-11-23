@@ -1,5 +1,5 @@
 <?php
-
+defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <!doctype html>
 <html class="no-js">
@@ -38,21 +38,20 @@
     <link rel="stylesheet" href="../../assets/css/app.css">
 </head>
 
-
 <body style="background-color: #e9e9e9">
-
 
 <header class="am-topbar am-topbar-inverse">
     <h1 class="am-topbar-brand">
-        <a href="#">Amaze UI</a>
+        <a href="#">简易问卷系统</a>
     </h1>
 
     <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
 
     <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
         <ul class="am-nav am-nav-pills am-topbar-nav">
-            <li class="am-active"><a href="#">首页</a></li>
-            <li><a href="#">项目</a></li>
+            <li <?php if(isset($pageFlag) && $pageFlag===0) echo "class=\"am-active\""; ?>><a href="../visitorview/index">首页</a></li>
+            <li <?php if(isset($pageFlag) && $pageFlag===1) echo "class=\"am-active\""; ?>><a href="../usercontroller/adminindex">个人中心</a></li>
+            <li><a href="../visitorview/getquestionID">填写问卷</a></li>
             <li class="am-dropdown" data-am-dropdown>
                 <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
                     下拉 <span class="am-icon-caret-down"></span>
@@ -79,14 +78,33 @@
             <div class="am-dropdown" data-am-dropdown="{boundary: '.am-topbar'}">
                 <button class="am-btn am-btn-secondary am-topbar-btn am-btn-sm am-dropdown-toggle" data-am-dropdown-toggle>其他 <span class="am-icon-caret-down"></span></button>
                 <ul class="am-dropdown-content">
-                    <li><a href="#">注册</a></li>
-                    <li><a href="#">随便看看</a></li>
+                    <li>
+                        <a href="https://github.com/rgzhang2018/questionnaire">
+                            <i class="am-icon-github am-icon-fw am-u-sm-left "></i>GitHub
+                        </a>
+                    </li>
+                    <li><a href="../visitorview/register">点击注册</a></li>
+                    <li><a href="../visitorview/messageboard">留言板</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="am-topbar-right">
-            <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm">登录</button>
+
+            <a href="https://github.com/rgzhang2018/questionnaire">
+                <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm"><i class="am-icon-github am-icon-fw am-u-sm-left "></i>GitHub</button>
+            </a>
+            <?php
+            if(isset($_SESSION['is_login'])) {
+                echo "你好! ".$_SESSION['username'].'!，';
+                echo "<a href='../usercontroller/logout'>|注销|</a>";
+            }else{
+                echo "<a href='../visitorview/login'>
+                        <button class=\"am-btn am-btn-primary am-topbar-btn am-btn-sm\">点击登录</button>
+                      </a>";
+            }
+            ?>
+
         </div>
     </div>
 </header>

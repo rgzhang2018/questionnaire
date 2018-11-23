@@ -19,7 +19,7 @@ if (isset($_POST['login'])) {
     $password = $_POST['password'];
     if ( !isset($email) ||  !isset($password)) {
         // 若为空,提示错误,并3秒后返回登录界面
-        header('refresh:3; url=../view/login.html');
+        header('refresh:3; url=../view/visitor_login.html');
         echo "用户名或密码不能为空,系统将在3秒后跳转到登录界面,请重新填写登录信息!";
         exit;
     }
@@ -32,7 +32,7 @@ if (isset($_POST['login'])) {
     //错误判断
     if(!$mysql_result){
         //查询错误 证明没有该用户
-        header('refresh:3; url=../view/login.html');
+        header('refresh:3; url=../view/visitor_login.html');
         echo "用户名或密码错误,系统将在3秒后跳转到登录界面,请重新填写登录信息!";
         exit;
     }
@@ -42,7 +42,7 @@ if (isset($_POST['login'])) {
     // 判断提交的登录信息
     if (($email != $message['u_email']) || ($password != $message['u_password'])) {
         # 用户名或密码错误,同空的处理方式
-        header('refresh:3; url=../view/login.html');
+        header('refresh:3; url=../view/visitor_login.html');
         echo "用户名或密码错误,系统将在3秒后跳转到登录界面,请重新填写登录信息!";
         exit;
     } else{
@@ -71,6 +71,6 @@ if (isset($_POST['login'])) {
         exit;
     }
 }elseif (isset($_POST['register']) ){
-    header('location:../view/register.html');
+    header('location:../view/visitor_register.html');
 }
 ?>

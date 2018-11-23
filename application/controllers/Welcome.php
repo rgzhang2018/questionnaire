@@ -21,7 +21,8 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 	    $arr['title']="首页";
-        $this->load->view('userHeader',$arr);
+        $this->load->view('welcome_header',$arr);
 		$this->load->view('welcome_message');
+        $this->load->view('myFooter');
 	}
 }

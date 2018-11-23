@@ -92,7 +92,7 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
                 echo "你好! ".$_SESSION['username'].' ,欢迎您来到主页 <a href="../control/logout.php" >|点击注销|</a><br>';
             } else {
                 // 若没有登录
-                echo "欢迎您来到主页，<a href='home/view/login.html'>点击登录/注册</a>";
+                echo "欢迎您来到主页，<a href='home/view/visitor_login.html'>点击登录/注册</a>";
             }
             ?>
             <hr>

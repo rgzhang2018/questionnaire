@@ -14,39 +14,56 @@ class VisitorView extends CI_Controller
         $this->load->helper('url');
     }
 
+    //下面是CI框架的各个模块的显示方法，通过调用我的showPage($pageName,$arr);方法实现渲染
+    public function index(){
+        $arr['title']  = "简易问卷系统V1.2";
+        $arr['pageFlag'] = 0;
+        $this->showPage("welcome_message.php",$arr);
+    }
+
     public function login(){
         $arr['title']  = "用户登陆";
-        $this->load->view('userHeader.php',$arr);
-        $this->load->view('login.html');
+        $this->showPage("visitor_login.html",$arr);
     }
 
     public function register(){
         $arr['title']  = "用户注册";
-        $this->load->view('userHeader.php',$arr);
-        $this->load->view('register.html');
+        $this->showPage("visitor_register.html",$arr);
     }
 
     public function messageBoard(){
         $arr['title']  = "留言板";
-        $this->load->view('userHeader.php',$arr);
-        $this->load->view('messageBoard.php');
+        $arr['arrs'] = $this->getMessage();
+        $this->showPage("visitor_messageBoard.php",$arr);
     }
 
-    public function getQuestionnaireID(){
+    public function getQuestionID(){
         $arr['title']  = "请输入问卷ID";
-        $this->load->view('userHeader.php',$arr);
-        $this->load->view('getQuestionID.php');
+        $this->showPage("visitor_getQuestionID.php",$arr);
     }
 
     public function writeQuestionnaire(){
         $arr['title']  = "问卷填写";
-        $this->load->view('userHeader.php',$arr);
-        $this->load->view('writeQuestionnaire.php');
+        $this->showPage('visitor_writeQuestionnaire.php',$arr);
     }
 
     public function success(){
         $arr['title']  = "成功!";
-        $this->load->view('userHeader.php',$arr);
-        $this->load->view('success.php');
+        $this->showPage('mySuccess.php',$arr);
+    }
+
+    //总的渲染模块
+    private function showPage($pageName,$arr){
+        $this->load->view('myHeader.php',$arr);
+        $this->load->view($pageName);
+        $this->load->view('myFooter.php');
+    }
+
+    //下面是控制model模块
+    private function getMessage(){
+        //制获得留言板信息
+        $message = [''];
+        return $message;
+
     }
 }

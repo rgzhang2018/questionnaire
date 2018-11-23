@@ -17,31 +17,61 @@ class UserController extends CI_Controller
 
     //下面是控制显示部分的信息
     public function adminIndex(){
-        $message = $this-> welcomeMessage();
-        $this->load->view('userHead');
-        $this->load->view('userAdmin/');
-        $this->load->view('userFooter/footer');
+        $arr['title'] = "个人中心";
+        $this->showPage('user_admin.php',$arr);
     }
 
     public function addQuestionnaire(){
-
+        $arr['title'] = "添加问卷";
+        $this->showPage('user_addQuestionnaire.php',$arr);
     }
 
     public function overViewQuestionnaire(){
-
+        $arr['title'] = "问卷总览";
+        $this->showPage('user_overViewQuestionnaire.php',$arr);
     }
 
     public function preview(){
+        $arr['title'] = "预览问卷";
+        $this->showPage('user_preview.php',$arr);
+    }
 
+    public function changePassword(){
+        $arr['title'] = "修改密码";
+        $this->showPage('user_changePassword.php',$arr);
     }
 
 
+
+    public function logout(){
+        $this->$this->loginControl();
+    }
+
+
+    //下面总的渲染函数
+    private function showPage($pageName,$arr){
+        $this->load->view('userHead.php',$arr);
+        $this->load->view('userNav.php');
+        $this->load->view('userTopbar.php');
+        $this->load->view($pageName);
+        $this->load->view('userFooter.php');
+    }
 
 
     //下面控制model部分
-    public function logincontrol(){
+    public function loginControl(){
 
     }
+    public function registerControl(){
+
+    }
+    public function logoutControl(){
+
+    }
+
+
+
+
 
     private function welcomeMessage(){
         // 开启Session，存储cookie

@@ -12,6 +12,6 @@ if (isset($_COOKIE['username']) && !isset($_SESSION['username'])) {
     $_SESSION['u_id'] = $_COOKIE['u_id'];
     $_SESSION['islogin'] = 1;
 }
-if (!isset($_SESSION['islogin']))header("refresh:3;url=./login.html");
+if (!isset($_SESSION['islogin']))header("refresh:3;url=./visitor_login.html");
 
  ?>

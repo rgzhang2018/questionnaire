@@ -1,7 +1,17 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: HiJack
+ * Date: 2018/11/23
+ * Time: 15:45
+ */
+
+?>
+
 
 
 <!doctype html>
-<html class="no-js"">
+<html class="no-js" style="background-color: #464c5c">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,3 +46,4 @@
     <link rel="stylesheet" href="../../assets/css/amazeui.min.css">
     <link rel="stylesheet" href="../../assets/css/app.css">
 </head>
+
