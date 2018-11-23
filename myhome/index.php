@@ -105,7 +105,7 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
         </div>
         <div class="am-form-group"></div>
         <div class="am-form-group">
-            <a class="am-btn am-u-sm-centered am-btn-primary" href="home/view/admin_index.php">
+            <a class="am-btn am-u-sm-centered am-btn-primary" href="../home/view/admin_index.php">
                 发布问卷
             </a>
         </div>
