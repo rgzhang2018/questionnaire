@@ -42,7 +42,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <header class="am-topbar am-topbar-inverse">
     <h1 class="am-topbar-brand">
-        <a href="#">简易问卷系统</a>
+        <a href="../visitorview/index">简易问卷系统</a>
     </h1>
 
     <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>

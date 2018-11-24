@@ -48,8 +48,28 @@ class VisitorView extends CI_Controller
     }
 
     public function success(){
-        $arr['title']  = "成功!";
+        session_start();
+        $arr['title']  = "Success";
+        if(isset($_SESSION['controlMessage'])){
+            $arr['controlMessage'] = $_SESSION['controlMessage'];
+            if(isset($_SESSION['nextURL'])) $arr['nextURL'] = $_SESSION['nextURL']; //如果设置了操作成功的转跳，则进行转跳，否则返回上一层
+        }else {
+            header('Location: ../visitorview/error');      //错误的调用，转调到错误信息处理
+        }
         $this->showPage('mySuccess.php',$arr);
+    }
+
+    public function error(){
+        session_start();
+        $arr['title']  = "error";
+        if(isset($_SESSION['controlMessage'])){
+            $arr['controlMessage'] = $_SESSION['controlMessage'];
+        }else{
+            $arr['controlMessage'] = "出BUG了，也许是进行了错误的调用，请联系我改BUG";
+        }
+        if(isset($_SESSION['controlMessage']))$arr['controlMessage'] = $_SESSION['controlMessage'];
+        $_SESSION['controlMessage'] = null;
+        $this->showPage('myError.php',$arr);
     }
 
     //总的渲染模块

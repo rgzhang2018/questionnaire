@@ -5,7 +5,7 @@
 
 <!--  here  -->
 <div class="am-u-md-5 am-u-sm-centered"  style="background-color: #FFFFFF ;box-shadow: 10px 10px 5px">
-    <form class="am-form am-form-horizontal" action="../usercontroller/registercontrol" method="post">
+    <form class="am-form am-form-horizontal" action="../databasecontroller/newuser" method="post">
         <div class="am-form-group">
             <br>
         </div>
@@ -61,7 +61,7 @@
 </div>
 
   <script>
-    var flag_email = 0;
+    var flag_email = 1;
     var flag_password = 0;
     var flag_name = 0;
     function validate() {
@@ -134,7 +134,7 @@
     function emailChick(){
         var f = document.getElementById("reg-email").value;//获取文本框内容
         S_xmlhttprequest();
-        xmlHttp.open("GET","../control/email_check.php?email="+f,true);//找开请求
+        xmlHttp.open("GET","../databasecontroller/checkemail?email="+f,true);//找开请求
         xmlHttp.onreadystatechange = byphp;//准备就绪执行
         xmlHttp.send(null);//发送
 

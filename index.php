@@ -52,8 +52,11 @@
  *     production
  *
  * NOTE: If you change these, also change the error_reporting() code below
+ * 开发环境:改为 'development'，可以显示各种报错
+ * 正常运行环境：改为'production'，禁止各种错误显示，但是仍然在记录
  */
 	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
+
 
 /*
  *---------------------------------------------------------------
