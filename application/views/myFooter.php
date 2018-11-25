@@ -22,15 +22,15 @@
             <h1 >
                 <a href="#" target="_blank" id = "foot_front">简易问卷系统</a>
             </h1>
-            <ul class="amz-links">
-                <h5 id = "foot_front">
-                    <a href="#" id = "foot_front">&nbsp;111</a> |
-                    <a href="#" id = "foot_front">222</a> |
-                    <a href="#" id = "foot_front">333</a> |
-                    <a href="#" id = "foot_front">444</a>
-                </h5>
-
-            </ul>
+<!--            <ul class="amz-links">-->
+<!--                <div class="markdown-body" id = "foot_front">-->
+<!--                    <a href="http://rgzhang2018.github.io" id = "foot_front"> **关于我** </a> |-->
+<!--                    <a href="../visitorview/messageboard" id = "foot_front"> **服务支持** </a> |-->
+<!--                    <a href="#" id = "foot_front"> **null** </a> |-->
+<!--                    <a href="#" id = "foot_front"> **null** </a>-->
+<!--                </div>-->
+<!---->
+<!--            </ul>-->
 
 
 

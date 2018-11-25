@@ -72,7 +72,7 @@ class DatabaseController extends CI_Controller
         $this->load->model('UserModel');
         $message = $this->UserModel->userLogin($email,$password,$remember);
         if($message){
-            $this->successMessage("登录成功","../usercontroller/adminindex");
+            $this->successMessage("登录成功","../userview/adminindex");
         }else{
             $this->errorMessage("用户名或密码错误");
         }

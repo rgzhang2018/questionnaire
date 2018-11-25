@@ -18,7 +18,7 @@ class VisitorView extends CI_Controller
     public function index(){
         $arr['title']  = "简易问卷系统V1.2";
         $arr['pageFlag'] = 0;
-        $this->showPage("welcome_message.php",$arr);
+        $this->showPage("visitor_index.php",$arr);
     }
 
     public function login(){

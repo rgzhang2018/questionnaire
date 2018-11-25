@@ -6,7 +6,7 @@
  * Time: 2:47
  */
 
-class UserController extends CI_Controller
+class UserView extends CI_Controller
 {
 
     public function __construct()

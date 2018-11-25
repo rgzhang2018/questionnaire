@@ -8,8 +8,33 @@
 
 ?>
 
+<style type="text/css">
 
-<div class="am-u-md-5 am-u-sm-centered"  style="background-color: #FFFFFF ;box-shadow: 10px 10px 5px">
+    #bg_index{
+        background: url(../../assets/myImg/newResigner.jpg);
+        box-sizing: border-box;
+        max-width: 100%;
+        height: 700px;
+        vertical-align: middle;
+        border: 0;
+    }
+
+</style>
+
+
+
+<body style="background-color: #e9e9e9">
+
+<div class="am-u-md-12" id="bg_index" >
+    <br>
+    <br>
+    <br>
+
+    <!--  here  -->
+
+    <div class="am-u-md-5 am-u-sm-centered"  style="background-color: #FFFFFF ;box-shadow: 10px 10px 5px">
+        <hr>
+        <br>
     <form class="am-form am-form-horizontal" action="questionnaire.php" method="get">
         <div class="am-form-group">
             <br>
@@ -39,4 +64,4 @@
         </div>
     </form>
 </div>
-
+</div>

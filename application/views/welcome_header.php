@@ -57,7 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
         <ul class="am-nav am-nav-pills am-topbar-nav">
             <li <?php if(isset($pageFlag) && $pageFlag===0) echo "class=\"am-active\""; ?>><a href="./index.php/visitorview/index">首页</a></li>
-            <li <?php if(isset($pageFlag) && $pageFlag===1) echo "class=\"am-active\""; ?>><a href="./index.php/usercontroller/adminindex">个人中心</a></li>
+            <li <?php if(isset($pageFlag) && $pageFlag===1) echo "class=\"am-active\""; ?>><a href="./index.php/userview/adminindex">个人中心</a></li>
             <li><a href="./index.php/visitorview/getquestionID">填写问卷</a></li>
             <li class="am-dropdown" data-am-dropdown>
                 <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
@@ -104,7 +104,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <?php
             if(isset($_SESSION['is_login'])) {
                 echo "你好! ".$_SESSION['username'].'!，';
-                echo "<a href='./index.php/usercontroller/logout'>|注销|</a>";
+                echo "<a href='./index.php/userview/logout'>|注销|</a>";
             }else{
                 echo "<a href='./index.php/visitorview/login'>
                         <button class=\"am-btn am-btn-primary am-topbar-btn am-btn-sm\">点击登录</button>

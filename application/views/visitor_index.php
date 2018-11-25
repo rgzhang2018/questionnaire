@@ -1,11 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-
 <style type="text/css">
 
     #bg_index{
-        background: url(../assets/myImg/newIndex.jpg);
+        background: url(../../assets/myImg/newIndex.jpg);
         box-sizing: border-box;
         max-width: 100%;
         height: 700px;
@@ -20,7 +19,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <div class="am-u-md-4 am-u-md-centered"  >
         <br>
-
         <br>
         <hr>
         <form  action="#" method="post" class="am-form am-form-horizontal">
