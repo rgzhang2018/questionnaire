@@ -17,29 +17,29 @@ include_once "../controller/userHeader.php";
 
 <!--  here  -->
 <div class="am-u-md-12 am-u-md-centered" style="background-color: #ffffff ;box-shadow: 5px 5px 3px"   >
-    <div class="am-u-md-8 am-u-md-centered">
+    <div class="am-u-md-7 am-u-md-centered">
 
-
-
+        <br>
+        <br>
         <form  action="#" method="post" class="am-form am-form-horizontal">
             <div class="am-form-group" style="text-align:center">
                 <h2>请输入问卷信息</h2>
             </div>
-
+            <br>
             <div class="am-form-group">
                 <label for="doc-ipt-3" class="col-sm-2 am-form-label">标题</label>
                 <div class="col-sm-10">
                     <input type="text" id="doc-ipt-3" placeholder="输入问卷标题">
                 </div>
             </div>
-
+            <br>
             <div class="am-form-group">
                 <label for="doc-ipt-pwd-2" class="col-sm-2 am-form-label">描述</label>
                 <div class="col-sm-10">
                     <textarea id="doc-ta-1" placeholder="描述一下你的问卷吧" rows="4"></textarea>
                 </div>
             </div>
-
+            <br>
             <div class="am-form-group">
                 <div class="am-u-sm-4">
                     <button type="button" class="am-u-sm-9 am-btn am-btn-primary  am-round" onclick="addSingle()">添加单选</button>
@@ -52,8 +52,7 @@ include_once "../controller/userHeader.php";
                     <button type="button" class="am-u-sm-9 am-u-sm-centered am-btn am-btn-secondary  am-round">添加问答</button>
                 </div>
             </div>
-
-            <div class="am-form-group"><br></div>
+            <br>
 
             <div class="am-form-group">
                 <div class="am-u-sm-6">
@@ -68,6 +67,8 @@ include_once "../controller/userHeader.php";
                 <h3>下面是题目预览</h3>
             </div>
             <div class="am-form-group" id="addItemSingle">
+                <hr>
+                <br>
             </div>
         </form>
     </div>

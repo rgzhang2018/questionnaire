@@ -31,16 +31,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </form>
 
         <div class="am-topbar-right">
+            <p class="am-topbar-brand"><?php  echo "您好! {$username}!";  ?></p>
+
 
             <a href="../visitorview/index">
                 <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm">回到首页</button>
             </a>
 
-            <?php
-            if(isset($_SESSION['is_login'])) {
-                echo "<li>你好! {$_SESSION['username']}!";
-            }
-            ?>
+
             <a href='../visitorview/logout'>
                     <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm">点击注销</button>
             </a>

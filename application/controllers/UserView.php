@@ -43,13 +43,23 @@ class UserView extends CI_Controller
 
 
 
+    // 注销
     public function logout(){
-        $this->$this->loginControl();
+        header('Content-type:text/html; charset=utf-8');
+        session_start();
+//        $username = $_SESSION['username'];  //用于后面的提示信息
+        $_SESSION = array();
+        session_destroy();
+        setcookie('username', '', time()-999);
+        setcookie('code', '', time()-999);
+        // 提示信息
+        $this->successMessage("注销成功！即将转跳主页","../visitorview/index");
     }
 
 
     //下面总的渲染函数
     private function showPage($pageName,$arr){
+        $arr['username'] = $this->getUsername();
         $this->load->view('userHead.php',$arr);
         $this->load->view('userNav.php');
         $this->load->view('userTopbar.php');
@@ -58,22 +68,7 @@ class UserView extends CI_Controller
     }
 
 
-    //下面控制model部分
-    public function loginControl(){
-
-    }
-    public function registerControl(){
-
-    }
-    public function logoutControl(){
-
-    }
-
-
-
-
-
-    private function welcomeMessage(){
+    private function getUsername(){
         // 开启Session，存储cookie
         session_start();
         // 首先判断Cookie是否有记住了用户信息
@@ -84,9 +79,29 @@ class UserView extends CI_Controller
             $_SESSION['u_id'] = $_COOKIE['u_id'];
             $_SESSION['islogin'] = 1;
         }
-        $message = "";
-        if(!isset($_SESSION['islogin']))$message = "你好! ".$_SESSION['username']. ' ,欢迎来到个人中心! <a href="../controller/logout.php" >|点击注销|</a><br>';
-        else $message = "您还没有登录！三秒后转跳到<a href='/visitorview/login'>登录</a>界面";
-        return $message;
+        if(isset($_SESSION['username'])){
+            $userName = $_SESSION['username'];
+            return $userName;
+        }else {
+            $this->errorMessage("请您先登录！");
+            return null;
+        }
+    }
+
+
+
+    private function errorMessage($message){
+        session_start();
+        $_SESSION['controlMessage'] = $message;
+        header('Location: ../visitorview/error');
+        die();
+    }
+
+    private function successMessage($message,$url = null){
+        session_start();
+        $_SESSION['controlMessage'] = $message;
+        if($url!=null)$_SESSION['nextURL'] =$url;   //设置在success位置的转跳，比如登录成功就转跳到个人主页
+        header('Location: ../visitorview/success');
+        die();
     }
 }

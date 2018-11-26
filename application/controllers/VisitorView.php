@@ -8,6 +8,7 @@
 
 class VisitorView extends CI_Controller
 {
+
     public function __construct()
     {
         parent::__construct();
@@ -56,6 +57,8 @@ class VisitorView extends CI_Controller
         }else {
             header('Location: ../visitorview/error');      //错误的调用，转调到错误信息处理
         }
+        $_SESSION['controlMessage'] = null;         //重置控制信息为空
+        $_SESSION['nextURL'] = null;
         $this->showPage('mySuccess.php',$arr);
     }
 
@@ -74,6 +77,7 @@ class VisitorView extends CI_Controller
 
     //总的渲染模块
     private function showPage($pageName,$arr){
+        $arr['loginMessage'] = $this->isLogin();
         $this->load->view('myHeader.php',$arr);
         $this->load->view($pageName);
         $this->load->view('myFooter.php');
@@ -84,6 +88,40 @@ class VisitorView extends CI_Controller
         //制获得留言板信息
         $message = [''];
         return $message;
-
     }
+
+
+    //判断是否登录
+    private function isLogin(){
+        header('Content-type:text/html; charset=utf-8');
+        // 开启Session，存储cookie
+        session_start();
+        // 首先判断Cookie是否有记住了用户信息
+        if (isset($_COOKIE['username']) && !isset($_SESSION['username'])) {
+            # 若记住了用户信息,则直接传给Session
+            $_SESSION['username'] = $_COOKIE['username'];
+            $_SESSION['email'] = $_COOKIE['email'];
+            $_SESSION['u_id'] = $_COOKIE['u_id'];
+            $_SESSION['islogin'] = 1;
+        }
+        $message = [];
+        $message['login'] = "<a href='../visitorview/login'><button class=\"am-btn am-btn-primary am-topbar-btn am-btn-sm\">点击登录</button></a>";
+        $message['dropDown'] = "其他";
+        $message['dropDownMore'] = "<li><a href=\"../visitorview/register\">注册账号</a></li>";
+        //如果登录了
+        if($_SESSION['islogin'] == 1){
+            $message['login'] = "<p class = \"am-topbar-brand\">欢迎您，{$_SESSION['username']}</p>";
+            $message['dropDown'] = "个人中心";
+            $message['dropDownMore'] = "<li><a href=\"../userview/adminindex\">进入个人中心</a></li><li><a href=\"../userview/logout\">退出登录</a></li>";
+        }
+        return $message;
+    }
+
+
+
+
+
+
+
+
 }

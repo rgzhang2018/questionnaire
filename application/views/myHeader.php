@@ -70,21 +70,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <form class="am-topbar-form am-topbar-left am-form-inline" role="search">
             <div class="am-form-group">
-                <input type="text" class="am-form-field am-input-sm" placeholder="搜索">
+                <input type="text" class="am-form-field am-input-sm" placeholder="在这里搜索">
             </div>
         </form>
 
         <div class="am-topbar-right">
             <div class="am-dropdown" data-am-dropdown="{boundary: '.am-topbar'}">
-                <button class="am-btn am-btn-secondary am-topbar-btn am-btn-sm am-dropdown-toggle" data-am-dropdown-toggle>其他 <span class="am-icon-caret-down"></span></button>
+                <button class="am-btn am-btn-secondary am-topbar-btn am-btn-sm am-dropdown-toggle" data-am-dropdown-toggle>
+                    <?php if(isset($loginMessage))echo $loginMessage['dropDown']; ?> <span class="am-icon-caret-down"></span>
+                </button>
                 <ul class="am-dropdown-content">
                     <li>
                         <a href="https://github.com/rgzhang2018/questionnaire">
                             <i class="am-icon-github am-icon-fw am-u-sm-left "></i>GitHub
                         </a>
                     </li>
-                    <li><a href="../visitorview/register">点击注册</a></li>
-                    <li><a href="../visitorview/messageboard">留言板</a></li>
+                    <li><a href="../visitorview/messageboard">有BUG请言板</a></li>
+                    <?php if(isset($loginMessage))echo $loginMessage['dropDownMore']; ?>
                 </ul>
             </div>
         </div>
@@ -94,17 +96,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <a href="https://github.com/rgzhang2018/questionnaire">
                 <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm"><i class="am-icon-github am-icon-fw am-u-sm-left "></i>GitHub</button>
             </a>
-            <?php
-            if(isset($_SESSION['is_login'])) {
-                echo "你好! ".$_SESSION['username'].'!，';
-                echo "<a href='../userview/logout'>|注销|</a>";
-            }else{
-                echo "<a href='../visitorview/login'>
-                        <button class=\"am-btn am-btn-primary am-topbar-btn am-btn-sm\">点击登录</button>
-                      </a>";
-            }
-            ?>
-
+                <?php if(isset($loginMessage))echo $loginMessage['login']; ?>
         </div>
     </div>
 </header>

@@ -1,13 +1,17 @@
 
 <style type="text/css">
-
     #foot_front{ color : #ffffff; }
-
+    #foot_a{ color : #ffffff; }
+    #foot_a:hover{
+        color: #19a7f0;
+    }
 </style>
 
 <footer class="amz-footer" style="background-color:#333131" >
-    <br>
+
+
     <div class="am-g am-g-fixed">
+
         <div class="col-md-4 col-md-push-8 am-u-md-4 am-u-md-push-8 ">
             <ul class="amz-social am-fr">
                 <li>
@@ -32,17 +36,17 @@
 <!---->
 <!--            </ul>-->
 
-
-
             <div class="markdown-body" id = "foot_front">
                 <p>MIT License Copyright (c) <span class="CommunityTemplate-highlight js-template-highlight" data-fieldname="year">2018</span> <span class="CommunityTemplate-highlight js-template-highlight" data-fieldname="fullname">rgzhang</span></p>
             </div>
 
             <p class="amz-cp" id="foot_front">
-                Developed with <a href="http://www.jetbrains.com/phpstorm/" target="_blank" id = "foot_front">PhpStorm</a>.
-                <a href="http://amazeui.org" target="_blank" id = "foot_front">Amaze UI</a>.
-                <a href="https://codeigniter.org.cn/" target="_blank" id = "foot_front">CodeIgniter</a>.
+                Developed with <a href="http://www.jetbrains.com/phpstorm/" target="_blank" id = "foot_a">PhpStorm</a>.
+                <a href="http://amazeui.org" target="_blank" id = "foot_a">Amaze UI</a>.
+                <a href="https://codeigniter.org.cn/" target="_blank" id = "foot_a">CodeIgniter</a>.
             </p>
+
+            <p class="amz-cp" id="foot_front"> 豫ICP备 18034004号</p>
         </div>
     </div>
 </footer>

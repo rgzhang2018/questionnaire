@@ -8,7 +8,6 @@
 header('Content-type:text/html; charset=utf-8');
 // 开启Session，存储cookie
 session_start();
-
 // 首先判断Cookie是否有记住了用户信息
 if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
     # 若记住了用户信息,则直接传给Session
