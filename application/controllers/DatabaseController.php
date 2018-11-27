@@ -33,7 +33,7 @@ class DatabaseController extends CI_Controller
         $this->load->model('UserModel');
         $flag = $this->UserModel->newUser($arr);
         if ($flag) {
-            $this->successMessage("注册成功","../visitorview/login") ;
+            $this->successMessage("注册成功","../VisitorView/login") ;
         } else {
             $this->errorMessage("注册失败，请检查注册信息，或者联系我改BUG...") ;
         }
@@ -72,7 +72,7 @@ class DatabaseController extends CI_Controller
         $this->load->model('UserModel');
         $message = $this->UserModel->userLogin($email,$password,$remember);
         if($message){
-            $this->successMessage("登录成功","../userview/adminindex");
+            $this->successMessage("登录成功","../UserView/adminIndex");
         }else{
             $this->errorMessage("用户名或密码错误");
         }
@@ -81,15 +81,15 @@ class DatabaseController extends CI_Controller
     public function test(){
         session_start();
         $_SESSION['controlMessage'] = "test";
-        $_SESSION['nextURL'] = "../visitorview/index";
-        header('Location: ../visitorview/success');
+        $_SESSION['nextURL'] = "../VisitorView/index";
+        header('Location: ../VisitorView/success');
         die();
     }
 
     private function errorMessage($message){
         session_start();
         $_SESSION['controlMessage'] = $message;
-        header('Location: ../visitorview/error');
+        header('Location: ../VisitorView/error');
         die();
     }
 
@@ -97,7 +97,7 @@ class DatabaseController extends CI_Controller
         session_start();
         $_SESSION['controlMessage'] = $message;
         if($url!=null)$_SESSION['nextURL'] =$url;   //设置在success位置的转跳，比如登录成功就转跳到个人主页
-        header('Location: ../visitorview/success');
+        header('Location: ../VisitorView/success');
         die();
     }
 

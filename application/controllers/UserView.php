@@ -53,7 +53,7 @@ class UserView extends CI_Controller
         setcookie('username', '', time()-999);
         setcookie('code', '', time()-999);
         // 提示信息
-        $this->successMessage("注销成功！即将转跳主页","../visitorview/index");
+        $this->successMessage("注销成功！即将转跳主页","../VisitorView/index");
     }
 
 
@@ -93,7 +93,7 @@ class UserView extends CI_Controller
     private function errorMessage($message){
         session_start();
         $_SESSION['controlMessage'] = $message;
-        header('Location: ../visitorview/error');
+        header('Location: ../VisitorView/error');
         die();
     }
 
@@ -101,7 +101,7 @@ class UserView extends CI_Controller
         session_start();
         $_SESSION['controlMessage'] = $message;
         if($url!=null)$_SESSION['nextURL'] =$url;   //设置在success位置的转跳，比如登录成功就转跳到个人主页
-        header('Location: ../visitorview/success');
+        header('Location: ../VisitorView/success');
         die();
     }
 }

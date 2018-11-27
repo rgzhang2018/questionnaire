@@ -34,12 +34,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <p class="am-topbar-brand"><?php  echo "您好! {$username}!";  ?></p>
 
 
-            <a href="../visitorview/index">
+            <a href="../VisitorView/index">
                 <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm">回到首页</button>
             </a>
 
 
-            <a href='../visitorview/logout'>
+            <a href='../VisitorView/logout'>
                     <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm">点击注销</button>
             </a>
         </div>

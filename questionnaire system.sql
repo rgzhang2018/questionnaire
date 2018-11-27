@@ -6,7 +6,7 @@
 
 SET FOREIGN_KEY_CHECKS=0;
 
-drop table if exists messageboard;
+drop table if exists messageBoard;
 
 drop table if exists question;
 
@@ -19,9 +19,9 @@ drop table if exists user;
 SET FOREIGN_KEY_CHECKS=1;
 
 /*==============================================================*/
-/* Table: messageboard                                          */
+/* Table: messageBoard                                          */
 /*==============================================================*/
-create table messageboard
+create table messageBoard
 (
    m_id                 int not null auto_increment,
    u_id                 int not null,
@@ -101,7 +101,7 @@ CHANGE COLUMN `u_name` `u_name` VARCHAR(45) CHARACTER SET 'utf8' NOT NULL ;
 /*==============================================================*/
 
 
-alter table messageboard add constraint FK_user_messagebord foreign key (u_id)
+alter table messageBoard add constraint FK_user_messagebord foreign key (u_id)
       references user (u_id) on delete restrict on update restrict;
 
 alter table question add constraint FK_q_question foreign key (q_id)
@@ -133,7 +133,7 @@ CHANGE COLUMN `qs_name` `qs_name` VARCHAR(180) CHARACTER SET 'utf8' NULL DEFAULT
 ALTER TABLE `schema1`.`user` 
 CHANGE COLUMN `u_name` `u_name` VARCHAR(45) CHARACTER SET 'utf8' NULL DEFAULT NULL ;
 
-ALTER TABLE `schema1`.`messageboard` 
+ALTER TABLE `schema1`.`messageBoard`
 CHANGE COLUMN `m_message` `m_message` VARCHAR(300) CHARACTER SET 'utf8' NULL DEFAULT NULL ,
 CHANGE COLUMN `m_name` `m_name` VARCHAR(45) CHARACTER SET 'utf8' NULL DEFAULT NULL ;
 

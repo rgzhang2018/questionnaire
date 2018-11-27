@@ -57,7 +57,7 @@ if(isOk($name) ){
 include '../model/quicksql.php';
 $u_id = 1;
 if(isset($_SESSION["u_id"]))$u_id=$_SESSION["u_id"];
-$insertMessage = "INSERT INTO messageboard (u_id,m_message,m_name,m_time) VALUES ('{$u_id}','{$text}','{$name}','{$time}');";
+$insertMessage = "INSERT INTO messageBoard (u_id,m_message,m_name,m_time) VALUES ('{$u_id}','{$text}','{$name}','{$time}');";
 
 
 $flag = $db1->query($insertMessage);

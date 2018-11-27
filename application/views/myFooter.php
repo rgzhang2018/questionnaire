@@ -29,7 +29,7 @@
 <!--            <ul class="amz-links">-->
 <!--                <div class="markdown-body" id = "foot_front">-->
 <!--                    <a href="http://rgzhang2018.github.io" id = "foot_front"> **关于我** </a> |-->
-<!--                    <a href="../visitorview/messageboard" id = "foot_front"> **服务支持** </a> |-->
+<!--                    <a href="../VisitorView/messageBoard" id = "foot_front"> **服务支持** </a> |-->
 <!--                    <a href="#" id = "foot_front"> **null** </a> |-->
 <!--                    <a href="#" id = "foot_front"> **null** </a>-->
 <!--                </div>-->

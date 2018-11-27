@@ -55,7 +55,7 @@
 
         <div class="am-form-group">
             <div class="am-u-sm-6 ">
-                <a href="../visitorview/writeQuestionnaire/"><button type="submit" name="check"  class="am-btn am-btn-primary am-fr">提交检查</button></a>
+                <a href="../VisitorView/writeQuestionnaire/"><button type="submit" name="check"  class="am-btn am-btn-primary am-fr">提交检查</button></a>
             </div>
         </div>
         <div class="am-form-group">

@@ -55,7 +55,7 @@ class VisitorView extends CI_Controller
             $arr['controlMessage'] = $_SESSION['controlMessage'];
             if(isset($_SESSION['nextURL'])) $arr['nextURL'] = $_SESSION['nextURL']; //如果设置了操作成功的转跳，则进行转跳，否则返回上一层
         }else {
-            header('Location: ../visitorview/error');      //错误的调用，转调到错误信息处理
+            header('Location: ../VisitorView/error');      //错误的调用，转调到错误信息处理
         }
         $_SESSION['controlMessage'] = null;         //重置控制信息为空
         $_SESSION['nextURL'] = null;
@@ -105,14 +105,14 @@ class VisitorView extends CI_Controller
             $_SESSION['islogin'] = 1;
         }
         $message = [];
-        $message['login'] = "<a href='../visitorview/login'><button class=\"am-btn am-btn-primary am-topbar-btn am-btn-sm\">点击登录</button></a>";
+        $message['login'] = "<a href='../VisitorView/login'><button class=\"am-btn am-btn-primary am-topbar-btn am-btn-sm\">点击登录</button></a>";
         $message['dropDown'] = "其他";
-        $message['dropDownMore'] = "<li><a href=\"../visitorview/register\">注册账号</a></li>";
+        $message['dropDownMore'] = "<li><a href=\"../VisitorView/register\">注册账号</a></li>";
         //如果登录了
         if($_SESSION['islogin'] == 1){
             $message['login'] = "<p class = \"am-topbar-brand\">欢迎您，{$_SESSION['username']}</p>";
             $message['dropDown'] = "个人中心";
-            $message['dropDownMore'] = "<li><a href=\"../userview/adminindex\">进入个人中心</a></li><li><a href=\"../userview/logout\">退出登录</a></li>";
+            $message['dropDownMore'] = "<li><a href=\"../UserView/adminIndex\">进入个人中心</a></li><li><a href=\"../UserView/logout\">退出登录</a></li>";
         }
         return $message;
     }

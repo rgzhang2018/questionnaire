@@ -7,7 +7,7 @@
 header('Content-type:text/html; charset=utf-8');
 include("../model/quicksql.php");
 
-$queryMessage = "SELECT * FROM messageboard;";
+$queryMessage = "SELECT * FROM messageBoard;";
 
 $mysql_result = $db1->query($queryMessage);
 

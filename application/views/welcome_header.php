@@ -56,9 +56,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
         <ul class="am-nav am-nav-pills am-topbar-nav">
-            <li <?php if(isset($pageFlag) && $pageFlag===0) echo "class=\"am-active\""; ?>><a href="./index.php/visitorview/index">首页</a></li>
-            <li <?php if(isset($pageFlag) && $pageFlag===1) echo "class=\"am-active\""; ?>><a href="./index.php/userview/adminindex">个人中心</a></li>
-            <li><a href="./index.php/visitorview/getquestionID">填写问卷</a></li>
+            <li <?php if(isset($pageFlag) && $pageFlag===0) echo "class=\"am-active\""; ?>><a href="./index.php/VisitorView/index">首页</a></li>
+            <li <?php if(isset($pageFlag) && $pageFlag===1) echo "class=\"am-active\""; ?>><a href="./index.php/UserView/adminIndex">个人中心</a></li>
+            <li><a href="./index.php/VisitorView/getQuestionID">填写问卷</a></li>
             <li class="am-dropdown" data-am-dropdown>
                 <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
                     下拉 <span class="am-icon-caret-down"></span>
@@ -90,8 +90,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <i class="am-icon-github am-icon-fw am-u-sm-left "></i>GitHub
                         </a>
                     </li>
-                    <li><a href="./index.php/visitorview/register">点击注册</a></li>
-                    <li><a href="./index.php/visitorview/messageboard">留言板</a></li>
+                    <li><a href="./index.php/VisitorView/register">点击注册</a></li>
+                    <li><a href="./index.php/VisitorView/messageBoard">留言板</a></li>
                 </ul>
             </div>
         </div>
@@ -104,9 +104,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <?php
             if(isset($_SESSION['is_login'])) {
                 echo "你好! ".$_SESSION['username'].'!，';
-                echo "<a href='./index.php/userview/logout'>|注销|</a>";
+                echo "<a href='./index.php/UserView/logout'>|注销|</a>";
             }else{
-                echo "<a href='./index.php/visitorview/login'>
+                echo "<a href='./index.php/VisitorView/login'>
                         <button class=\"am-btn am-btn-primary am-topbar-btn am-btn-sm\">点击登录</button>
                       </a>";
             }

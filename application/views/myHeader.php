@@ -42,16 +42,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <header class="am-topbar am-topbar-inverse">
     <h1 class="am-topbar-brand">
-        <a href="../visitorview/index">简易问卷系统</a>
+        <a href="../VisitorView/index">简易问卷系统</a>
     </h1>
 
     <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
 
     <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
         <ul class="am-nav am-nav-pills am-topbar-nav">
-            <li <?php if(isset($pageFlag) && $pageFlag===0) echo "class=\"am-active\""; ?>><a href="../visitorview/index">首页</a></li>
-            <li <?php if(isset($pageFlag) && $pageFlag===1) echo "class=\"am-active\""; ?>><a href="../userview/adminindex">个人中心</a></li>
-            <li><a href="../visitorview/getquestionID">填写问卷</a></li>
+            <li <?php if(isset($pageFlag) && $pageFlag===0) echo "class=\"am-active\""; ?>><a href="../VisitorView/index">首页</a></li>
+            <li <?php if(isset($pageFlag) && $pageFlag===1) echo "class=\"am-active\""; ?>><a href="../UserView/adminIndex">个人中心</a></li>
+            <li><a href="../VisitorView/getQuestionID">填写问卷</a></li>
             <li class="am-dropdown" data-am-dropdown>
                 <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
                     更多 <span class="am-icon-caret-down"></span>
@@ -85,7 +85,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <i class="am-icon-github am-icon-fw am-u-sm-left "></i>GitHub
                         </a>
                     </li>
-                    <li><a href="../visitorview/messageboard">有BUG请言板</a></li>
+                    <li><a href="../VisitorView/messageBoard">有BUG请言板</a></li>
                     <?php if(isset($loginMessage))echo $loginMessage['dropDownMore']; ?>
                 </ul>
             </div>

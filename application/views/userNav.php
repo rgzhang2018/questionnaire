@@ -23,12 +23,12 @@
             <li><br><br></li>
 
 
-            <li ><a href="../userview/adminIndex">个人首页</a></li>
-            <li><a href="../userview/addQuestionnaire">发布问卷</a></li>
-            <li><a href="../userview/preview">预览问卷</a></li>
-            <li><a href="../userview/overViewQuestionnaire">问卷总览</a></li>
-            <li><a href="../visitorview/getQuestionID">填写问卷</a></li>
-            <li><a href="../userview/changePassword">维护信息</a></li>
+            <li ><a href="../UserView/adminIndex">个人首页</a></li>
+            <li><a href="../UserView/addQuestionnaire">发布问卷</a></li>
+            <li><a href="../UserView/preview">预览问卷</a></li>
+            <li><a href="../UserView/overViewQuestionnaire">问卷总览</a></li>
+            <li><a href="../VisitorView/getQuestionID">填写问卷</a></li>
+            <li><a href="../UserView/changePassword">维护信息</a></li>
         </ul>
 
     </div>

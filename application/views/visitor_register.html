@@ -27,7 +27,7 @@
     <div class="am-u-md-5 am-u-sm-centered"  style="background-color: #FFFFFF ;box-shadow: 10px 10px 5px">
         <hr>
         <br>
-    <form class="am-form am-form-horizontal" action="../databasecontroller/newuser" method="post">
+    <form class="am-form am-form-horizontal" action="../databasecontroller/newUser" method="post">
         <div class="am-form-group">
             <br>
         </div>
@@ -156,7 +156,7 @@
     function emailChick(){
         var f = document.getElementById("reg-email").value;//获取文本框内容
         S_xmlhttprequest();
-        xmlHttp.open("GET","../databasecontroller/checkemail?email="+f,true);//找开请求
+        xmlHttp.open("GET","../databasecontroller/checkEmail?email="+f,true);//找开请求
         xmlHttp.onreadystatechange = byphp;//准备就绪执行
         xmlHttp.send(null);//发送
 

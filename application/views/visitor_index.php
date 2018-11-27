@@ -24,19 +24,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <form  action="#" method="post" class="am-form am-form-horizontal">
 
             <div class="am-form-group">
-                <a class="am-btn am-u-sm-centered am-btn-primary" href="../visitorview/messageboard" >
+                <a class="am-btn am-u-sm-centered am-btn-primary" href="../VisitorView/messageBoard" >
                     留言板
                 </a>
             </div>
             <div class="am-form-group"></div>
             <div class="am-form-group">
-                <a class="am-btn am-u-sm-centered am-btn-primary" href="../userview/adminindex">
+                <a class="am-btn am-u-sm-centered am-btn-primary" href="../UserView/adminIndex">
                     发布问卷
                 </a>
             </div>
             <div class="am-form-group"></div>
             <div class="am-form-group">
-                <a class="am-btn am-u-sm-centered am-btn-primary" href="../visitorview/getquestionID">
+                <a class="am-btn am-u-sm-centered am-btn-primary" href="../VisitorView/getQuestionID">
                     填写问卷
                 </a>
             </div>
