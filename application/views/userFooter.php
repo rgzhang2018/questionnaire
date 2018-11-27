@@ -10,8 +10,7 @@
 
 
 
-
-<footer class="amz-footer am-u-md-12" style="background-color:#ffffff" >
+<footer class="amz-footer" style="background-color:#ffffff ; " >
     <br>
     <div class="am-g am-g-fixed">
             <div class="markdown-body am-u-md-offset-4 am-u-md-4" >

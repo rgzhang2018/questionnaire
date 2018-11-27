@@ -27,16 +27,16 @@ include_once "../controller/userHeader.php";
             </div>
             <br>
             <div class="am-form-group">
-                <label for="doc-ipt-3" class="col-sm-2 am-form-label">标题</label>
+                <label for="q_name" class="col-sm-2 am-form-label">标题</label>
                 <div class="col-sm-10">
-                    <input type="text" id="doc-ipt-3" placeholder="输入问卷标题">
+                    <input type="text" id="q_name" placeholder="输入问卷标题">
                 </div>
             </div>
             <br>
             <div class="am-form-group">
-                <label for="doc-ipt-pwd-2" class="col-sm-2 am-form-label">描述</label>
+                <label for="q_describe" class="col-sm-2 am-form-label">描述</label>
                 <div class="col-sm-10">
-                    <textarea id="doc-ta-1" placeholder="描述一下你的问卷吧" rows="4"></textarea>
+                    <textarea id="q_describe" placeholder="描述一下你的问卷吧" rows="4"></textarea>
                 </div>
             </div>
             <br>
@@ -92,8 +92,8 @@ include_once "../controller/userHeader.php";
 
         </header>
         <div class="am-panel-bd" id=<%=selection%> >
-            <label><input type="text" placeholder="输入选项内容"></label><br>
-            <label><input type="text" placeholder="输入选项内容"></label><br>
+            <label><input type="text" placeholder="输入选项内容" style="width: 200%"></label><br>
+            <label><input type="text" placeholder="输入选项内容" style="width: 200%"></label><br>
         </div>
     </section>
 </script>

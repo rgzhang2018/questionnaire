@@ -38,11 +38,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="../../assets/css/app.css">
 </head>
 
-<body style="background-color: #e9e9e9">
+<body >
 
 <header class="am-topbar am-topbar-inverse">
     <h1 class="am-topbar-brand">
-        <a href="../VisitorView/index">简易问卷系统</a>
+        <a href="../VisitorView/index">简易问卷调查系统</a>
     </h1>
 
     <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
@@ -51,19 +51,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <ul class="am-nav am-nav-pills am-topbar-nav">
             <li <?php if(isset($pageFlag) && $pageFlag===0) echo "class=\"am-active\""; ?>><a href="../VisitorView/index">首页</a></li>
             <li <?php if(isset($pageFlag) && $pageFlag===1) echo "class=\"am-active\""; ?>><a href="../UserView/adminIndex">个人中心</a></li>
-            <li><a href="../VisitorView/getQuestionID">填写问卷</a></li>
+            <li <?php if(isset($pageFlag) && $pageFlag===3) echo "class=\"am-active\""; ?>><a href="../VisitorView/getQuestionID">填写问卷</a></li>
             <li class="am-dropdown" data-am-dropdown>
                 <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
                     更多 <span class="am-icon-caret-down"></span>
                 </a>
                 <ul class="am-dropdown-content">
-                    <li class="am-dropdown-header">标题</li>
-                    <li><a href="#">1. 去月球</a></li>
-                    <li class="am-active"><a href="#">2. 去火星</a></li>
-                    <li><a href="#">3. 还是回地球</a></li>
-                    <li class="am-disabled"><a href="#">4. 下地狱</a></li>
-                    <li class="am-divider"></li>
-                    <li><a href="#">5. 桥头一回首</a></li>
+                    <li class="am-dropdown-header">123</li>
+                    <li><a href="#">1. 456</a></li>
+                    <li class="am-active"><a href="#">2. 789</a></li>
+                    <li><a href="#">3. 012</a></li>
+
                 </ul>
             </li>
         </ul>

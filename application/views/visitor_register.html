@@ -1,5 +1,6 @@
 
 
+
 <style type="text/css">
 
     #bg_index{
@@ -15,9 +16,9 @@
 
 
 
-<body style="background-color: #e9e9e9">
 
 <div class="am-u-md-12" id="bg_index" >
+
     <br>
     <br>
     <br>
@@ -27,7 +28,7 @@
     <div class="am-u-md-5 am-u-sm-centered"  style="background-color: #FFFFFF ;box-shadow: 10px 10px 5px">
         <hr>
         <br>
-    <form class="am-form am-form-horizontal" action="../databasecontroller/newUser" method="post">
+    <form class="am-form am-form-horizontal" action="../DatabaseController/newUser" method="post">
         <div class="am-form-group">
             <br>
         </div>
@@ -81,8 +82,13 @@
         </div>
     </form>
 </div>
+
+
 </div>
-  <script>
+
+
+
+<script type="javascript">
     var flag_email = 1;
     var flag_password = 0;
     var flag_name = 0;
@@ -156,7 +162,7 @@
     function emailChick(){
         var f = document.getElementById("reg-email").value;//获取文本框内容
         S_xmlhttprequest();
-        xmlHttp.open("GET","../databasecontroller/checkEmail?email="+f,true);//找开请求
+        xmlHttp.open("GET","../DatabaseController/checkEmail?email="+f,true);//找开请求
         xmlHttp.onreadystatechange = byphp;//准备就绪执行
         xmlHttp.send(null);//发送
 
@@ -180,5 +186,3 @@
 
 
 </script>
-
-

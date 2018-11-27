@@ -11,7 +11,7 @@
 
 <!--  here  -->
 <div class="am-u-md-12" style="background-color: #ffffff ">
-    <div class="am-u-md-7 am-u-md-centered" >
+    <div class="am-u-md-7 am-u-md-centered" style="height: 600px;">
 
         <form  action="#" method="post" class="am-form am-form-horizontal">
 

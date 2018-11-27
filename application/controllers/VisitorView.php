@@ -40,6 +40,7 @@ class VisitorView extends CI_Controller
 
     public function getQuestionID(){
         $arr['title']  = "请输入问卷ID";
+        $arr['pageFlag'] = 3;
         $this->showPage("visitor_getQuestionID.php",$arr);
     }
 

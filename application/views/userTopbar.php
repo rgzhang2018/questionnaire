@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="am-u-md-10" style="background-color: #dddddd">
     <br>
 
-<header class="am-topbar ">
+    <header class="am-topbar ">
     <h1 class="am-topbar-brand">
         <a href="#">简易问卷系统</a>
     </h1>

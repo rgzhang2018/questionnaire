@@ -10,27 +10,28 @@
  * 问卷查看页面。这里显示全部的问卷
  */
 
-include_once "../controller/userHeader.php";
-include_once "../model/reader.php";
-
-
-$questions = [];
-if(isset($_SESSION['u_id'])){
-    $reader = new reader($_SESSION['u_id']);
-    $questions = $reader->queryQuestions();
-}else{
-    header("refresh:3;url=./visitor_login.html");
-}
+//include_once "../controller/userHeader.php";
+//include_once "../model/reader.php";
+//
+//
+//$questions = [];
+//if(isset($_SESSION['u_id'])){
+//    $reader = new reader($_SESSION['u_id']);
+//    $questions = $reader->queryQuestions();
+//}else{
+//    header("refresh:3;url=./visitor_login.html");
+//}
 
 
 ?>
 
 
-<div class="am-u-md-12" style="background-color: #ffffff ">
+<div class="am-u-md-12" style="background-color: #ffffff ; height: 700px;">
     <div class="am-u-md-7 am-u-md-centered" >
 
     <form action="admin_preview.php" method="post" class="am-form am-form-horizontal">
         <div class="am-form-group" style="text-align:center">
+            <br>
             <h2>我的问卷</h2>
         </div>
         <div class="am-form-group">
