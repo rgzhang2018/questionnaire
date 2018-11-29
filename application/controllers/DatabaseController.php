@@ -79,11 +79,10 @@ class DatabaseController extends CI_Controller
     }
 
     public function test(){
-        session_start();
-        $_SESSION['controlMessage'] = "test";
-        $_SESSION['nextURL'] = "../VisitorView/index";
-        header('Location: ../VisitorView/success');
-        die();
+        $message = $_POST['message'];
+        $questionnaire = json_decode($message);
+        var_dump($questionnaire);
+        echo "OK";
     }
 
     private function errorMessage($message){

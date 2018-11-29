@@ -23,6 +23,6 @@ class Welcome extends CI_Controller {
 	    $arr['title']="首页";
         $this->load->view('welcome_header',$arr);
 		$this->load->view('welcome_message');
-        $this->load->view('myFooter');
+        $this->load->view('visitorFooter');
 	}
 }

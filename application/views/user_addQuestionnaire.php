@@ -23,7 +23,7 @@ include_once "../controller/userHeader.php";
         <br>
         <form  action="#" method="post" class="am-form am-form-horizontal">
             <div class="am-form-group" style="text-align:center">
-                <h2>请输入问卷信息</h2>
+                <h1>请输入问卷信息</h1>
             </div>
             <br>
             <div class="am-form-group">
@@ -45,30 +45,40 @@ include_once "../controller/userHeader.php";
                     <button type="button" class="am-u-sm-9 am-btn am-btn-primary  am-round" onclick="addSingle()">添加单选</button>
                 </div>
                 <div class="am-u-sm-4">
-                    <button type="button" class="am-u-sm-9 am-u-sm-centered am-btn am-btn-secondary  am-round">添加多选</button>
+                    <button type="button" class="am-u-sm-9 am-u-sm-centered am-btn am-btn-secondary  am-round" onclick="addMultiple()">添加多选</button>
                 </div>
 
                 <div class="am-u-sm-4">
-                    <button type="button" class="am-u-sm-9 am-u-sm-centered am-btn am-btn-secondary  am-round">添加问答</button>
+                    <button type="button" class="am-u-sm-9 am-u-sm-centered am-btn am-btn-secondary  am-round" onclick="addEssay()">添加问答</button>
                 </div>
             </div>
             <br>
 
             <div class="am-form-group">
                 <div class="am-u-sm-6">
-                    <button type="submit" name="commit" class="am-btn am-btn-default am-btn-block" >完成提交</button>
+                    <button type="button" class="am-btn am-btn-default am-btn-block" onclick="submitAll()">完成提交</button>
                 </div>
                 <div class="am-u-sm-6">
                     <button class="am-btn am-btn-default am-btn-block" >重置问卷</button>
                 </div>
             </div>
-            <div class="am-form-group" >
+            <div class="am-form-group">
                 <hr>
-                <h3>下面是题目预览</h3>
-            </div>
-            <div class="am-form-group" id="addItemSingle">
-                <hr>
-                <br>
+                <h1>下面是题目预览</h1>
+
+                <div class="am-form-group" id="addSingle">
+                    <h2>单选题：</h2>
+
+                    <br>
+                </div>
+                <div class="am-form-group" id="addMultiple">
+                    <h2>多选题：</h2>
+                    <br>
+                </div>
+                <div class="am-form-group" id="addEssay">
+                    <h2>问答题：</h2>
+                    <br>
+                </div>
             </div>
         </form>
     </div>
@@ -82,72 +92,266 @@ include_once "../controller/userHeader.php";
 
 
 <!--下面是单选题目的添加-->
-<script id="Question" type="text/html">
-    <section class="am-panel am-panel-default">
-        <header class="am-panel-hd">
-            <h3 class="am-panel-title">
-                <label><input type="text" placeholder="输入单选题题目"></label>
-                <button type="button" class = "am-fr am-btn am-btn-default am-round" id=<%=id%> onclick="addSingleChoice(this)">添加选项</button>
-            </h3>
-
-        </header>
-        <div class="am-panel-bd" id=<%=selection%> >
-            <label><input type="text" placeholder="输入选项内容" style="width: 200%"></label><br>
-            <label><input type="text" placeholder="输入选项内容" style="width: 200%"></label><br>
+<script id="single_Question" type="text/html">
+    <div class = "single">
+        <div>
+            <label class="singleCount">第<%=singleCount%>题</label>
+            <button type="button" class ="am-fr am-btn am-btn-danger" onclick="deleteQuestion(this)">删除题目</button>
+            <button type="button" class ="am-fr am-btn am-btn-default" id=<%=id%> onclick="addSingleChoice(this)">添加选项</button>
+            <textarea placeholder="输入题目" class=<%=q_type%> rows="2"></textarea>
         </div>
-    </section>
+        <div id=<%=selection%> >
+            <br>
+            <input type="text" placeholder="输入选项内容"  class=<%=type%>>
+            <input type="text" placeholder="输入选项内容" class=<%=type%>>
+        </div>
+        <hr style="height:3px;border:none;border-top:3px groove skyblue;">
+    </div>
 </script>
 
-<!--下面是单选题选项的添加-->
+<!--下面是选项的添加-->
 <script id="Choice" type="text/html">
-    <label><input type="text" name="" placeholder="输入选项内容"></label><br>
+    <input type="text" class=<%=type%> placeholder="输入选项内容" >
 </script>
 
 
+<!--下面是多选题目的添加-->
+<script id="multiple_Question" type="text/html">
+    <div class = "multiple">
+        <div>
+            <label class="multipleCount">第<%=multipleCount%>题</label>
+            <button type="button" class = "am-fr am-btn am-btn-danger" onclick="deleteQuestion(this)">删除题目</button>
+            <button type="button" class = "am-fr am-btn am-btn-default" id=<%=id%> onclick="addMultipleChoice(this)">添加选项</button>
+            <textarea placeholder="输入题目" class=<%=q_type%> rows="2"></textarea>
+        </div>
+        <div id="<%=selection%>" >
+            <br>
+            <input type="text" placeholder="输入选项内容"  class=<%=type%> >
+            <input type="text" placeholder="输入选项内容" class=<%=type%> >
+        </div>
+        <hr style="height:3px;border:none;border-top:3px groove skyblue;">
+    </div>
+</script>
+
+<!--下面是问答题的添加-->
+<script id="essay" type="text/html" >
+    <div class = "essay">
+        <div>
+            <label class="essayCount">第<%=essayCount%>题</label>
+            <button type="button" class = "am-fr am-btn am-btn-danger" onclick="deleteQuestion(this)">删除题目</button>
+        </div>
+        <div>
+            <textarea placeholder="输入问答题内容" class=<%=q_type%> rows="4"></textarea>
+        </div>
+        <hr style="height:3px;border:none;border-top:3px groove skyblue;">
+    </div>
+</script>
 
 
 <!--用于渲染模版-->
 <script>
-    var signleID = 0;   //动态添加单选信息
+
+    /**
+     * 渲染过程：
+     * id负责记录渲染,id用到了三处，分别是：
+     *      1.script部分关联渲染，分别渲染单选、多选、问答题
+     *      2.script内部负责增加选项数目的按钮，用于定位(也可用node树代替)(ID= countID)
+     *      3.script内部控制添加选择题选项的div块，和上一行说的按钮呼应(ID = countID+"-singleChoice")
+     *
+     * class用于取出对应的题目、选项，同时负责更新题号:
+     *      1.更新当前是第几题(class = "singleCount")
+     *      2.class=<%=q_type%>  (如   1-1 ID为1-单选题   10-3 ID为10-问答题)
+     *      3.class=<%=type%>   (如   1-selection :ID为1的题目的选项)
+     */
+
+    var singleCount = 0;    //动态添加信息，记录单/多/问答题目数量，删除则减少
+    var multipleCount = 0 ;
+    var essayCount = 0 ;
+    var countID = 0;      //记录总数，这个数据作为id绑定固定的div，只会自增
+
 
     function addSingle() {
-        signleID++;
-        var Selection = signleID+"-singleChoice";
-        var data = {
-            id:signleID,
-            selection:Selection
-        };
-        var html=template('Question',data);
-        console.log(html);
-        $("#addItemSingle").append(html);
-    }
+        singleCount++;
+        countID ++;
+        let id = countID ;           //这个是用于删除单选题目的那个div块，确定该块之后，将其内容置空
+        let selection = countID+"-singleChoice";       //追加选项时记录内容
+        let q_type = countID + "-1";
+        let type = countID + "-selection";
 
-    function addSingleChoice(e){
-        var selectionID = e.id +"-singleChoice";
-        var data = {
+        let data = {
+            singleCount:singleCount,        //用于计数，题号
+            id:id ,                         //用于添加选项
+            selection:selection,            //用于添加选项
+            q_type:q_type,                  //用于提交，获取题目内容
+            type:type                       //用于提交，获取选项内容
         };
-        var html=template('Choice',data);
+        var html=template('single_Question',data);      //单选题的题目，放在scrpit id=single_question下
+        console.log(html);
+        $("#addSingle").append(html);               //追加在id=addSingle的元素下面
+    }
+    function addSingleChoice(e){
+        let selectionID = e.id +"-singleChoice";  //在每个题目都为所有的选项设置了一个div，在这个div里追加东西，就可以吧选项追加到对应位置
+        let type = countID + "-selection";
+        let data = {
+            type:type
+        };
+        let html=template('Choice',data);
         $("#"+selectionID).append(html);
     }
+
+
 
     function addMultiple() {
-        signleID++;
-        var Selection = signleID+"-multipleChoice";
-        var data = {
-            id:signleID,
-            selection:Selection
+        multipleCount++;
+        countID ++;
+        let id = countID ;
+        let selection = countID+"-multipleChoice";
+        let q_type = countID + "-2";
+        let type = countID + "-selection";
+
+        let data = {
+            multipleCount:multipleCount,
+            id:id ,
+            selection:selection,
+            q_type:q_type,
+            type:type
         };
-        var html=template('Question',data);
+        var html=template('multiple_Question',data);
         console.log(html);
-        $("#addItemMultiple").append(html);
+        $("#addMultiple").append(html);
     }
     function addMultipleChoice(e){
-        var selectionID = e.id +"-multipleChoice";
-        var data = {
+        let selectionID = e.id +"-multipleChoice";
+        let type = countID + "-selection";
+        let data = {
+            type:type
         };
-        var html=template('Choice',data);
+        let html=template('Choice',data);
         $("#"+selectionID).append(html);
-        alert(selectionID);
     }
+
+
+
+    function addEssay() {
+        essayCount++;
+        countID++;
+        let q_type = countID + "-3";
+        let data = {
+            essayCount:essayCount,
+            q_type:q_type
+        };
+        let html=template('essay',data);
+        console.log(html);
+        $("#addEssay").append(html);
+    }
+
+
+
+    function deleteQuestion(e) {
+        let child = e.parentElement.parentElement;
+        let type = child.className;
+        let parent = child.parentElement;
+        parent.removeChild(child);      //删除节点
+
+        //修正题目标号
+        switch (type) {
+            case "single":
+                singleCount--;
+                break;
+            case "multiple":
+                multipleCount--;
+                break;
+            case "essay":
+                essayCount--;
+                break;
+        }
+        reCount(type+"Count");          //type+Count标签显示当前是第几题
+        alert("删除题目成功");
+    }
+    //配合删除，修改题目号
+    function reCount(className) {
+        let arr = document.getElementsByClassName(className);
+        for(let i=0;i<arr.length;i++){
+            let num = i+1;
+            arr[i].innerHTML = "第"+num+"题";
+        }
+    }
+
+    var DomType = 0;        //1为单选，2为多选，3为问答
+    //所有内容存放在一个数组里，通过JSON编码，以POST方式提交
+    function submitAll() {
+        const q_name = document.getElementById("q_name").value;
+        const q_describe = document.getElementById("q_describe").value;
+        let questionnaire = [];
+        questionnaire[0] = [];
+        questionnaire[0][0] = q_name;
+        questionnaire[0][1] = q_describe;
+        for(let i = 1; i<=countID;i++){
+            questionnaire[i] = [];
+            let type = getDOM(i);
+            if(type!=="0"){
+                questionnaire[i][0] = type;
+                let string = i+"-"+type;
+                questionnaire[i][1] = $("."+string)[0].value;       //题目信息
+                let arr = $("."+i+"-selection");
+                for(let j = 0;j<arr.length;j++){                //循环写入选项内容
+                    questionnaire[i][j+2] = arr[j].value;
+                }
+            }
+        }
+        // for(let i = 0;i<questionnaire.length;i++){
+        //     for(let j = 0;j<questionnaire[i].length;j++){
+        //         let string =i +"+"+j+":"+ questionnaire[i][j];
+        //         alert(string);
+        //     }
+        // }
+        let data = JSON.stringify(questionnaire);
+        ajaxPost(data);
+    }
+
+    function getDOM(id) {
+        let single = document.getElementsByClassName(id+"-1");
+        let multiple = document.getElementsByClassName(id+"-2");
+        let essay = document.getElementsByClassName(id+"-3");
+        if(isExist(single))return "1";
+        if(isExist(multiple))return "2";
+        if(isExist(essay))return "3";
+        return "0";
+    }
+
+
+    function isExist(e){    //判断节点是否存在
+        return typeof e !== 'undefined' && e.length >= 1;
+    }
+
+
+    var xmlHttp;
+    function ajaxPost(message){
+        S_xmlhttprequest();
+        xmlHttp.open("POST","../DatabaseController/test",true);//找开请求
+        xmlHttp.setRequestHeader("content-type","application/x-www-form-urlencoded");
+        xmlHttp.onreadystatechange = byphp;//准备就绪执行
+        xmlHttp.send("message="+message);//发送
+
+    }
+    function S_xmlhttprequest(){
+        if(window.ActiveXObject){
+            xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
+        }else if(window.XMLHttpRequest){
+            xmlHttp = new XMLHttpRequest();
+        }
+    }
+    function byphp(){
+        //判断状态
+        if(xmlHttp.readyState===1){//Ajax状态
+            alert("正在传送");
+        }
+        if(xmlHttp.readyState===4){//Ajax状态
+            if(xmlHttp.status===200){//服务器端状态
+                alert(xmlHttp.responseText);
+            }
+        }
+    }
+
 </script>
 

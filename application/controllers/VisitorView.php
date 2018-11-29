@@ -79,9 +79,9 @@ class VisitorView extends CI_Controller
     //总的渲染模块
     private function showPage($pageName,$arr){
         $arr['loginMessage'] = $this->isLogin();
-        $this->load->view('myHeader.php',$arr);
+        $this->load->view('visitorHeader.php',$arr);
         $this->load->view($pageName);
-        $this->load->view('myFooter.php');
+        $this->load->view('visitorFooter.php');
     }
 
     //下面是控制model模块
