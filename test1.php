@@ -6,7 +6,7 @@ include "./myModel/questionnaire.php";
 
 
 $name="测试问卷1";
-$thisq = new questionnaire(1,$name,"这是第一份测试问卷，内容包括2个单选，1个多选，1个大题");
+$thisq = new Questionnaire(1,$name,"这是第一份测试问卷，内容包括2个单选，1个多选，1个大题");
 
 $question1 = "问题1(单选题)：什么是正确的sql表删除顺序？";
 $type1 = 0;

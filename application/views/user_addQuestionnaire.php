@@ -5,7 +5,6 @@
  * Date: 2018/11/23
  * Time: 15:58
  */
-
 /**
  * 问卷发布页面。
  * 这里的post请求内容：...
@@ -150,7 +149,6 @@ include_once "../controller/userHeader.php";
 
 <!--用于渲染模版-->
 <script>
-
     /**
      * 渲染过程：
      * id负责记录渲染,id用到了三处，分别是：
@@ -163,21 +161,17 @@ include_once "../controller/userHeader.php";
      *      2.class=<%=q_type%>  (如   1-1 ID为1-单选题   10-3 ID为10-问答题)
      *      3.class=<%=type%>   (如   1-selection :ID为1的题目的选项)
      */
-
     var singleCount = 0;    //动态添加信息，记录单/多/问答题目数量，删除则减少
     var multipleCount = 0 ;
     var essayCount = 0 ;
     var countID = 0;      //记录总数，这个数据作为id绑定固定的div，只会自增
-
-
     function addSingle() {
         singleCount++;
         countID ++;
         let id = countID ;           //这个是用于删除单选题目的那个div块，确定该块之后，将其内容置空
         let selection = countID+"-singleChoice";       //追加选项时记录内容
-        let q_type = countID + "-1";
+        let q_type = countID + "-0";
         let type = countID + "-selection";
-
         let data = {
             singleCount:singleCount,        //用于计数，题号
             id:id ,                         //用于添加选项
@@ -198,17 +192,13 @@ include_once "../controller/userHeader.php";
         let html=template('Choice',data);
         $("#"+selectionID).append(html);
     }
-
-
-
     function addMultiple() {
         multipleCount++;
         countID ++;
         let id = countID ;
         let selection = countID+"-multipleChoice";
-        let q_type = countID + "-2";
+        let q_type = countID + "-1";
         let type = countID + "-selection";
-
         let data = {
             multipleCount:multipleCount,
             id:id ,
@@ -229,13 +219,10 @@ include_once "../controller/userHeader.php";
         let html=template('Choice',data);
         $("#"+selectionID).append(html);
     }
-
-
-
     function addEssay() {
         essayCount++;
         countID++;
-        let q_type = countID + "-3";
+        let q_type = countID + "-2";
         let data = {
             essayCount:essayCount,
             q_type:q_type
@@ -244,15 +231,11 @@ include_once "../controller/userHeader.php";
         console.log(html);
         $("#addEssay").append(html);
     }
-
-
-
     function deleteQuestion(e) {
         let child = e.parentElement.parentElement;
         let type = child.className;
         let parent = child.parentElement;
         parent.removeChild(child);      //删除节点
-
         //修正题目标号
         switch (type) {
             case "single":
@@ -276,7 +259,6 @@ include_once "../controller/userHeader.php";
             arr[i].innerHTML = "第"+num+"题";
         }
     }
-
     var DomType = 0;        //1为单选，2为多选，3为问答
     //所有内容存放在一个数组里，通过JSON编码，以POST方式提交
     function submitAll() {
@@ -289,7 +271,7 @@ include_once "../controller/userHeader.php";
         for(let i = 1; i<=countID;i++){
             questionnaire[i] = [];
             let type = getDOM(i);
-            if(type!=="0"){
+            if(type!=="9"){
                 questionnaire[i][0] = type;
                 let string = i+"-"+type;
                 questionnaire[i][1] = $("."+string)[0].value;       //题目信息
@@ -308,31 +290,25 @@ include_once "../controller/userHeader.php";
         let data = JSON.stringify(questionnaire);
         ajaxPost(data);
     }
-
     function getDOM(id) {
-        let single = document.getElementsByClassName(id+"-1");
-        let multiple = document.getElementsByClassName(id+"-2");
-        let essay = document.getElementsByClassName(id+"-3");
-        if(isExist(single))return "1";
-        if(isExist(multiple))return "2";
-        if(isExist(essay))return "3";
-        return "0";
+        let single = document.getElementsByClassName(id+"-0");
+        let multiple = document.getElementsByClassName(id+"-1");
+        let essay = document.getElementsByClassName(id+"-2");
+        if(isExist(single))return "0";
+        if(isExist(multiple))return "1";
+        if(isExist(essay))return "2";
+        return "9";
     }
-
-
     function isExist(e){    //判断节点是否存在
         return typeof e !== 'undefined' && e.length >= 1;
     }
-
-
     var xmlHttp;
     function ajaxPost(message){
         S_xmlhttprequest();
-        xmlHttp.open("POST","../DatabaseController/test",true);//找开请求
+        xmlHttp.open("POST","../DatabaseController/addQuestion",true);//找开请求
         xmlHttp.setRequestHeader("content-type","application/x-www-form-urlencoded");
         xmlHttp.onreadystatechange = byphp;//准备就绪执行
         xmlHttp.send("message="+message);//发送
-
     }
     function S_xmlhttprequest(){
         if(window.ActiveXObject){
@@ -352,6 +328,4 @@ include_once "../controller/userHeader.php";
             }
         }
     }
-
 </script>
-

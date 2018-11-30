@@ -1,5 +1,7 @@
 <?php
 
+namespace writeQuestionnaire;
+
 /**
  * 问卷类和问题类，二者之间为聚合关系，外部调用问卷类即可。
  * 问卷类包括如下方法：
@@ -13,52 +15,8 @@
  *           如果判断的flag没有返回值，多半是插入的格式问题，如文字编码等
  **/
 
-class qQuestion
-{
-    protected $q_mysqli;
-    protected $q_id;         //问卷的编号，用于插入题目
-    protected $qq_id;        //题目的编号，用于插入选项
-    protected $question;
-    protected $options=[];
-    protected $count;
-    protected $type;         //type = 0,1,2分别表示单选、多选、问答题
 
-    public function __construct($question,$options,mysqli $mysqli,$type){
-        $this->question = $question;
-        $this->options = $options;
-        $this->q_mysqli = $mysqli;
-        $this->count = 0;
-        $this->type = $type;
-
-    }
-
-    public function insertQuestion($q_id){
-        $this->q_id = $q_id;
-        $message = "insert into question (q_id,qq_name,qq_type) values ('{$this->q_id}','{$this->question}','{$this->type}');";
-        $flag = $this->q_mysqli->query($message);       //返回当前题目的编号
-        $this->qq_id = $this->q_mysqli->insert_id;
-//        echo "<br>在插题号里，flag={$flag}，q_id={$this->q_id}，qq_id={$this->qq_id}";
-        return $flag;
-    }
-
-    public function insertOptions(){
-        if($this->type===2)return true;  //问答题无选项
-        $flag = true;
-        foreach ($this->options as $option){
-            $message = "insert into selection (qq_id,qs_order,qs_name,qs_counts) 
-    values ('{$this->qq_id}','{$this->count}','{$option}','0');";
-            $flag = $this->q_mysqli->query($message);
-            if(!$flag)return $flag;
-            $this->count++;
-        }
-//        echo "<br>在插入选项这里，flag = {$flag}<br>";
-        return $flag;
-    }
-}
-
-
-
-class questionnaire
+class Questionnaire
 {
 
     private $userID;    //userID是插入的时候的问卷的外键，必须要有
@@ -71,26 +29,15 @@ class questionnaire
     private $endTime ;
     private $mysqli;
 
-    public function __construct($userID, $q_name, $describe){
+    public function __construct($userID, $q_name, $describe,$CI_mysql){
         $this->count = 0;
         $this->userID = $userID;
         $this->q_name = $q_name;
         $this->describe = $describe;
         $this->setTime();
 
-        //下面设置数据库的内容
-        $host001 = '127.0.0.1';
-        $username001 = 'admin001';
-        $password001 = 'a530371306';
-        $dataBase001 = 'schema1';
-        $this->mysqli = new mysqli($host001,$username001,$password001,$dataBase001);
-        //错误判断
-        if($this->mysqli->connect_errno <> 0 ){
-            echo "connect fail!";
-            echo $this->mysqli->connect_error;
-        }
-        //设置传输过去的编码格式为utf-8（注意，没有'-'）
-        $flag = $this->mysqli->query("SET NAMES UTF8");
+        $this->mysqli = $CI_mysql;
+
     }
 
     public function setQName($name, $describe){
@@ -117,14 +64,6 @@ class questionnaire
         }
     }
 
-//    public function getQuestion(){
-//        $message = [];
-//        $questionnaire = [];
-//        $questionnaire["q_id"]
-//        $message['quesetionnaire'] = $questionnaire;
-//
-//    }
-
     public function submit(){
         $message = "begin;";
         $flag = $this->mysqli->query("$message");
@@ -138,8 +77,7 @@ class questionnaire
             $message = "insert into questionnaire (u_id,q_name,q_describe,q_starttime,q_endtime) 
             values ('$this->userID','$this->q_name','$this->describe','$this->startTime','$this->endTime');";
             $flag = $this->mysqli->query("$message");
-            $this->q_id = $this->mysqli->insert_id;         //插入完一个问题之后，怎么及时返回当前问题的编号？——就用mysqli->insert_id
-//            echo "<br>在插入问卷这里，flag = {$flag}  q_id={$this->q_id}<br>";
+            $this->q_id = $this->mysqli->insert_id();
 
             //问题2：插入的选项这些是否应该直接包含他们自身的编号(1-9)来作为主码的一部分，而不是单独再设置主码？
             //目前的解决：不管在数据库的编号是否是1-9，只要保证插入顺序和自己的id，就可以有序的取出来
@@ -149,12 +87,14 @@ class questionnaire
             //只要上方出了问题，就执行会滚操作，防止出现错误的选择题
             $message = "rollback;";
             $this->mysqli->query("$message");
-            echo "Wrong submit! rollback";
+//            echo "Wrong submit! rollback";
             echo $exception;
+            return -1;
         }
         $message = "commit;";
         $flag = $this->mysqli->query("{$message}");
 //        echo "<br>OK!flag = {$flag}";
+        return $this->q_id;
     }
 
     //下面是对单选、多选、问答题的插入,用关键词insert

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace reader;
+namespace readQuestionnaire;
 
 
 /**
