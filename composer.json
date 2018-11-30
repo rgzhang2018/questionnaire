@@ -13,7 +13,8 @@
 	"require": {
 		"php": ">=5.3.7",
       "ext-json": "*",
-      "ext-mysqli": "*"
+      "ext-mysqli": "*",
+      "ext-gd": "*"
     },
 	"suggest": {
 		"paragonie/random_compat": "Provides better randomness in PHP 5.x"

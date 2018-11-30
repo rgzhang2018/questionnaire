@@ -85,6 +85,40 @@ class DatabaseController extends CI_Controller
         echo "OK";
     }
 
+    public function getMessageBoard(){
+        $this->load->model('MessageBoardModel');
+        $message = $this->MessageBoardModel->getAllMessage();
+        return $message;
+    }
+
+    public function addMessage(){
+        if(!isset($_POST['commit'])){
+            $this->errorMessage("错误的提交！");
+        }
+        session_start();
+        $time = time();
+        $text = $_POST['text1'];
+        $name = $_POST['text2'];
+        $captcha = $_POST["captcha"];
+        $u_id = 1;          //默认为1，表示游客
+        if(isset($_SESSION["u_id"])){
+            $u_id=$_SESSION["u_id"];
+        }
+        if(strtolower($_SESSION["captcha"]) == strtolower($captcha)){
+            $_SESSION["captcha"] = "";
+        }else{
+            $this->errorMessage("验证码错误，请重新输入！");
+        }
+        if(!isset($text) || !isset($name)){
+            $this->errorMessage("留言信息或者留言人不能为空！");
+        }
+        $this->load->model('MessageBoardModel');
+        $flag = $this->MessageBoardModel->saveMessage($text,$name,$time,$u_id);
+        if($flag)$this->successMessage("留言成功！","../VisitorView/messageBoard");
+        else $this->errorMessage("留言失败，请联系管理员！");
+    }
+
+
     private function errorMessage($message){
         session_start();
         $_SESSION['controlMessage'] = $message;

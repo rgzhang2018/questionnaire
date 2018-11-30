@@ -6,10 +6,6 @@
  * Time: 13:18
  */
 
-
-include('../controller/querymessage.php');
-include_once "../controller/userHeader.php";
-
 ?>
 
 
@@ -18,7 +14,9 @@ include_once "../controller/userHeader.php";
 
 
 <div class="am-u-md-6 am-u-md-centered" style="background-color: #FFFFFF ;box-shadow: 10px 10px 5px"  >
-    <form action="#" method="post" class="am-form am-form-horizontal">
+
+    <div>
+    <form action="../DatabaseController/addMessage" method="post" class="am-form am-form-horizontal">
 
 
         <div class="am-form-group">
@@ -39,7 +37,7 @@ include_once "../controller/userHeader.php";
         </div>
         <div class="am-form-group">
             <div class="am-u-md-3">
-                <img src="../model/image_captcha.php" onclick="this.src='../control/getImage.php?'+new Date().getTime();" width="100" height="30">
+                <img src="../visitorView/getCaptcha" onclick="this.src='../visitorView/getCaptcha?'+new Date().getTime();" width="100" height="30">
             </div>
             <div class="am-u-md-3">
                 <input type="text" name="captcha" placeholder="请输入验证码"><br/>
@@ -50,14 +48,10 @@ include_once "../controller/userHeader.php";
         </div>
         <div class="am-form-group"></div>
     </form >
-</div>
-
-
-
-<div class="am-u-sm-12">
-    <br>
-</div>
-<div class="am-u-md-6 am-u-md-centered"  style="background-color: #FFFFFF ;box-shadow: 10px 10px 5px">
+    </div>
+    <div class="am-u-sm-12">
+        <br>
+    </div>
 
     <div class="am-u-sm-12"><h4>历史留言：</h4></div>
     <br>
@@ -78,11 +72,15 @@ include_once "../controller/userHeader.php";
             </div>
         </section>
         <br>
-        <?php
-        }
-        ?>
     </div>
+    <?php
+    }
+    ?>
 
 </div>
+
+<br>
+<br>
+</body>
 
 
