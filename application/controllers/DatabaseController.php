@@ -79,6 +79,25 @@ class DatabaseController extends CI_Controller
     }
 
 
+    public function changePassword(){
+        if(!isset($_POST['changePassword'])){
+            $this->errorMessage("错误的调用！");
+        }
+        $password = $_POST['password'];
+        $newPassword = $_POST['password1'];
+        session_start();
+        $email = $_SESSION['email'];
+        $u_id = $_SESSION['u_id'];
+        $this->load->model('UserModel');
+        $message = $this->UserModel->changePassword($u_id, $email,$password,$newPassword);
+        if($message == true) {
+            $this->successMessage("修改密码成功","../UserView/logout");
+        }else{
+            $this->errorMessage($message);
+        }
+
+    }
+
     public function addQuestion(){
         //添加整个问卷，接收POST方法
         $message = $_POST['message'];
@@ -125,7 +144,8 @@ class DatabaseController extends CI_Controller
     }
 
     public function test(){
-
+        $this->load->model('QuestionnaireModel');
+        $message = $this->QuestionnaireModel->test();
     }
 
     public function getMessageBoard(){
@@ -138,7 +158,7 @@ class DatabaseController extends CI_Controller
         if(!isset($_POST['commit'])){
             $this->errorMessage("错误的提交！");
         }
-        session_start();
+        isset($_SESSION) OR session_start();
         $time = time();
         $text = $_POST['text1'];
         $name = $_POST['text2'];
@@ -163,14 +183,14 @@ class DatabaseController extends CI_Controller
 
 
     private function errorMessage($message){
-        session_start();
+        isset($_SESSION) OR session_start();
         $_SESSION['controlMessage'] = $message;
         header('Location: ../VisitorView/error');
         die();
     }
 
     private function successMessage($message,$url = null){
-        session_start();
+        isset($_SESSION) OR session_start();
         $_SESSION['controlMessage'] = $message;
         if($url!=null)$_SESSION['nextURL'] =$url;   //设置在success位置的转跳，比如登录成功就转跳到个人主页
         header('Location: ../VisitorView/success');

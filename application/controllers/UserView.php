@@ -28,19 +28,46 @@ class UserView extends CI_Controller
 
     public function overViewQuestionnaire(){
         $arr['title'] = "问卷总览";
+        isset($_SESSION) OR session_start();
+        $u_id = $_SESSION['u_id'];
+        $this->load->model('QuestionnaireModel');
+        $arr['questions'] = $this->QuestionnaireModel->getAllQuestionnaireByUID($u_id);
         $this->showPage('user_overViewQuestionnaire.php',$arr);
     }
 
+    //问卷总览页面的控制器，可以进行问卷的预览、结果预览、以及删除指定问卷
+    public function overViewControl(){
+        if(!isset($_POST['q_id']))$this->$this->errorMessage("错误的指向");
+        isset($_SESSION) OR session_start();
+        $_SESSION['q_id'] = $_POST['q_id'];
+        if(isset($_POST['look'])){
+            header('Location: ../UserView/preview');
+        }elseif (isset($_POST['check'])){
+            header('Location: ../UserView/questionnaireResult');
+        }elseif (isset($_POST['delete'])){
+            header('Location: ../DatabaseController/deleteByID');
+        }
+    }
+
+    //问卷预览界面
     public function preview(){
         $arr['title'] = "预览问卷";
+        isset($_SESSION) OR session_start();
+        $q_id = $_SESSION['q_id'];
+        $this->load->model('QuestionnaireModel');
+        $arr['questions'] = $this->QuestionnaireModel->getQuestionnaireByID($q_id);
         $this->showPage('user_preview.php',$arr);
+    }
+
+    //显示某个问卷的结果信息
+    public function questionnaireResult(){
+
     }
 
     public function changePassword(){
         $arr['title'] = "修改密码";
         $this->showPage('user_changePassword.php',$arr);
     }
-
 
 
     // 注销

@@ -44,9 +44,26 @@ class VisitorView extends CI_Controller
         $arr['pageFlag'] = 3;
         $this->showPage("visitor_getQuestionID.php",$arr);
     }
+    //接收上面的getQuestionID传过来的请求
+    public function getQuestionnaire(){
+        if(isset( $_GET['q_id'])){
+            session_start();
+            $_SESSION['q_id'] = $_GET['q_id'];
+            header("Location:../../VisitorView/writeQuestionnaire");
+        }else{
+            $_SESSION['controlMessage'] = "错误！未提交问卷号";
+            header("Location:../../VisitorView/error");
+        }
 
-    public function writeQuestionnaire(){
+    }
+
+    public function writeQuestionnaire()
+    {
         $arr['title']  = "问卷填写";
+        session_start();
+        $q_id = $_SESSION['q_id'];
+        $this->load->model('QuestionnaireModel');
+        $arr['questions'] = $this->QuestionnaireModel->getQuestionnaireByID($q_id);
         $this->showPage('visitor_writeQuestionnaire.php',$arr);
     }
 
@@ -72,7 +89,6 @@ class VisitorView extends CI_Controller
         }else{
             $arr['controlMessage'] = "出BUG了，也许是进行了错误的调用，请联系我改BUG";
         }
-        if(isset($_SESSION['controlMessage']))$arr['controlMessage'] = $_SESSION['controlMessage'];
         $_SESSION['controlMessage'] = null;
         $this->showPage('myError.php',$arr);
     }
@@ -161,7 +177,7 @@ class VisitorView extends CI_Controller
         $message['dropDown'] = "其他";
         $message['dropDownMore'] = "<li><a href=\"../VisitorView/register\">注册账号</a></li>";
         //如果登录了
-        if($_SESSION['islogin'] == 1){
+        if(isset($_SESSION['islogin']) && $_SESSION['islogin'] == 1){
             $message['login'] = "<p class = \"am-topbar-brand\">欢迎您，{$_SESSION['username']}</p>";
             $message['dropDown'] = "个人中心";
             $message['dropDownMore'] = "<li><a href=\"../UserView/adminIndex\">进入个人中心</a></li><li><a href=\"../UserView/logout\">退出登录</a></li>";

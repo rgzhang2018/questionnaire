@@ -62,7 +62,15 @@ class userModel extends CI_Model
         return true;
     }
 
+    public function changePassword($u_id, $email,$password,$newPassword){
+        $flag = $this->userLogin($email,$password);
+        if(!$flag)return "原始密码错误";
+        $data = "update user set u_password='{$newPassword}' where u_id='{$u_id}';";
+        $bool=$this->db->query($data);
+        if($bool)return true;
+        else return "修改失败";
 
+    }
 
 
 }

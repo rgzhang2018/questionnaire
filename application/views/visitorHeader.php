@@ -38,7 +38,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="../../assets/css/app.css">
 </head>
 
-<body >
+<body style="background-color: #e9e9e9">
 
 <header class="am-topbar am-topbar-inverse">
     <h1 class="am-topbar-brand">

@@ -11,11 +11,10 @@
 
 <!--  here  -->
 <div class="am-u-md-12" style="background-color: #ffffff ">
-    <div class="am-u-md-7 am-u-md-centered" style="height: 600px;">
-
+    <div class="am-u-md-7 am-u-md-centered" ">
         <form  action="#" method="post" class="am-form am-form-horizontal">
-
-            <div>问卷预览:</div>
+            <br>
+            <h3>问卷预览:</h3>
             <div class="am-form-group" style="text-align:center">
                 <hr>
                 <h2><?php  echo "{$questions["questionnaire"]["q_name"]}"  ?></h2>
@@ -74,3 +73,5 @@
         </form>
     </div>
 </div>
+
+

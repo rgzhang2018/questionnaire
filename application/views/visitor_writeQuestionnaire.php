@@ -6,33 +6,19 @@
  * Time: 13:17
  */
 
-header('Content-type:text/html; charset=utf-8');
-$q_id = 0;
-if (isset($_GET['check'])){
-    $q_id = $_GET['q_id'];
-}else {
-    echo "错误：未指明问卷，三秒后返回首页";
-    header('refresh:3; url=../index.php');
-}
-
-
-include_once "../controller/userHeader.php";
-
-include "../controller/getQuestionnaire.php";
-
 
 ?>
 
 
 <!--  here  -->
-<div class="am-u-md-7 am-u-md-centered" style="background-color: #ffffff ;box-shadow: 5px 5px 3px"   >
+<div class="am-u-md-7 am-u-md-centered" style="background-color: #FFFFFF ;box-shadow: 5px 5px 3px"   >
 
     <form  action="#" method="post" class="am-form am-form-horizontal">
 
         <div class="am-form-group" style="text-align:center">
             <hr>
-            <h2><?php  echo "{$questions["questionnaire"]["q_name"]}"  ?></h2>
-            <?php  echo "{$questions["questionnaire"]["q_describe"]}"  ?>
+            <h2><?php  echo "{$questions["questionnaire"]["q_name"]}" ; ?></h2>
+            <?php  echo "{$questions["questionnaire"]["q_describe"]}" ; ?>
 
         </div>
         <hr>
