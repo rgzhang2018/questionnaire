@@ -104,7 +104,7 @@ class DatabaseController extends CI_Controller
         $questionnaire = json_decode($message);
 
         if(strlen($questionnaire[0][0])<=2 || sizeof($questionnaire)<=1){   //标题信息太短，或者没有题目，则返回信息有误
-            echo "0";
+            echo "问卷信息太短";
             return ;
         }
         //下面对接收到的问卷信息进行转存
@@ -128,8 +128,9 @@ class DatabaseController extends CI_Controller
         }
         //检查过滤后的问题信息是否完整，不完整则返回错误(由于可能存在空数组，因此需要转存后进行信息流格式确认)
         for($i = 0; $i<sizeof($questions);$i++){
+            if($questions[$i][0]==2)continue;       //问答题不考虑这个
             if(strlen($questions[$i][1])<=2 || sizeof($answers[$i])<1 ){  //题目内容太短，或者只有一个选项，返回信息有误
-                echo "0";
+                echo "题目内容太短，选项信息有空白";
                 return;
             }
         }
@@ -143,10 +144,29 @@ class DatabaseController extends CI_Controller
 
     }
 
-    public function test(){
+    public function deleteByID(){
+        session_start();
+        $q_id = $_SESSION['q_id'];
         $this->load->model('QuestionnaireModel');
-        $message = $this->QuestionnaireModel->test();
+        $flag = $this->QuestionnaireModel->deleteQuestionnaireByID($q_id);
+        if($flag)$this->successMessage("删除成功","../UserView/overViewQuestionnaire");
+        else $this->errorMessage("删除失败");
     }
+
+    public function writeQuestion(){
+        //answers信息格式：
+        //0下标：问卷id
+        //1-n下标：
+        //[0]问题id
+        //[1]要么是选项id(代表问题被选中的次数)，要么是-1,代表这个题目是问答题，对应有问答题的答案信息
+        $arr = $_POST['message'];
+        $answers = json_decode($arr);
+        $this->load->model('QuestionnaireModel');
+        $flag = $this->QuestionnaireModel->answerQuestionnaire($answers);
+        if($flag)echo "1";
+        else echo "0";
+    }
+
 
     public function getMessageBoard(){
         $this->load->model('MessageBoardModel');

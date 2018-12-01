@@ -46,6 +46,68 @@ class QuestionnaireModel extends CI_Model
         $reader = new \readQuestionnaire\reader($this->db);
         $result = $reader->queryQuestions($u_id);
         return $result;
+    }
 
+
+    public function deleteQuestionnaireByID($q_id){
+        $message = "select qq_id from question where q_id='{$q_id}';";
+        $query = $this->db->query($message);
+        $result=$query->result_array();
+        foreach ($result as $item){
+            $qq_id = $item['qq_id'];
+            $message = "delete from selection where qq_id='{$qq_id}';";
+            $this->db->query($message);
+        }
+        $message = "delete from question where q_id='{$q_id}';";
+        $query = $this->db->query($message);
+        $message = "delete from questionnaire where q_id='{$q_id}';";
+        $flag = $this->db->query($message);
+        return $flag;
+    }
+
+    public function answerQuestionnaire($answers){
+        //answers信息格式：
+        //0下标：问卷id
+        //1-n下标：
+        //[i][0]问题id
+        //[i][1]要么是选项id(代表问题被选中的次数)，要么是-1,代表这个题目是问答题，对应有问答题的答案信息
+//        $q_id = $answers[0];
+        //用事务进行提交
+        $message = "begin;";
+        $this->db->query($message);
+        for($i=1;$i<sizeof($answers);$i++){
+            if($answers[$i][1]!=-1){
+                //!=-1是选择题，插入到数据库表的count位置，统计被选中的次数
+//                $qq_id = $answers[$i][0];
+                $qs_id = $answers[$i][1];
+                $qs_counts = 0;
+                $message = "select * from selection where qs_id='{$qs_id}';"; //先取出qs_count，然后qs_count++，再插入
+                $query = $this->db->query($message);
+                $arr =$query->result_array();
+                $qs_counts = $arr[0]['qs_counts'];
+                $qs_counts++;
+
+                $message = "update selection set qs_counts='{$qs_counts}' where qs_id={$qs_id};";
+                $flag = $this->db->query($message);
+                if(!$flag){
+                    $message = "rollback;";
+                    $this->db->query($message);
+                    return false;
+                }
+            }elseif($answers[$i][1]==-1){
+                $qq_id = $answers[$i][0];
+                $essay = $answers[$i][2];
+                $message = "insert into selection (qq_id,qs_order,qs_name,qs_counts) values ('{$qq_id}','-1','{$essay}','0');";
+                $flag = $this->db->query($message);
+                if(!$flag){
+                    $message = "rollback;";
+                    $this->db->query($message);
+                    return false;
+                }
+            }
+        }
+        $message = "commit;";
+        $this->db->query($message);
+        return true;
     }
 }

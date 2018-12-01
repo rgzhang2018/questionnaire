@@ -20,9 +20,6 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-	    $arr['title']="首页";
-        $this->load->view('welcome_header',$arr);
-		$this->load->view('welcome_message');
-        $this->load->view('visitorFooter');
+	    header("Location: http://www.rgzhang.top/index.php/VisitorView/index");
 	}
 }

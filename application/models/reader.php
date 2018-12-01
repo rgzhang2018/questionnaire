@@ -28,7 +28,7 @@ namespace readQuestionnaire;
  *                      ["qs_id"]=>string(1) "1"                  //对应问题的ID（唯一）
  *                      ["qq_id"]=>string(1) "1"                  //这个选项的ID，并非次序（唯一）
  *                      ["qs_order"]=>string(1) "0"               //这是该选项的顺序，可以不用管，读出的数组就是正确顺序的
- *                      ["qs_name"]=>string(9) "这是问题"          //这是选项
+ *                      ["qs_name"]=>string(9) "这是选项"          //这是选项
  *                      ["qs_counts"]=>string(1) "0"              //计数，目前这个还没用到
  *                  }
  *                  [1]=>array(5) {

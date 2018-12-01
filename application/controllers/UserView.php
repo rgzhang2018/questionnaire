@@ -52,7 +52,7 @@ class UserView extends CI_Controller
     //问卷预览界面
     public function preview(){
         $arr['title'] = "预览问卷";
-        isset($_SESSION) OR session_start();
+        session_start();
         $q_id = $_SESSION['q_id'];
         $this->load->model('QuestionnaireModel');
         $arr['questions'] = $this->QuestionnaireModel->getQuestionnaireByID($q_id);
@@ -61,7 +61,12 @@ class UserView extends CI_Controller
 
     //显示某个问卷的结果信息
     public function questionnaireResult(){
-
+        $arr['title'] = "问卷结果统计";
+        session_start();
+        $q_id = $_SESSION['q_id'];
+        $this->load->model('QuestionnaireModel');
+        $arr['questions'] = $this->QuestionnaireModel->getQuestionnaireByID($q_id);
+        $this->showPage('user_questionnaireResult.php',$arr);
     }
 
     public function changePassword(){
