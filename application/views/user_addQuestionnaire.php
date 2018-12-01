@@ -158,7 +158,7 @@ include_once "../controller/userHeader.php";
      *
      * class用于取出对应的题目、选项，同时负责更新题号:
      *      1.更新当前是第几题(class = "singleCount")
-     *      2.class=<%=q_type%>  (如   1-1 ID为1-单选题   10-3 ID为10-问答题)
+     *      2.class=<%=q_type%>  (如   1-0 ID为1-单选题   10-2 ID为10-问答题)
      *      3.class=<%=type%>   (如   1-selection :ID为1的题目的选项)
      */
     var singleCount = 0;    //动态添加信息，记录单/多/问答题目数量，删除则减少
@@ -185,7 +185,7 @@ include_once "../controller/userHeader.php";
     }
     function addSingleChoice(e){
         let selectionID = e.id +"-singleChoice";  //在每个题目都为所有的选项设置了一个div，在这个div里追加东西，就可以吧选项追加到对应位置
-        let type = countID + "-selection";
+        let type = e.id  + "-selection";
         let data = {
             type:type
         };
@@ -212,7 +212,7 @@ include_once "../controller/userHeader.php";
     }
     function addMultipleChoice(e){
         let selectionID = e.id +"-multipleChoice";
-        let type = countID + "-selection";
+        let type = e.id + "-selection";
         let data = {
             type:type
         };
@@ -259,7 +259,7 @@ include_once "../controller/userHeader.php";
             arr[i].innerHTML = "第"+num+"题";
         }
     }
-    var DomType = 0;        //1为单选，2为多选，3为问答
+    var DomType = 0;        //0为单选，1为多选，2为问答
     //所有内容存放在一个数组里，通过JSON编码，以POST方式提交
     function submitAll() {
         const q_name = document.getElementById("q_name").value;
@@ -281,12 +281,6 @@ include_once "../controller/userHeader.php";
                 }
             }
         }
-        // for(let i = 0;i<questionnaire.length;i++){
-        //     for(let j = 0;j<questionnaire[i].length;j++){
-        //         let string =i +"+"+j+":"+ questionnaire[i][j];
-        //         alert(string);
-        //     }
-        // }
         let data = JSON.stringify(questionnaire);
         ajaxPost(data);
     }
