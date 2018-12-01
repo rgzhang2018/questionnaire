@@ -39,7 +39,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </a>
 
 
-            <a href='../VisitorView/logout'>
+            <a href='../UserView/logout'>
                     <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm">点击注销</button>
             </a>
         </div>
