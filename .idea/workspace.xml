@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1176f9eb-3d77-4113-aa20-948c332d458a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/application/controllers/DatabaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/DatabaseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/user_addQuestionnaire.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/user_addQuestionnaire.php" afterDir="false" />
-    </list>
+    <list default="true" id="1176f9eb-3d77-4113-aa20-948c332d458a" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +52,7 @@
     <session id="1687533486">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="42" />
+          <entry key="project.closed" value="43" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="4" />
           <entry key="project.open.time.12" value="2" />
@@ -202,8 +199,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/controllers/DatabaseController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="141" selection-start-line="141" selection-end-line="147" selection-end-column="15" />
+            <state relative-caret-position="304">
+              <caret line="142" column="49" lean-forward="true" selection-start-line="142" selection-start-column="49" selection-end-line="142" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -526,16 +523,15 @@
       <workItem from="1543589881121" duration="3920000" />
       <workItem from="1543628623836" duration="9545000" />
       <workItem from="1543639616357" duration="415000" />
-      <workItem from="1543640893855" duration="1738000" />
+      <workItem from="1543640893855" duration="1871000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="289255000" />
+    <option name="totallyTimeSpent" value="289388000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28284183" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -844,8 +840,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/DatabaseController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="141" selection-start-line="141" selection-end-line="147" selection-end-column="15" />
+        <state relative-caret-position="304">
+          <caret line="142" column="49" lean-forward="true" selection-start-line="142" selection-start-column="49" selection-end-line="142" selection-end-column="49" />
         </state>
       </provider>
     </entry>
