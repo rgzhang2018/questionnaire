@@ -1,39 +1,59 @@
-﻿## 简易投票系统
-## questionniare system
-#### *php开发，使用CI框架*
+﻿## 简易投票系统  questionniare system
+
+*php开发，使用CI框架*
 
 
 
+<br>
 ### 演示网址：
 欢迎访问：www.rgzhang.top
 
 
+
+<hr>
 ### 使用说明
 
-###### 关于数据库
+##### 目录结构
+```./application/views/```  			存放视图
+```./application/controllers/```		存放控制器
+```./application/models/```				存放模型文件
+
+
+<br>
+##### 关于数据库
 **```questionnaire system.sql```存放数据库建表文件。**
+
 *注：如果无法成功建表，可以去掉约束条件，先建表，后面单独写入约束条件，或者更改外键名词*
 
-###### 关于UI界面
+
+<br>
+##### 关于UI界面
 采用amazeUI框架，该框架兼容很好。
+
 ```assets```目录下存放amazeUI的样式布局，以及用到的art-template等JS文件
 
 具体使用可以参考官网http://amazeui.org/
+
 或者GitHub:https://github.com/amazeui/amazeui
 
 
+<br>
+##### 关于CI框架
 
-###### 关于CI框架
 相关说明参考框架官网https://codeigniter.org.cn/user_guide/
+
 使用时请修改到对应的URI，以及修改controller/welcome.php下的转跳URL
 
+<br>
 
-###### 补充说明
+##### 补充说明
 初学者第一次尝试，作为给其他初学者的一个参考，有许多不足之处还请见谅
 有问题欢迎Issues或者留言至演示网址留言板
 
 
 
+
+<hr>
 ### 更新说明
 
 
