@@ -119,7 +119,10 @@ class DatabaseController extends CI_Controller
         for($i = 1; $i<sizeof($questionnaire);$i++){
             $tempQuestion = [];
             $tempAnswer = [];
-            if(strlen($questionnaire[$i][1])<=1)continue;
+            if(strlen($questionnaire[$i][1])<=1){
+                echo "存在空题目，或者有题目太短，请检查后重试";
+                return;
+            }
             $tempQuestion[0] = $questionnaire[$i][0];       //0位置存放的type
             $tempQuestion[1] = $questionnaire[$i][1];       //1位置存放的问题题目
             for($j = 2;$j<sizeof($questionnaire[$i]);$j++){
@@ -137,6 +140,11 @@ class DatabaseController extends CI_Controller
                 return;
             }
         }
+        if(sizeof($questions)<=1){
+            echo "空白题目，请先完善";
+            return;
+        }
+
 //        var_dump($questions);
 //        var_dump($answers);
 //        检查完成，将数据传给数据库，成功则返回问卷识别码
