@@ -40,7 +40,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <body style="background-color: #e9e9e9">
 
-<header class="am-topbar am-topbar-inverse">
+<header class="am-topbar am-topbar-inverse" style = "margin:0px;">
     <h1 class="am-topbar-brand">
         <a href="../VisitorView/index">简易问卷调查系统</a>
     </h1>
