@@ -1,4 +1,4 @@
-
+[TOC]
 
 ## 简易投票系统  questionniare system
 
@@ -7,12 +7,11 @@
 
 
 <br>
-快速导航：
-[TOC]
+
 
 
 <hr>
-<br>
+
 
 
 ### 演示网址
