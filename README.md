@@ -1,14 +1,22 @@
-﻿## 简易投票系统  questionniare system
+
+
+## 简易投票系统  questionniare system
 
 *php开发，使用CI框架*
 
 
 
 <br>
+快速导航：
+[TOC]
+
+
+<hr>
+<br>
 
 
 ### 演示网址
-欢迎访问：questionnaire.rgzhang.top
+欢迎访问：http://blog.rgzhang.top/
 
 
 
