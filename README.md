@@ -3,7 +3,7 @@
 ## 简易投票系统  questionniare system
 
 *php开发，使用CI框架*
-
+本地环境为LAMP。建议php使用7.0以下的版本。
 
 
 <br>
@@ -24,6 +24,10 @@
 
 ### 使用说明
 
+#### 本地演示
+``` application/controllers/Welcome.php ```  里面的那个转跳的地址改为本地的localhost或者ip（详细使用参照CI框架）
+``` application/config/database.php ```是CI框架中配置数据库的配置文件，需要修改为自己的信息。
+
 ##### 目录结构
 ```./application/views/```  			存放视图
 ```./application/controllers/```		存放控制器
@@ -33,6 +37,7 @@
 
 ##### 关于数据库
 **```questionnaire system.sql```存放数据库建表文件。**
+``` application/config/database.php ```是CI框架中配置数据库的配置文件。
 
 *注：如果无法成功建表，可以去掉约束条件，先建表，后面单独写入约束条件，或者更改外键名词*
 
@@ -54,8 +59,9 @@
 相关说明参考框架官网https://codeigniter.org.cn/user_guide/
 
 使用时请修改到对应的URI，以及修改controller/welcome.php下的转跳URL
-
 <br>
+
+
 
 ##### 补充说明
 初学者第一次尝试，作为给其他初学者的一个参考，有许多不足之处还请见谅
