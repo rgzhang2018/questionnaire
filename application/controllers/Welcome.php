@@ -20,6 +20,6 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-	    header("Location: http://www.rgzhang.top/index.php/VisitorView/index");
+	    header("Location: http://questionnaire.rgzhang.top/index.php/VisitorView/index");
 	}
 }
