@@ -126,21 +126,24 @@
     submitBtn.onclick = function checkAll( e ){
         if(flag_password===1 && flag_email === 1 &&flag_name===1){
             alert("格式正确，转跳注册");
-        }else if(flag_email === 0){
+        }
+        if(flag_email === 0){
             alert("用户名已存在！请重新输入");
             if(e&&e.preventDefault){
                 e.preventDefault();
             }else{                                      //IE标签
                 window.event.returnValue = false;
             }
-        }else if(flag_password === 0){
+        }
+        if(flag_password === 0){
             alert("两次密码不一致/密码格式错误：密码长度必须大于等于6");
             if(e&&e.preventDefault){
                 e.preventDefault();
             }else{
                 window.event.returnValue = false;
             }
-        }else if(flag_name === 0){
+        }
+        if(flag_name === 0){
             alert("昵称不能为空");
             if(e&&e.preventDefault){
                 e.preventDefault();

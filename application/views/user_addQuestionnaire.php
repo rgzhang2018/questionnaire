@@ -319,6 +319,9 @@ include_once "../controller/userHeader.php";
         if(xmlHttp.readyState===4){//Ajax状态
             if(xmlHttp.status===200){//服务器端状态
                 alert(xmlHttp.responseText);
+                if(xmlHttp.responseText.search("插入成功")!==-1 ){
+                    location.reload();
+                }
             }
         }
     }

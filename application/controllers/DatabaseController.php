@@ -141,7 +141,7 @@ class DatabaseController extends CI_Controller
             }
         }
         if(sizeof($questions)<=1){
-            echo "空白题目，请先完善";
+            echo "题目信息不完整（请设置>=2道题目）";
             return;
         }
 
