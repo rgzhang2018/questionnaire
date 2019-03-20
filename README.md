@@ -63,8 +63,19 @@
 
 
 
+#### 关于redis
+redis的安装：http://blog.rgzhang.top/2019/03/19/redis-%E5%AE%89%E8%A3%85/
+
+php安装redis扩展：http://blog.rgzhang.top/2019/03/19/php%E5%AE%89%E8%A3%85redis%E6%89%A9%E5%B1%95/
+
+
+
+<br>
+
+
 ##### 补充说明
 初学者第一次尝试，作为给其他初学者的一个参考，有许多不足之处还请见谅
+
 有问题欢迎Issues或者留言至演示网址留言板
 
 
@@ -72,9 +83,13 @@
 <br>
 
 
+
 #### 分支说明
+
 old：快照，纯php，未使用框架
+
 ci：快照，使用ci框架和完善基本功能
+
 master：持续更新
 
 <hr>

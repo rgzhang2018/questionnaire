@@ -16,6 +16,9 @@ class QuestionnaireModel extends CI_Model
         $this->load->database();
     }
 
+
+    
+
     public function insertQuestionnaire($u_id,$title,$describe,$questions,$answers){
     /**
      * 问卷的添加控制过程：

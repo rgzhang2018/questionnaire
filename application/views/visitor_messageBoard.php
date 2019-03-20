@@ -58,6 +58,7 @@
     <br>
     <br>
     <?php
+    var_dump($arrs['test'] );
     foreach ($arrs as $value) {
     ?>
     <div>
