@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1176f9eb-3d77-4113-aa20-948c332d458a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/QuestionnaireModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/QuestionnaireModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/user_overViewQuestionnaire.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/user_overViewQuestionnaire.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/MessageBoardModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/MessageBoardModel.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,20 +65,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/user_overViewQuestionnaire.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="79">
-              <caret line="21" column="48" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
+            <state relative-caret-position="700">
+              <caret line="40" column="24" lean-forward="true" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/models/MessageBoardModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="65" column="31" lean-forward="true" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="31" />
+            <state relative-caret-position="820">
+              <caret line="73" column="45" lean-forward="true" selection-start-line="73" selection-start-column="45" selection-end-line="73" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -222,12 +221,12 @@
         <option value="$PROJECT_DIR$/application/controllers/MyMessage.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/application/views/visitor_messageBoard.php" />
-        <option value="$PROJECT_DIR$/application/models/MessageBoardModel.php" />
         <option value="$PROJECT_DIR$/application/models/Questionnaire.php" />
         <option value="$PROJECT_DIR$/application/models/UserModel.php" />
         <option value="$PROJECT_DIR$/application/controllers/UserView.php" />
         <option value="$PROJECT_DIR$/application/models/QuestionnaireModel.php" />
         <option value="$PROJECT_DIR$/application/views/user_overViewQuestionnaire.php" />
+        <option value="$PROJECT_DIR$/application/models/MessageBoardModel.php" />
       </list>
     </option>
   </component>
@@ -317,7 +316,7 @@
     <property name="SearchEverywhereHistoryKey" value="..&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553165879413" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553166438433" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -427,7 +426,7 @@
       <workItem from="1553012350457" duration="1549000" />
       <workItem from="1553071788093" duration="2922000" />
       <workItem from="1553074942139" duration="2523000" />
-      <workItem from="1553145237990" duration="14738000" />
+      <workItem from="1553145237990" duration="15326000" />
     </task>
     <task id="LOCAL-00001" summary="留言板的提取增加redis缓存">
       <created>1553076795494</created>
@@ -450,15 +449,21 @@
       <option name="project" value="LOCAL" />
       <updated>1553165214138</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="新增：通过redis查询问卷">
+      <created>1553165902947</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1553165902947</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="316579000" />
+    <option name="totallyTimeSpent" value="317167000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1455" height="935" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18181819" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -498,7 +503,8 @@
     <MESSAGE value="留言板的提取增加redis缓存" />
     <MESSAGE value="优化：未设置redis时正常插入数据库，不会报错" />
     <MESSAGE value="新增：填写问卷先写入redis" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增：填写问卷先写入redis" />
+    <MESSAGE value="新增：通过redis查询问卷" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增：通过redis查询问卷" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/myhome/controller/messagesave.php" />
@@ -767,13 +773,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/MessageBoardModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="65" column="31" lean-forward="true" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/QuestionnaireModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -786,8 +785,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/user_overViewQuestionnaire.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="21" column="48" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
+        <state relative-caret-position="700">
+          <caret line="40" column="24" lean-forward="true" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/MessageBoardModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="820">
+          <caret line="73" column="45" lean-forward="true" selection-start-line="73" selection-start-column="45" selection-end-line="73" selection-end-column="45" />
         </state>
       </provider>
     </entry>

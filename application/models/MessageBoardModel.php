@@ -55,7 +55,7 @@ class MessageBoardModel extends CI_Model
      * @Description:从redis中取出messageboard的内容(如果有更新，则从数据库获取最新内容)
      * @return mixed
      */
-    public function getAllMessageFromRedis()
+    private function getAllMessageFromRedis()
     {
         $redis = new Redis();
         $redis->connect("127.0.0.1", 6379);
