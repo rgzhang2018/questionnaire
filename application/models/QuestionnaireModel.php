@@ -48,11 +48,12 @@ class QuestionnaireModel extends CI_Model
      * @Date: 2018/11/21
      */
     public function getQuestionnaireByID($q_id,$freshFlag = 0){
-//        if(!class_exists('Redis') || $freshFlag){
+        if(!class_exists('Redis') || $freshFlag){
+            if($freshFlag)$this->answerQuestionnaireInRedis(null,1);  //用户要查询，则将redis中剩余缓存也写入数据库，保证获取到的是最新的结果
             $result = $this->getQuestionnaireByIDInDataBase($q_id);
-//        }else{
-//            $result = $this->getQuestionnaireByIDInRedis($q_id);
-//        }
+        }else{
+            $result = $this->getQuestionnaireByIDInRedis($q_id);
+        }
 
         return $result;
     }
@@ -182,16 +183,18 @@ class QuestionnaireModel extends CI_Model
                 //取出选择情况并写入sql
                 $selections = $redis->hGetAll('selections');
                 $qs_ids = array_keys($selections);
+                //取出问答题并写入sql
+                $listLength = $redis->lLen('answers');
+                $answers = $redis->lRange('answers',0,$listLength-1);
+
                 $i = 0;
+                //取出选择情况并写入sql
                 foreach($selections as $counts){
                     $message = "update `selection` set qs_counts=qs_counts + {$counts} where qs_id={$qs_ids[$i]};";
                     $this->db->query($message);
                     $i++;
                 }
-
                 //取出问答题并写入sql
-                $listLength = $redis->lLen('answers');
-                $answers = $redis->lRange('answers',0,$listLength-1);
                 for ($i=0;$i< $listLength;$i++){
                     $this->db->query($answers[$i]);
                 }
@@ -227,12 +230,24 @@ class QuestionnaireModel extends CI_Model
      * @Description:从redis中获取整张问卷
      * @param $q_id
      * @param int $freshFlag=0
-     * @return void :
+     * @return array :
      * @Author: rgzhang
      * @Date: 2019/3/21
      */
-    private function getQuestionnaireByIDInRedis($q_id,$freshFlag = 0)
+    private function getQuestionnaireByIDInRedis($q_id)
     {
-        return 1;
+        $redis = new Redis();
+        $redis->connect('127.0.0.1', 6379);
+        $redis->select($this->selectRedis);
+        $result = $redis->get($q_id);
+
+        if(strlen($result) < 1){
+            $questionnaire = $this->getQuestionnaireByIDInDataBase($q_id);
+            $redis->set($q_id,json_encode($questionnaire));
+        }else{
+            $questionnaire = json_decode($result,1);
+        }
+
+        return $questionnaire;
     }
 }
