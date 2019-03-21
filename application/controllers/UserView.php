@@ -65,7 +65,7 @@ class UserView extends CI_Controller
         session_start();
         $q_id = $_SESSION['q_id'];
         $this->load->model('QuestionnaireModel');
-        $arr['questions'] = $this->QuestionnaireModel->getQuestionnaireByID($q_id);
+        $arr['questions'] = $this->QuestionnaireModel->getQuestionnaireByID($q_id,1);
         $this->showPage('user_questionnaireResult.php',$arr);
     }
 

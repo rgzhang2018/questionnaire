@@ -6,9 +6,13 @@
  * Time: 10:18
  */
 
-
+/**
+ * @Description:处理问卷相关信息，使用redis的2号库
+ * @Author: rgzhang
+ */
 class QuestionnaireModel extends CI_Model
 {
+    private $selectRedis = 2;
 
     public function __construct()
     {
@@ -16,8 +20,6 @@ class QuestionnaireModel extends CI_Model
         $this->load->database();
     }
 
-
-    
 
     public function insertQuestionnaire($u_id,$title,$describe,$questions,$answers){
     /**
@@ -37,10 +39,21 @@ class QuestionnaireModel extends CI_Model
     }
 
 
-    public function getQuestionnaireByID($q_id){
-        include_once "reader.php";
-        $reader = new \readQuestionnaire\reader($this->db);
-        $result = $reader->getQuestionnaireByID($q_id);
+    /**
+     * @Description:获取到某张问卷，作用于：user_perview，user_questionnaireResult，visitor_writeQuestionnaire
+     * @param $q_id
+     * @param int $freshFlag
+     * @return array :
+     * @Author: rgzhang
+     * @Date: 2018/11/21
+     */
+    public function getQuestionnaireByID($q_id,$freshFlag = 0){
+//        if(!class_exists('Redis') || $freshFlag){
+            $result = $this->getQuestionnaireByIDInDataBase($q_id);
+//        }else{
+//            $result = $this->getQuestionnaireByIDInRedis($q_id);
+//        }
+
         return $result;
     }
 
@@ -48,8 +61,11 @@ class QuestionnaireModel extends CI_Model
         include_once "reader.php";
         $reader = new \readQuestionnaire\reader($this->db);
         $result = $reader->queryQuestions($u_id);
+
         return $result;
     }
+
+
 
 
     public function deleteQuestionnaireByID($q_id){
@@ -68,41 +84,56 @@ class QuestionnaireModel extends CI_Model
         return $flag;
     }
 
+
+
+
+
     public function answerQuestionnaire($answers){
+
+        if(class_exists('Redis')){
+            $flag = $this->answerQuestionnaireInRedis($answers);
+        }else{
+            $flag = $this->answerQuestionnaireInDataBase($answers);
+        }
+
+        return $flag;
+    }
+
+
+
+    /**
+     * @Description:写入回答，写到数据库中
+     * @param $answers
+     * @return bool
+     */
+    private function answerQuestionnaireInDataBase($answers)
+    {
         //answers信息格式：
         //0下标：问卷id
         //1-n下标：
         //[i][0]问题id
         //[i][1]要么是选项id(代表问题被选中的次数)，要么是-1,代表这个题目是问答题，对应有问答题的答案信息
-//        $q_id = $answers[0];
+        //$q_id = $answers[0];
         //用事务进行提交
         $message = "begin;";
         $this->db->query($message);
-        for($i=1;$i<sizeof($answers);$i++){
-            if($answers[$i][1]!=-1){
-                //!=-1是选择题，插入到数据库表的count位置，统计被选中的次数
-//                $qq_id = $answers[$i][0];
+        for ($i = 1; $i < sizeof($answers); $i++) {
+            if ($answers[$i][1] != -1) {
+                //!=-1是选择，更新被选中的次数
                 $qs_id = $answers[$i][1];
-                $qs_counts = 0;
-                $message = "select * from selection where qs_id='{$qs_id}';"; //先取出qs_count，然后qs_count++，再插入
-                $query = $this->db->query($message);
-                $arr =$query->result_array();
-                $qs_counts = $arr[0]['qs_counts'];
-                $qs_counts++;
-
-                $message = "update selection set qs_counts='{$qs_counts}' where qs_id={$qs_id};";
+                $message = "update `selection` set qs_counts=qs_counts + 1 where qs_id={$qs_id};";
                 $flag = $this->db->query($message);
-                if(!$flag){
+                if (!$flag) {
                     $message = "rollback;";
                     $this->db->query($message);
                     return false;
                 }
-            }elseif($answers[$i][1]==-1){
+            } elseif ($answers[$i][1] == -1) {
                 $qq_id = $answers[$i][0];
                 $essay = $answers[$i][2];
                 $message = "insert into selection (qq_id,qs_order,qs_name,qs_counts) values ('{$qq_id}','-1','{$essay}','0');";
                 $flag = $this->db->query($message);
-                if(!$flag){
+                if (!$flag) {
                     $message = "rollback;";
                     $this->db->query($message);
                     return false;
@@ -112,5 +143,96 @@ class QuestionnaireModel extends CI_Model
         $message = "commit;";
         $this->db->query($message);
         return true;
+    }
+
+
+    /**
+     * @Description: 写入到redis中，选择题通过一个redis的hashset实现；问答通过一个list串接sql语句实现(同时存储问题id和解答)
+     * $freshFlag=1，表示直接把redis中现有的数据入数据库，用于用户查询的时候
+     * @param $answers
+     * @param int $freshFlag=0
+     * @return bool
+     */
+    private function answerQuestionnaireInRedis($answers,$freshFlag = 0){
+        $redis = new Redis();
+        $redis->connect('127.0.0.1', 6379);
+        $redis->select($this->selectRedis);
+
+        $thisTime = time();
+        $redisTime = $redis->get('time');
+
+        for ($i = 1; $i < sizeof($answers); $i++){
+            if ($answers[$i][1] != -1) {
+                $qs_id = $answers[$i][1];
+                $redis->hIncrBy('selections',$qs_id,1);    //hIncrBy(hset,key,x)使得集合中key对应的值增加x
+
+            }elseif ($answers[$i][1] == -1) {   //插入问答答案，键值较复杂，每句话都要插入新的一行
+                $qq_id = $answers[$i][0];
+                $essay = $answers[$i][2];
+                $message = "insert into selection (qq_id,qs_order,qs_name,qs_counts) values ('{$qq_id}','-1','{$essay}','0');";
+                $redis->rPush('answers',$message);
+//                $this->db->query($message);
+            }
+        }
+
+        if($thisTime - $redisTime >= 10 || $freshFlag){   //超过时间间隔10s，则刷新写入刚才的填写情况，采用事务写入
+            $this->db->query("start;");
+            try{
+
+                //取出选择情况并写入sql
+                $selections = $redis->hGetAll('selections');
+                $qs_ids = array_keys($selections);
+                $i = 0;
+                foreach($selections as $counts){
+                    $message = "update `selection` set qs_counts=qs_counts + {$counts} where qs_id={$qs_ids[$i]};";
+                    $this->db->query($message);
+                    $i++;
+                }
+
+                //取出问答题并写入sql
+                $listLength = $redis->lLen('answers');
+                $answers = $redis->lRange('answers',0,$listLength-1);
+                for ($i=0;$i< $listLength;$i++){
+                    $this->db->query($answers[$i]);
+                }
+
+            }catch (Exception $exception){
+                $this->db->query("rollback;");
+                echo $exception;
+                return false;
+            }
+            $this->db->query("commit;");
+            $redis->del('selections');
+            $redis->del('answers');
+            $redis->set('time',$thisTime); //记录这次写入redis的时间，作为下一个时间间隔
+        }
+
+        return true;
+    }
+
+    /**
+     * @param $q_id
+     * @return array
+     */
+    private function getQuestionnaireByIDInDataBase($q_id)
+    {
+        include_once "reader.php";
+        $reader = new \readQuestionnaire\reader($this->db);
+        $result = $reader->getQuestionnaireByID($q_id);
+        return $result;
+    }
+
+
+    /**
+     * @Description:从redis中获取整张问卷
+     * @param $q_id
+     * @param int $freshFlag=0
+     * @return void :
+     * @Author: rgzhang
+     * @Date: 2019/3/21
+     */
+    private function getQuestionnaireByIDInRedis($q_id,$freshFlag = 0)
+    {
+        return 1;
     }
 }

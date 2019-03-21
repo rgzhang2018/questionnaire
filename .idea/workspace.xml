@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1176f9eb-3d77-4113-aa20-948c332d458a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/UserView.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/UserView.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/models/MessageBoardModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/MessageBoardModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/visitor_messageBoard.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/visitor_messageBoard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/QuestionnaireModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/QuestionnaireModel.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,38 +55,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/models/QuestionnaireModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="50" column="23" lean-forward="true" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/models/MessageBoardModel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="83" column="38" lean-forward="true" selection-start-line="83" selection-start-column="38" selection-end-line="83" selection-end-column="38" />
+            <state relative-caret-position="379">
+              <caret line="54" column="9" lean-forward="true" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+              <folding>
+                <element signature="e#6#88#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/visitor_messageBoard.php">
+        <entry file="file://$PROJECT_DIR$/application/views/user_questionnaireResult.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="61" column="30" lean-forward="true" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
+            <state relative-caret-position="95">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/Questionnaire.php">
+        <entry file="file://$PROJECT_DIR$/application/controllers/UserView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+            <state relative-caret-position="360">
+              <caret line="67" column="71" selection-start-line="67" selection-start-column="71" selection-end-line="67" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -101,9 +96,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>-question</find>
-      <find>tpye</find>
-      <find>-singleQuestion</find>
       <find>-multipleQuestion</find>
       <find>-essayQuestion</find>
       <find>singleSelection</find>
@@ -131,6 +123,9 @@
       <find>-2</find>
       <find>saveMessage</find>
       <find>sizeof</find>
+      <find>$arr</find>
+      <find>getQuestionnaire</find>
+      <find>getQuestionnaireByID</find>
     </findStrings>
     <replaceStrings>
       <replace>VisitorView</replace>
@@ -187,7 +182,6 @@
         <option value="$PROJECT_DIR$/test1.php" />
         <option value="$PROJECT_DIR$/application/models/test.php" />
         <option value="$PROJECT_DIR$/application/models/qQuestion.php" />
-        <option value="$PROJECT_DIR$/application/models/Questionnaire.php" />
         <option value="$PROJECT_DIR$/application/models/text.php" />
         <option value="$PROJECT_DIR$/application/views/visitor_getQuestionID.php" />
         <option value="$PROJECT_DIR$/application/views/visitorHeader.php" />
@@ -195,7 +189,6 @@
         <option value="$PROJECT_DIR$/application/views/user_overViewQuestionnaire.php" />
         <option value="$PROJECT_DIR$/application/views/user_preview.php" />
         <option value="$PROJECT_DIR$/application/views/user_changePassword.php" />
-        <option value="$PROJECT_DIR$/application/models/UserModel.php" />
         <option value="$PROJECT_DIR$/questionnaire system.sql" />
         <option value="$PROJECT_DIR$/application/views/uesr_questionnaireResult.php" />
         <option value="$PROJECT_DIR$/application/views/user_questionnaireResult.php" />
@@ -203,7 +196,6 @@
         <option value="$PROJECT_DIR$/application/views/visitor_writeQuestionnaire.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/application/views/userTopbar.php" />
-        <option value="$PROJECT_DIR$/application/models/QuestionnaireModel.php" />
         <option value="$PROJECT_DIR$/application/controllers/Welcome.php" />
         <option value="$PROJECT_DIR$/application/views/user_addQuestionnaire.php" />
         <option value="$PROJECT_DIR$/application/views/visitor_register.html" />
@@ -211,11 +203,14 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/application/controllers/MyController.php" />
         <option value="$PROJECT_DIR$/application/controllers/VisitorView.php" />
-        <option value="$PROJECT_DIR$/application/controllers/UserView.php" />
         <option value="$PROJECT_DIR$/application/controllers/MyMessage.php" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/application/models/MessageBoardModel.php" />
         <option value="$PROJECT_DIR$/application/views/visitor_messageBoard.php" />
+        <option value="$PROJECT_DIR$/application/models/MessageBoardModel.php" />
+        <option value="$PROJECT_DIR$/application/models/Questionnaire.php" />
+        <option value="$PROJECT_DIR$/application/models/UserModel.php" />
+        <option value="$PROJECT_DIR$/application/controllers/UserView.php" />
+        <option value="$PROJECT_DIR$/application/models/QuestionnaireModel.php" />
       </list>
     </option>
   </component>
@@ -305,7 +300,7 @@
     <property name="SearchEverywhereHistoryKey" value="..&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553146552035" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553165181187" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -415,7 +410,7 @@
       <workItem from="1553012350457" duration="1549000" />
       <workItem from="1553071788093" duration="2922000" />
       <workItem from="1553074942139" duration="2523000" />
-      <workItem from="1553145237990" duration="1778000" />
+      <workItem from="1553145237990" duration="14065000" />
     </task>
     <task id="LOCAL-00001" summary="留言板的提取增加redis缓存">
       <created>1553076795494</created>
@@ -424,23 +419,31 @@
       <option name="project" value="LOCAL" />
       <updated>1553076795494</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="优化：未设置redis时正常插入数据库，不会报错">
+      <created>1553148340688</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1553148340688</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="303619000" />
+    <option name="totallyTimeSpent" value="315906000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1455" height="935" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.321403" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18181819" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
       <window_info id="UI Designer" order="5" />
       <window_info id="Capture Tool" order="6" />
+      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.47654155" weight="0.32765958" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -469,7 +472,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="留言板的提取增加redis缓存" />
-    <option name="LAST_COMMIT_MESSAGE" value="留言板的提取增加redis缓存" />
+    <MESSAGE value="优化：未设置redis时正常插入数据库，不会报错" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化：未设置redis时正常插入数据库，不会报错" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/myhome/controller/messagesave.php" />
@@ -537,13 +541,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/text.php" />
-    <entry file="file://$PROJECT_DIR$/application/views/visitor_getQuestionID.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="43" column="16" lean-forward="true" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/userNav.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
@@ -566,20 +563,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/myhome/controller/getQuestionnaire.php" />
-    <entry file="file://$PROJECT_DIR$/application/views/user_preview.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="617">
-          <caret line="77" lean-forward="true" selection-start-line="10" selection-end-line="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/user_overViewQuestionnaire.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="42" column="21" lean-forward="true" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/user_changePassword.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
@@ -622,20 +605,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/user_questionnaireResult.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/UserModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1235">
-          <caret line="70" column="27" lean-forward="true" selection-start-line="70" selection-start-column="27" selection-end-line="70" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/user_addQuestionnaire.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6340">
@@ -667,20 +636,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/qQuestion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/reader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/questionnaire system.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="679">
@@ -707,38 +662,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/UserView.php">
+    <entry file="file://$PROJECT_DIR$/application/models/qQuestion.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="53" column="30" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/VisitorView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="34" column="35" lean-forward="true" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/DatabaseController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="211" column="53" selection-start-line="211" selection-start-column="42" selection-end-line="211" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Questionnaire.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/QuestionnaireModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="50" column="23" lean-forward="true" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
+        <state relative-caret-position="-261">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
@@ -751,8 +678,91 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/MessageBoardModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="83" column="38" lean-forward="true" selection-start-line="83" selection-start-column="38" selection-end-line="83" selection-end-column="38" />
+        <state relative-caret-position="900">
+          <caret line="83" column="33" lean-forward="true" selection-start-line="83" selection-start-column="33" selection-end-line="83" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Questionnaire.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/reader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="129" column="31" selection-start-line="129" selection-start-column="18" selection-end-line="129" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/DatabaseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1079">
+          <caret line="161" column="34" lean-forward="true" selection-start-line="161" selection-start-column="34" selection-end-line="161" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/visitor_getQuestionID.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="39" column="14" lean-forward="true" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/VisitorView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="65" column="64" selection-start-line="65" selection-start-column="64" selection-end-line="65" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/user_preview.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-541">
+          <caret line="16" column="26" lean-forward="true" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/UserModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1053">
+          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/user_overViewQuestionnaire.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="42" column="21" lean-forward="true" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/user_questionnaireResult.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/UserView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="67" column="71" selection-start-line="67" selection-start-column="71" selection-end-line="67" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/QuestionnaireModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="54" column="9" lean-forward="true" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+          <folding>
+            <element signature="e#6#88#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

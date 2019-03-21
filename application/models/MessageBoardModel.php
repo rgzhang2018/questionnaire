@@ -7,9 +7,11 @@
  */
 
 
-//redis采用1号库存放留言板信息
+
 class MessageBoardModel extends CI_Model
 {
+    //redis采用1号库存放留言板信息
+    private $selectRedis = 1;
     public function __construct()
     {
         parent::__construct();
@@ -57,7 +59,7 @@ class MessageBoardModel extends CI_Model
     {
         $redis = new Redis();
         $redis->connect("127.0.0.1", 6379);
-        $redis->select(1); //选择1号库
+        $redis->select($this->selectRedis); //选择1号库
         $result = $redis->get("messageBoard");
         $saveFlag = $redis->get("messageBoardFlag");    //flag=true表示上次存储了新的数据
 
@@ -81,7 +83,7 @@ class MessageBoardModel extends CI_Model
         if(class_exists('Redis')){
             $redis = new Redis();
             $redis->connect("127.0.0.1",6379);
-            $redis->select(1); //选择1号库
+            $redis->select($this->selectRedis); //选择1号库
             $redis->set("messageBoardFlag",$flag);      //最近存储了新的数据，告诉getAllMessage()去取
         }
         return $flag;
