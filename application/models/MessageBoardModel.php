@@ -17,22 +17,20 @@ class MessageBoardModel extends CI_Model
     }
 
 
+    /**
+    * @Description:获取留言板内容
+    * @Author: rgzhang
+    * @Date: 2019/3/21
+    */
     public function getAllMessage(){
         $arr = null;
-        $redis = new Redis();
-        $redis->connect("127.0.0.1",6379);
-        $redis->select(1); //选择1号库
-        $result = $redis->get("messageBoard");
-        $saveFlag = $redis->get("messageBoardFlag");    //flag=true表示上次存储了新的数据
-        if(strlen($result)<1 || $saveFlag == 1){
-            $arr  = $this->getAllMessageFromDataBase();
-            $redis->set("messageBoard",json_encode($arr));  //如果没有存放在redis里，则重新存放进redis
-            $redis->set("messageBoardFlag",0);
-            //测试：
-            //$arr['test'] = "从mysql取得了新数据";
+
+        if(class_exists('Redis')){          //若不存在Redis，则直接插入数据库
+            $arr = $this->getAllMessageFromRedis();
+
         }else{
-            $arr = json_decode($result,true);        //true返回值是数组,否则返回值为object
-            //$arr['test'] = "从redis中获取了留言板";
+            $arr  = $this->getAllMessageFromDataBase();
+//            $arr['test'] = "从mysql取得了新数据222";
         }
 
         return $arr;
@@ -51,13 +49,41 @@ class MessageBoardModel extends CI_Model
         return $arr;
     }
 
+    /**
+     * @Description:从redis中取出messageboard的内容(如果有更新，则从数据库获取最新内容)
+     * @return mixed
+     */
+    public function getAllMessageFromRedis()
+    {
+        $redis = new Redis();
+        $redis->connect("127.0.0.1", 6379);
+        $redis->select(1); //选择1号库
+        $result = $redis->get("messageBoard");
+        $saveFlag = $redis->get("messageBoardFlag");    //flag=true表示上次存储了新的数据
+
+        if (strlen($result) < 1 || $saveFlag == 1) {
+            $arr = $this->getAllMessageFromDataBase();
+            $redis->set("messageBoard", json_encode($arr));  //如果没有存放在redis里，则重新存放进redis
+            $redis->set("messageBoardFlag", 0);
+            //测试：
+//            $arr['test'] = "从mysql取得了新数据";
+        } else {
+            $arr = json_decode($result, true);        //true返回值是数组,否则返回值为object
+//            $arr['test'] = "从redis中获取了留言板";
+        }
+        return $arr;
+    }
+
 
     public function saveMessage($text,$name,$time,$u_id){
         $flag = $this->saveMessageInDataBase($text,$name,$time,$u_id);
-        $redis = new Redis();
-        $redis->connect("127.0.0.1",6379);
-        $redis->select(1); //选择1号库
-        $redis->set("messageBoardFlag",1);      //最近存储了新的数据，告诉getAllMessage()去取
+
+        if(class_exists('Redis')){
+            $redis = new Redis();
+            $redis->connect("127.0.0.1",6379);
+            $redis->select(1); //选择1号库
+            $redis->set("messageBoardFlag",$flag);      //最近存储了新的数据，告诉getAllMessage()去取
+        }
         return $flag;
     }
 
