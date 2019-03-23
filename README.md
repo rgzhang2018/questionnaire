@@ -26,18 +26,26 @@
 
 #### 本地演示
 ``` application/controllers/Welcome.php ```  里面的那个转跳的地址改为本地的localhost或者ip（详细使用参照CI框架）
+
 ``` application/config/database.php ```是CI框架中配置数据库的配置文件，需要修改为自己的信息。
 
 ##### 目录结构
 ```./application/views/```  			存放视图
+
 ```./application/controllers/```		存放控制器
+
 ```./application/models/```				存放模型文件
 
 <br>
 
+
 ##### 关于数据库
-**```questionnaire system.sql```存放数据库建表文件。**
+
+**```questionnaire system.sql```存放数据库建表文件。最好使用mySQL57版本**
+
 ``` application/config/database.php ```是CI框架中配置数据库的配置文件。
+
+**由于用到了事务，使用时请采用InnoDB内核**(即mysql的5.6以上版本常规安装后的默认内核)
 
 *注：如果无法成功建表，可以去掉约束条件，先建表，后面单独写入约束条件，或者更改外键名词*
 
@@ -72,9 +80,18 @@ php安装redis扩展：http://blog.rgzhang.top/2019/03/19/php%E5%AE%89%E8%A3%85r
 
 <br>
 
+#### art-temlpate
 
-##### 补充说明
-初学者第一次尝试，作为给其他初学者的一个参考，有许多不足之处还请见谅
+在新建问卷后，添加不定数量的单/多选题、问答题时有用到，如需修改对应模块请参考：
+
+GitHub:https://github.com/aui/art-template
+
+<br>
+
+##### 关于本项目
+初学者小试牛刀，后面可能会继续更新吧
+
+发布上来作为给其他朋友的一个参考，有许多不足之处还请见谅
 
 有问题欢迎Issues或者留言至演示网址留言板
 
@@ -84,7 +101,7 @@ php安装redis扩展：http://blog.rgzhang.top/2019/03/19/php%E5%AE%89%E8%A3%85r
 
 
 
-#### 分支说明
+#### GitHub分支说明
 
 old：快照，纯php，未使用框架
 
