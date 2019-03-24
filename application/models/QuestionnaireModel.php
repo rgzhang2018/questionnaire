@@ -7,12 +7,13 @@
  */
 
 /**
- * @Description:处理问卷相关信息，使用redis的2号库
+ * @Description:处理问卷相关信息，使用redis的2号库，写入问卷用redis的setnx锁实现
  * @Author: rgzhang
  */
 class QuestionnaireModel extends CI_Model
 {
     private $selectRedis = 2;
+    private $freshTime = 30;    //题目写入数据库的间隔
 
     public function __construct()
     {
@@ -176,40 +177,43 @@ class QuestionnaireModel extends CI_Model
             }
         }
 
-        if($thisTime - $redisTime >= 10 || $freshFlag){   //超过时间间隔10s，则刷新写入刚才的填写情况，采用事务写入
-            $this->db->query("start;");
-            try{
+        if($thisTime - $redisTime >= $this->freshTime || $freshFlag ){   //超过时间间隔$freshTime，则刷新写入刚才的填写情况，采用事务写入
+            if($redis->setnx('insertLock',1)){      //给redis加锁，防止多个线程重复写入(比如上面的时间条件由一个写入触发，同时flag条件由一个查询触发)
+                $this->db->query("start;");
+                try{
 
-                //取出选择情况并写入sql
-                $selections = $redis->hGetAll('selections');
-                $qs_ids = array_keys($selections);
-                //取出问答题并写入sql
-                $listLength = $redis->lLen('answers');
-                $answers = $redis->lRange('answers',0,$listLength-1);
+                    //取出选择情况并写入sql
+                    $selections = $redis->hGetAll('selections');
+                    $qs_ids = array_keys($selections);
+                    //取出问答题并写入sql
+                    $listLength = $redis->lLen('answers');
+                    $answers = $redis->lRange('answers',0,$listLength-1);
 
-                $i = 0;
-                //取出选择情况并写入sql
-                foreach($selections as $counts){
-                    $message = "update `selection` set qs_counts=qs_counts + {$counts} where qs_id={$qs_ids[$i]};";
-                    $this->db->query($message);
-                    $i++;
+                    $i = 0;
+                    //取出选择情况并写入sql
+                    foreach($selections as $counts){
+                        $message = "update `selection` set qs_counts=qs_counts + {$counts} where qs_id={$qs_ids[$i]};";
+                        $this->db->query($message);
+                        $i++;
+                    }
+                    //取出问答题并写入sql
+                    for ($i=0;$i< $listLength;$i++){
+                        $this->db->query($answers[$i]);
+                    }
+
+                }catch (Exception $exception){
+                    $this->db->query("rollback;");
+                    echo $exception;
+                    return false;
                 }
-                //取出问答题并写入sql
-                for ($i=0;$i< $listLength;$i++){
-                    $this->db->query($answers[$i]);
-                }
-
-            }catch (Exception $exception){
-                $this->db->query("rollback;");
-                echo $exception;
-                return false;
+                $this->db->query("commit;");
+                $redis->del('selections');
+                $redis->del('answers');
+                $redis->del('insertLock');  //删除锁
+                $redis->set('time',$thisTime); //记录这次写入redis的时间，作为下一个时间间隔
             }
-            $this->db->query("commit;");
-            $redis->del('selections');
-            $redis->del('answers');
-            $redis->set('time',$thisTime); //记录这次写入redis的时间，作为下一个时间间隔
-        }
 
+        }
         return true;
     }
 
